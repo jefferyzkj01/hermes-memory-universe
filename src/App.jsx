@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import MiniSearch from 'minisearch'
-import { Activity, Database, Filter, GitBranch, Info, Maximize2, Minimize2, Sparkles } from 'lucide-react'
+import { Activity, Database, Filter, GitBranch, Info, Maximize2, Minimize2 } from 'lucide-react'
 import UniverseGraph from './components/UniverseGraph.jsx'
 import NebulaPanel from './components/NebulaPanel.jsx'
 import NodeDetail from './components/NodeDetail.jsx'
 import SearchCommand from './components/SearchCommand.jsx'
 import DataHealth from './components/DataHealth.jsx'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=fullscreen-dblclick-exit-v18`
+const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=hide-top-title-v19`
 
 function App() {
   const [graph, setGraph] = useState(null)
@@ -134,10 +134,6 @@ function App() {
   return (
     <main className={`app-shell${isImmersive ? ' immersive-mode' : ''}`} onDoubleClick={handleImmersiveDoubleClick}>
       <section className="topbar">
-        <div>
-          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.6.1</p>
-          <h1>無字全螢幕・閒置星雲環繞</h1>
-        </div>
         <div className="topbar-meta">
           <span><Activity size={14} /> {graph.snapshot.generatedAt}</span>
           <span><Database size={14} /> {graph.nodes.length} nodes / {graph.links.length} links</span>
