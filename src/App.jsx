@@ -68,8 +68,8 @@ function App() {
     <main className="app-shell">
       <section className="topbar">
         <div>
-          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe</p>
-          <h1>多星雲 AI Agent 神經宇宙</h1>
+          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 2.0</p>
+          <h1>真實宇宙風 AI Agent 星雲圖</h1>
         </div>
         <div className="topbar-meta">
           <span><Activity size={14} /> {graph.snapshot.generatedAt}</span>

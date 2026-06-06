@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-06T11:54:55+08:00",
+    "generatedAt": "2026-06-06T12:14:28+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "health": [
@@ -929,6 +929,25 @@
       "tags": [
         "skill",
         "data-science"
+      ]
+    },
+    {
+      "id": "skill-agent-system-cockpit",
+      "label": "agent-system-cockpit",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Design, build, and maintain visual cockpit dashboards for an AI agent system — redacted static GitHub Pages dashboards, local/private full-data views, memory/skill/tool graphs, and daily snapshot pipelines.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "devops",
+        "aesthetic",
+        "automation"
       ]
     },
     {
@@ -2288,6 +2307,18 @@
       "target": "skill-jupyter-live-kernel",
       "type": "skill",
       "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-agent-system-cockpit",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-agent-system-cockpit",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
     },
     {
       "source": "hermes-core",
