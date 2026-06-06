@@ -15,6 +15,17 @@ const NEBULA_COORDS = {
 }
 
 const FALLBACK_COORDS = [84, 46, -22]
+const SPACE_SCALE = 1.6
+const GLOW_DECAY = 0.7
+
+function endpointId(endpoint) {
+  return typeof endpoint === 'object' ? endpoint.id : endpoint
+}
+
+function isSelectedLink(link, selectedId) {
+  if (!selectedId) return false
+  return endpointId(link.source) === selectedId || endpointId(link.target) === selectedId
+}
 
 function colorFor(node, nebulaTheme) {
   return nebulaTheme?.[node.keywordCore]?.color ?? nebulaTheme?.[node.nebula]?.color ?? '#9ca3af'
@@ -177,7 +188,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const radius = isCore ? 2.35 + infoLight * 2.4 : 0.72 + infoLight * 1.12
   const glowScale = isCore ? 7.4 + infoLight * 7.6 : 4.4 + infoLight * 6.8
   const coreOpacity = isSelected ? 1 : isCore ? 0.92 : 0.62 + infoLight * 0.33
-  const haloOpacity = isSelected ? 0.95 : isCore ? 0.52 + infoLight * 0.26 : 0.18 + infoLight * 0.54
+  const haloOpacity = (isSelected ? 0.95 : isCore ? 0.52 + infoLight * 0.26 : 0.18 + infoLight * 0.54) * GLOW_DECAY
 
   const glowTexture = texturesRef.current.nodeGlow
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -202,13 +213,13 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   lightPoint.scale.set(radius * 3.2, radius * 3.2, 1)
   group.add(lightPoint)
 
-  const pinLight = new THREE.PointLight(color, isSelected ? 0.72 : isCore ? 0.32 + infoLight * 0.36 : 0.05 + infoLight * 0.12, isCore ? 58 : 24)
+  const pinLight = new THREE.PointLight(color, (isSelected ? 0.72 : isCore ? 0.32 + infoLight * 0.36 : 0.05 + infoLight * 0.12) * GLOW_DECAY, isCore ? 58 : 24)
   group.add(pinLight)
 
   if (isSelected || isCore) {
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(radius * 1.95, Math.max(0.018, radius * 0.018), 8, 96),
-      new THREE.MeshBasicMaterial({ color: isSelected ? '#ffffff' : baseColor, transparent: true, opacity: 0.42, blending: THREE.AdditiveBlending, depthWrite: false }),
+      new THREE.MeshBasicMaterial({ color: isSelected ? '#ffffff' : baseColor, transparent: true, opacity: 0.42 * GLOW_DECAY, blending: THREE.AdditiveBlending, depthWrite: false }),
     )
     ring.rotation.x = Math.PI / 2.7
     ring.rotation.y = Math.PI / 5
@@ -223,7 +234,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
       map: glowTexture,
       color,
       transparent: true,
-      opacity: isSelected ? 0.38 : 0.08 + infoLight * 0.18,
+      opacity: (isSelected ? 0.38 : 0.08 + infoLight * 0.18) * GLOW_DECAY,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }))
@@ -244,12 +255,16 @@ function buildNebulaCoords(graph) {
   cores.forEach((core, index) => {
     const angle = (index / count) * Math.PI * 2 + 0.32
     const layer = index % 2 === 0 ? 1 : -1
-    const radius = 178 + (index % 3) * 24
+    const radius = (178 + (index % 3) * 24) * SPACE_SCALE
     coords[core.key] = [
       Math.cos(angle) * radius,
-      Math.sin(angle * 1.17) * 88 + layer * 26,
+      (Math.sin(angle * 1.17) * 88 + layer * 26) * SPACE_SCALE,
       Math.sin(angle) * radius * 0.74,
     ]
+  })
+  Object.keys(coords).forEach((key) => {
+    if (key.startsWith('kw-')) return
+    coords[key] = coords[key].map((value) => value * SPACE_SCALE)
   })
   coords['kw-orbit'] = [0, 0, 0]
   return coords
@@ -268,7 +283,7 @@ function prepareGraphData(graph, nebulaCoords) {
     nodes: graph.nodes.map((node) => {
       const semanticKey = node.keywordCore ?? (node.type === 'core' ? 'kw-orbit' : node.nebula)
       const center = nebulaCoords[semanticKey] ?? nebulaCoords[node.nebula] ?? FALLBACK_COORDS
-      const [ox, oy, oz] = deterministicOffset(node.id, node.type === 'keyword_core' ? 2 : 46)
+      const [ox, oy, oz] = deterministicOffset(node.id, node.type === 'keyword_core' ? 2 : 46 * SPACE_SCALE)
       const x = center[0] + (node.type === 'keyword_core' ? 0 : ox)
       const y = center[1] + (node.type === 'keyword_core' ? 0 : oy)
       const z = center[2] + (node.type === 'keyword_core' ? 0 : oz)
@@ -316,17 +331,22 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
       .nodeThreeObject((node) => createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef))
       .nodeLabel((node) => `${node.label}<br/><span>${node.type} · ${node.keyword ? `keyword: ${node.keyword}` : node.nebula}</span>`)
       .linkWidth((link) => {
+        if (!isSelectedLink(link, selectedIdRef.current)) return 0
         if (link.type === 'skill') return 0.12
         return Math.max(0.25, (link.strength ?? 0.35) * (link.type === 'semantic-gravity' ? 1.7 : link.type === 'bridge' ? 1.35 : 0.72))
       })
-      .linkOpacity((link) => (link.type === 'skill' ? 0.025 : link.type === 'semantic-gravity' ? 0.30 : link.type === 'bridge' ? 0.18 : 0.07))
-      .linkDirectionalParticles((link) => (link.type === 'semantic-gravity' ? 2 : link.type === 'bridge' ? 1 : 0))
+      .linkVisibility((link) => isSelectedLink(link, selectedIdRef.current))
+      .linkOpacity((link) => {
+        if (!isSelectedLink(link, selectedIdRef.current)) return 0
+        return link.type === 'skill' ? 0.025 : link.type === 'semantic-gravity' ? 0.30 : link.type === 'bridge' ? 0.18 : 0.07
+      })
+      .linkDirectionalParticles((link) => (isSelectedLink(link, selectedIdRef.current) ? (link.type === 'semantic-gravity' ? 2 : link.type === 'bridge' ? 1 : 0) : 0))
       .linkDirectionalParticleWidth((link) => (link.type === 'bridge' ? 1.25 : 0.48))
       .linkDirectionalParticleSpeed(0.0045)
       .linkColor((link) => (link.type === 'bridge' ? 'rgba(226,232,240,0.42)' : 'rgba(148,163,184,0.14)'))
       .onNodeClick((node) => {
         onSelect(node)
-        const distance = node.type === 'core' ? 150 : 96
+        const distance = (node.type === 'core' ? 150 : 96) * SPACE_SCALE
         const denom = Math.max(1, Math.hypot(node.x, node.y, node.z))
         const distRatio = 1 + distance / denom
         fg.cameraPosition({ x: node.x * distRatio, y: node.y * distRatio + 18, z: node.z * distRatio }, node, 1200)
@@ -372,7 +392,7 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
       sceneObjectsRef.current.push(sprite)
     })
 
-    fg.cameraPosition({ x: 0, y: 36, z: 430 }, { x: 0, y: 0, z: 0 }, 0)
+    fg.cameraPosition({ x: 0, y: 58, z: 690 }, { x: 0, y: 0, z: 0 }, 0)
     fg.controls().autoRotate = true
     fg.controls().autoRotateSpeed = 0.28
     fg.controls().enableDamping = true

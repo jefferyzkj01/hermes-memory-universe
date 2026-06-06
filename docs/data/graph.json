@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-06T14:00:10+08:00",
+    "generatedAt": "2026-06-06T14:05:20+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -120,7 +120,7 @@
       "keyword": "aesthetic",
       "label": "Aesthetic Core",
       "color": "#7dd3fc",
-      "count": 30
+      "count": 31
     },
     {
       "key": "kw-research",
@@ -261,12 +261,12 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 26.42,
+      "keywordScore": 27.18,
       "semanticKeywords": [
         "aesthetic",
         "software",
-        "productivity",
-        "investment"
+        "investment",
+        "productivity"
       ]
     },
     {
@@ -1008,6 +1008,31 @@
       "semanticKeywords": [
         "aesthetic",
         "software"
+      ]
+    },
+    {
+      "id": "skill-interactive-data-visualization",
+      "label": "interactive-data-visualization",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Build, refine, and verify interactive data visualizations, especially graph/universe/star-map UIs using React, Three.js, force graphs, Canvas/SVG/WebGL, or static GitHub Pages deployments. Use for visualizing memory syst",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic",
+        "automation"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic"
       ]
     },
     {
@@ -3193,6 +3218,18 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-interactive-data-visualization",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-interactive-data-visualization",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-jeffery-visual-style-bible",
       "type": "skill",
       "strength": 0.32
@@ -4040,6 +4077,12 @@
     {
       "source": "keyword-core-aesthetic",
       "target": "skill-imagegen-frontend-web",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
+      "target": "skill-interactive-data-visualization",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
     },
