@@ -7,7 +7,7 @@ import NodeDetail from './components/NodeDetail.jsx'
 import SearchCommand from './components/SearchCommand.jsx'
 import DataHealth from './components/DataHealth.jsx'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=no-speckles-v12`
+const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=soft-nodes-v13`
 
 function App() {
   const [graph, setGraph] = useState(null)

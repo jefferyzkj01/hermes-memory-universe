@@ -277,7 +277,11 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const radius = isCore ? 2.35 + infoLight * 2.4 : 0.72 + infoLight * 1.12
   const glowScale = isCore ? 8.8 + infoLight * 9.2 : 5.4 + infoLight * 8.8
   const coreOpacity = isSelected ? 1 : isCore ? 0.98 : 0.74 + infoLight * 0.26
-  const haloOpacity = brightenOpacity((isSelected ? 1 : isCore ? 0.68 + infoLight * 0.25 : 0.28 + infoLight * 0.58) * GLOW_DECAY)
+  const haloOpacity = isSelected
+    ? brightenOpacity(1 * GLOW_DECAY)
+    : isCore
+      ? brightenOpacity((0.68 + infoLight * 0.25) * GLOW_DECAY)
+      : brightenOpacity((0.045 + infoLight * 0.075) * GLOW_DECAY, 0.28)
 
   const glowTexture = texturesRef.current.nodeGlow
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -291,16 +295,18 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   halo.scale.set(radius * (isSelected ? glowScale * 1.14 : glowScale), radius * (isSelected ? glowScale * 1.14 : glowScale), 1)
   group.add(halo)
 
-  const lightPoint = new THREE.Sprite(new THREE.SpriteMaterial({
-    map: glowTexture,
-    color: isSelected ? '#ffffff' : color,
-    transparent: true,
-    opacity: brightenOpacity(coreOpacity),
-    blending: THREE.AdditiveBlending,
-    depthWrite: false,
-  }))
-  lightPoint.scale.set(radius * 2.7, radius * 2.7, 1)
-  group.add(lightPoint)
+  if (isSelected || isCore) {
+    const lightPoint = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: glowTexture,
+      color: isSelected ? '#ffffff' : color,
+      transparent: true,
+      opacity: brightenOpacity(coreOpacity),
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }))
+    lightPoint.scale.set(radius * 2.7, radius * 2.7, 1)
+    group.add(lightPoint)
+  }
 
   const pinLight = new THREE.PointLight(color, (isSelected ? 1.05 : isCore ? 0.48 + infoLight * 0.5 : 0.08 + infoLight * 0.18) * GLOW_DECAY * GRAPH_BRIGHTNESS, isCore ? 86 : 42)
   group.add(pinLight)
