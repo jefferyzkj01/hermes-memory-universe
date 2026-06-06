@@ -7,7 +7,7 @@ import NodeDetail from './components/NodeDetail.jsx'
 import SearchCommand from './components/SearchCommand.jsx'
 import DataHealth from './components/DataHealth.jsx'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=progressive-core-view-v15`
+const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=subtle-dust-v10`
 
 function App() {
   const [graph, setGraph] = useState(null)
@@ -68,8 +68,8 @@ function App() {
     <main className="app-shell">
       <section className="topbar">
         <div>
-          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.6</p>
-          <h1>漸進式核心星雲測試版</h1>
+          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.5</p>
+          <h1>圓形星塵・深空環境測試版</h1>
         </div>
         <div className="topbar-meta">
           <span><Activity size={14} /> {graph.snapshot.generatedAt}</span>
@@ -89,7 +89,7 @@ function App() {
 
         <section className="universe-card">
           <div className="graph-toolbar">
-            <span><GitBranch size={14} /> 預設只看核心・點 core / 拉近展開・一般節點淡霧化</span>
+            <span><GitBranch size={14} /> 圓形柔光星塵・深空氣體帶・遠景天體環境</span>
             <span><Filter size={14} /> {activeNebula === 'all' ? '全部星雲' : graph.nebulas[activeNebula]?.label}</span>
           </div>
           <UniverseGraph graph={filteredGraph} selectedNode={selectedNode} activeNebula={activeNebula} onSelect={setSelectedNode} nebulaTheme={graph.nebulas} />
