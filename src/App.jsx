@@ -52,7 +52,7 @@ function App() {
   const filteredGraph = useMemo(() => {
     if (!graph || activeNebula === 'all') return graph
     const visible = new Set(graph.nodes
-      .filter((node) => node.nebula === activeNebula || (node.relatedNebulae ?? []).includes(activeNebula))
+      .filter((node) => node.keywordCore === activeNebula || node.nebula === activeNebula || (node.relatedNebulae ?? []).includes(activeNebula))
       .map((node) => node.id))
     return {
       ...graph,
@@ -68,8 +68,8 @@ function App() {
     <main className="app-shell">
       <section className="topbar">
         <div>
-          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 2.0</p>
-          <h1>真實宇宙風 AI Agent 星雲圖</h1>
+          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.0</p>
+          <h1>關鍵字核心星雲測試版</h1>
         </div>
         <div className="topbar-meta">
           <span><Activity size={14} /> {graph.snapshot.generatedAt}</span>

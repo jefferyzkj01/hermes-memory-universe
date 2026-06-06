@@ -14,7 +14,9 @@ export default function NodeDetail({ node, graph, onSelect }) {
         <p>{node.summary}</p>
       </div>
       <div className="detail-grid">
-        <span>Nebula</span><strong>{node.nebula}</strong>
+        <span>Keyword Core</span><strong>{node.keyword ?? node.keywordCore ?? 'orbit'}</strong>
+        <span>Original Layer</span><strong>{node.nebula}</strong>
+        <span>Semantic Score</span><strong>{node.keywordScore ?? 'computed'}</strong>
         <span>Visibility</span><strong>{node.visibility ?? 'public-safe'}</strong>
         <span>Freshness</span><strong>{node.freshness ?? 'snapshot'}</strong>
       </div>

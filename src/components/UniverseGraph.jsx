@@ -17,7 +17,7 @@ const NEBULA_COORDS = {
 const FALLBACK_COORDS = [84, 46, -22]
 
 function colorFor(node, nebulaTheme) {
-  return nebulaTheme?.[node.nebula]?.color ?? '#9ca3af'
+  return nebulaTheme?.[node.keywordCore]?.color ?? nebulaTheme?.[node.nebula]?.color ?? '#9ca3af'
 }
 
 function hashString(value = '') {
@@ -158,7 +158,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const baseColor = colorFor(node, nebulaTheme)
   const color = new THREE.Color(baseColor)
   const isSelected = selectedIdRef.current === node.id
-  const isCore = node.type === 'core'
+  const isCore = node.type === 'core' || node.type === 'keyword_core'
   const weight = Math.max(1, Number(node.size ?? 5))
   const radius = Math.max(2.6, weight * (isCore ? 1.28 : 0.82))
 
@@ -219,22 +219,38 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   return group
 }
 
-function prepareGraphData(graph) {
+function buildNebulaCoords(graph) {
+  const coords = { ...NEBULA_COORDS }
+  const cores = graph.keywordCores ?? []
+  const count = Math.max(1, cores.length)
+  cores.forEach((core, index) => {
+    const angle = (index / count) * Math.PI * 2 + 0.32
+    const layer = index % 2 === 0 ? 1 : -1
+    const radius = 178 + (index % 3) * 24
+    coords[core.key] = [
+      Math.cos(angle) * radius,
+      Math.sin(angle * 1.17) * 88 + layer * 26,
+      Math.sin(angle) * radius * 0.74,
+    ]
+  })
+  coords['kw-orbit'] = [0, 0, 0]
+  return coords
+}
+
+function prepareGraphData(graph, nebulaCoords) {
   return {
     nodes: graph.nodes.map((node) => {
-      const nebulaKey = node.type === 'core' ? 'core' : node.nebula
-      const center = NEBULA_COORDS[nebulaKey] ?? FALLBACK_COORDS
-      const [ox, oy, oz] = deterministicOffset(node.id, node.type === 'core' ? 4 : 54)
-      const x = center[0] + ox
-      const y = center[1] + oy
-      const z = center[2] + oz
+      const semanticKey = node.keywordCore ?? (node.type === 'core' ? 'kw-orbit' : node.nebula)
+      const center = nebulaCoords[semanticKey] ?? nebulaCoords[node.nebula] ?? FALLBACK_COORDS
+      const [ox, oy, oz] = deterministicOffset(node.id, node.type === 'keyword_core' ? 2 : 46)
+      const x = center[0] + (node.type === 'keyword_core' ? 0 : ox)
+      const y = center[1] + (node.type === 'keyword_core' ? 0 : oy)
+      const z = center[2] + (node.type === 'keyword_core' ? 0 : oz)
       return {
         ...node,
         x,
         y,
         z,
-        // 2.0: keep domains as visible nebulae instead of letting the force solver
-        // collapse everything into a generic ball around the highest-degree core node.
         fx: x,
         fy: y,
         fz: z,
@@ -252,7 +268,8 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
   const sceneObjectsRef = useRef([])
   const texturesRef = useRef({})
 
-  const preparedGraph = useMemo(() => (graph ? prepareGraphData(graph) : null), [graph])
+  const nebulaCoords = useMemo(() => (graph ? buildNebulaCoords(graph) : NEBULA_COORDS), [graph])
+  const preparedGraph = useMemo(() => (graph ? prepareGraphData(graph, nebulaCoords) : null), [graph, nebulaCoords])
 
   useEffect(() => {
     selectedIdRef.current = selectedNode?.id
@@ -270,10 +287,13 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
       .cooldownTicks(80)
       .nodeRelSize(0)
       .nodeThreeObject((node) => createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef))
-      .nodeLabel((node) => `${node.label}<br/><span>${node.type} · ${node.nebula}</span>`)
-      .linkWidth((link) => Math.max(0.25, (link.strength ?? 0.35) * (link.type === 'bridge' ? 1.65 : 0.85)))
-      .linkOpacity((link) => (link.type === 'bridge' ? 0.24 : 0.11))
-      .linkDirectionalParticles((link) => (link.type === 'bridge' ? 3 : 1))
+      .nodeLabel((node) => `${node.label}<br/><span>${node.type} · ${node.keyword ? `keyword: ${node.keyword}` : node.nebula}</span>`)
+      .linkWidth((link) => {
+        if (link.type === 'skill') return 0.12
+        return Math.max(0.25, (link.strength ?? 0.35) * (link.type === 'semantic-gravity' ? 1.7 : link.type === 'bridge' ? 1.35 : 0.72))
+      })
+      .linkOpacity((link) => (link.type === 'skill' ? 0.025 : link.type === 'semantic-gravity' ? 0.30 : link.type === 'bridge' ? 0.18 : 0.07))
+      .linkDirectionalParticles((link) => (link.type === 'semantic-gravity' ? 2 : link.type === 'bridge' ? 1 : 0))
       .linkDirectionalParticleWidth((link) => (link.type === 'bridge' ? 1.25 : 0.48))
       .linkDirectionalParticleSpeed(0.0045)
       .linkColor((link) => (link.type === 'bridge' ? 'rgba(226,232,240,0.42)' : 'rgba(148,163,184,0.14)'))
@@ -304,7 +324,7 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
     sceneObjectsRef.current.push(stars)
 
     Object.entries(nebulaTheme ?? {}).forEach(([keyName, theme], index) => {
-      const center = NEBULA_COORDS[keyName]
+      const center = nebulaCoords[keyName]
       if (!center) return
       const texture = makeNebulaTexture(theme.color ?? '#94a3b8', index % 2 === 0 ? '#7dd3fc' : '#c4b5fd')
       const material = new THREE.SpriteMaterial({
@@ -370,7 +390,7 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
       fg._destructor?.()
       graphRef.current = null
     }
-  }, [nebulaTheme, onSelect])
+  }, [nebulaTheme, nebulaCoords, onSelect])
 
   useEffect(() => {
     if (!graphRef.current || !preparedGraph) return
