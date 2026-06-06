@@ -17,6 +17,8 @@ const NEBULA_COORDS = {
 const FALLBACK_COORDS = [84, 46, -22]
 const SPACE_SCALE = 1.6
 const GLOW_DECAY = 0.9
+const GRAPH_BRIGHTNESS = 1.8
+const STAR_DENSITY = 1.5
 
 function endpointId(endpoint) {
   return typeof endpoint === 'object' ? endpoint.id : endpoint
@@ -62,6 +64,10 @@ function deterministicOffset(id, radius = 38) {
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value))
+}
+
+function brightenOpacity(value, cap = 1) {
+  return clamp(value * GRAPH_BRIGHTNESS, 0, cap)
 }
 
 function calculateInfoLight(node, degree = 0) {
@@ -145,7 +151,7 @@ function makeNebulaTexture(colorA, colorB) {
 }
 
 function addStarField(scene) {
-  const count = 2700
+  const count = Math.round(2700 * STAR_DENSITY)
   const positions = new Float32Array(count * 3)
   const colors = new Float32Array(count * 3)
   const color = new THREE.Color()
@@ -170,7 +176,7 @@ function addStarField(scene) {
     size: 1.25,
     vertexColors: true,
     transparent: true,
-    opacity: 0.82,
+    opacity: 0.94,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
     sizeAttenuation: true,
@@ -191,7 +197,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const radius = isCore ? 2.35 + infoLight * 2.4 : 0.72 + infoLight * 1.12
   const glowScale = isCore ? 8.8 + infoLight * 9.2 : 5.4 + infoLight * 8.8
   const coreOpacity = isSelected ? 1 : isCore ? 0.98 : 0.74 + infoLight * 0.26
-  const haloOpacity = (isSelected ? 1 : isCore ? 0.68 + infoLight * 0.25 : 0.28 + infoLight * 0.58) * GLOW_DECAY
+  const haloOpacity = brightenOpacity((isSelected ? 1 : isCore ? 0.68 + infoLight * 0.25 : 0.28 + infoLight * 0.58) * GLOW_DECAY)
 
   const glowTexture = texturesRef.current.nodeGlow
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -209,20 +215,20 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
     map: glowTexture,
     color: isSelected ? '#ffffff' : color,
     transparent: true,
-    opacity: coreOpacity,
+    opacity: brightenOpacity(coreOpacity),
     blending: THREE.AdditiveBlending,
     depthWrite: false,
   }))
   lightPoint.scale.set(radius * 2.7, radius * 2.7, 1)
   group.add(lightPoint)
 
-  const pinLight = new THREE.PointLight(color, (isSelected ? 1.05 : isCore ? 0.48 + infoLight * 0.5 : 0.08 + infoLight * 0.18) * GLOW_DECAY, isCore ? 76 : 32)
+  const pinLight = new THREE.PointLight(color, (isSelected ? 1.05 : isCore ? 0.48 + infoLight * 0.5 : 0.08 + infoLight * 0.18) * GLOW_DECAY * GRAPH_BRIGHTNESS, isCore ? 86 : 42)
   group.add(pinLight)
 
   if (isSelected || isCore) {
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(radius * 1.95, Math.max(0.018, radius * 0.018), 8, 96),
-      new THREE.MeshBasicMaterial({ color: isSelected ? '#ffffff' : baseColor, transparent: true, opacity: 0.42 * GLOW_DECAY, blending: THREE.AdditiveBlending, depthWrite: false }),
+      new THREE.MeshBasicMaterial({ color: isSelected ? '#ffffff' : baseColor, transparent: true, opacity: brightenOpacity(0.42 * GLOW_DECAY), blending: THREE.AdditiveBlending, depthWrite: false }),
     )
     ring.rotation.x = Math.PI / 2.7
     ring.rotation.y = Math.PI / 5
@@ -237,7 +243,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
       map: glowTexture,
       color,
       transparent: true,
-      opacity: (isSelected ? 0.48 : 0.11 + infoLight * 0.22) * GLOW_DECAY,
+      opacity: brightenOpacity((isSelected ? 0.48 : 0.11 + infoLight * 0.22) * GLOW_DECAY, 0.82),
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }))
@@ -362,11 +368,11 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
 
     const scene = fg.scene()
     scene.fog = new THREE.FogExp2(0x02040a, 0.00145)
-    scene.add(new THREE.AmbientLight(0x7897d7, 1.15))
-    const key = new THREE.PointLight(0xbfd7ff, 2.1, 620)
+    scene.add(new THREE.AmbientLight(0x7897d7, 1.15 * GRAPH_BRIGHTNESS))
+    const key = new THREE.PointLight(0xbfd7ff, 2.1 * GRAPH_BRIGHTNESS, 720)
     key.position.set(110, 145, 180)
     scene.add(key)
-    const violet = new THREE.PointLight(0x8b5cf6, 1.15, 520)
+    const violet = new THREE.PointLight(0x8b5cf6, 1.15 * GRAPH_BRIGHTNESS, 620)
     violet.position.set(-180, -80, -120)
     scene.add(violet)
 
@@ -381,7 +387,7 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
         map: texture,
         color: '#ffffff',
         transparent: true,
-        opacity: keyName === 'core' ? 0.13 : 0.085,
+        opacity: brightenOpacity(keyName === 'core' ? 0.13 : 0.085, keyName === 'core' ? 0.34 : 0.24),
         blending: THREE.AdditiveBlending,
         depthWrite: false,
       })
