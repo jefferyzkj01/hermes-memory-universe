@@ -162,11 +162,10 @@ h1 {
   pointer-events: none;
   z-index: 1;
   background:
-    radial-gradient(circle at 50% 52%, transparent 0 44%, rgba(0,0,0,.34) 100%),
-    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(255,255,255,.012) 1px, transparent 1px);
-  background-size: auto, 72px 72px, 72px 72px;
-  opacity: .7;
+    radial-gradient(circle at 50% 52%, transparent 0 44%, rgba(0,0,0,.28) 100%),
+    radial-gradient(ellipse at 18% 74%, rgba(92, 132, 255, .08), transparent 34%),
+    radial-gradient(ellipse at 82% 20%, rgba(112, 218, 255, .06), transparent 32%);
+  opacity: .78;
 }
 
 .universe-card::after {

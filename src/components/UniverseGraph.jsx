@@ -110,6 +110,70 @@ function makeGlowTexture({ color = '#ffffff' } = {}) {
   return texture
 }
 
+function makeRoundStarTexture() {
+  const canvas = document.createElement('canvas')
+  canvas.width = 128
+  canvas.height = 128
+  const ctx = canvas.getContext('2d')
+  const gradient = ctx.createRadialGradient(64, 64, 0, 64, 64, 64)
+  gradient.addColorStop(0, 'rgba(255,255,255,1)')
+  gradient.addColorStop(0.16, 'rgba(232,244,255,.88)')
+  gradient.addColorStop(0.42, 'rgba(155,205,255,.34)')
+  gradient.addColorStop(0.72, 'rgba(112,145,255,.08)')
+  gradient.addColorStop(1, 'rgba(0,0,0,0)')
+  ctx.fillStyle = gradient
+  ctx.fillRect(0, 0, 128, 128)
+  const texture = new THREE.CanvasTexture(canvas)
+  texture.colorSpace = THREE.SRGBColorSpace
+  return texture
+}
+
+function makeCosmicBandTexture() {
+  const canvas = document.createElement('canvas')
+  canvas.width = 1024
+  canvas.height = 384
+  const ctx = canvas.getContext('2d', { willReadFrequently: true })
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  const base = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
+  base.addColorStop(0, 'rgba(83,112,255,0)')
+  base.addColorStop(0.22, 'rgba(94,151,255,.20)')
+  base.addColorStop(0.5, 'rgba(186,142,255,.24)')
+  base.addColorStop(0.76, 'rgba(81,206,255,.18)')
+  base.addColorStop(1, 'rgba(83,112,255,0)')
+  ctx.fillStyle = base
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+  for (let i = 0; i < 34; i += 1) {
+    const x = seededUnit(i * 73 + 9) * canvas.width
+    const y = 92 + seededUnit(i * 137 + 17) * 200
+    const r = 86 + seededUnit(i * 191 + 31) * 220
+    const hue = i % 3 === 0 ? '154,219,255' : i % 3 === 1 ? '185,160,255' : '255,235,204'
+    const g = ctx.createRadialGradient(x, y, 0, x, y, r)
+    g.addColorStop(0, `rgba(${hue},${0.10 + seededUnit(i * 11) * 0.12})`)
+    g.addColorStop(0.45, `rgba(${hue},.035)`)
+    g.addColorStop(1, `rgba(${hue},0)`)
+    ctx.fillStyle = g
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+  }
+
+  const image = ctx.getImageData(0, 0, canvas.width, canvas.height)
+  const data = image.data
+  for (let y = 0; y < canvas.height; y += 1) {
+    for (let x = 0; x < canvas.width; x += 1) {
+      const i = (y * canvas.width + x) * 4
+      const centerFade = 1 - Math.min(1, Math.abs(y - canvas.height / 2) / (canvas.height / 2))
+      const filament = Math.max(0, Math.sin(x * 0.018 + Math.sin(y * 0.028) * 3.6) * Math.cos(y * 0.044 + x * 0.004))
+      data[i + 3] = Math.min(210, data[i + 3] * (0.4 + centerFade * 0.86) + filament * 34 * centerFade)
+    }
+  }
+  ctx.putImageData(image, 0, 0)
+
+  const texture = new THREE.CanvasTexture(canvas)
+  texture.colorSpace = THREE.SRGBColorSpace
+  return texture
+}
+
 function makeNebulaTexture(colorA, colorB) {
   const canvas = document.createElement('canvas')
   canvas.width = 512
@@ -150,7 +214,7 @@ function makeNebulaTexture(colorA, colorB) {
   return texture
 }
 
-function addStarField(scene) {
+function addStarField(scene, starTexture) {
   const count = Math.round(2700 * STAR_DENSITY)
   const positions = new Float32Array(count * 3)
   const colors = new Float32Array(count * 3)
@@ -173,10 +237,13 @@ function addStarField(scene) {
   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
   geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
   const material = new THREE.PointsMaterial({
-    size: 1.25,
+    map: starTexture,
+    alphaMap: starTexture,
+    alphaTest: 0.02,
+    size: 4.2,
     vertexColors: true,
     transparent: true,
-    opacity: 0.94,
+    opacity: 0.86,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
     sizeAttenuation: true,
@@ -185,6 +252,79 @@ function addStarField(scene) {
   stars.name = 'deep-starfield'
   scene.add(stars)
   return stars
+}
+
+
+function addCosmicEnvironment(scene, texturesRef) {
+  const created = []
+  const bandTexture = texturesRef.current.cosmicBand
+  const glowTexture = texturesRef.current.nodeGlow
+
+  const bandMaterial = new THREE.SpriteMaterial({
+    map: bandTexture,
+    color: '#ffffff',
+    transparent: true,
+    opacity: 0.34,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  })
+  const band = new THREE.Sprite(bandMaterial)
+  band.name = 'cosmic-band'
+  band.position.set(-80, 28, -640)
+  band.scale.set(1180, 430, 1)
+  band.material.rotation = -0.28
+  band.userData.phase = 0.2
+  scene.add(band)
+  created.push(band)
+
+  const aurora = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: bandTexture,
+    color: '#8bdfff',
+    transparent: true,
+    opacity: 0.13,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  }))
+  aurora.name = 'cosmic-aurora'
+  aurora.position.set(260, -130, -510)
+  aurora.scale.set(820, 260, 1)
+  aurora.material.rotation = 0.42
+  aurora.userData.phase = 1.8
+  scene.add(aurora)
+  created.push(aurora)
+
+  const distantMoon = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: glowTexture,
+    color: '#d9e7ff',
+    transparent: true,
+    opacity: 0.16,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  }))
+  distantMoon.name = 'distant-celestial-glow'
+  distantMoon.position.set(-390, 210, -590)
+  distantMoon.scale.set(92, 92, 1)
+  distantMoon.userData.phase = 2.7
+  scene.add(distantMoon)
+  created.push(distantMoon)
+
+  const horizon = new THREE.Mesh(
+    new THREE.TorusGeometry(360, 0.38, 8, 192, Math.PI * 1.25),
+    new THREE.MeshBasicMaterial({
+      color: 0x7dd3fc,
+      transparent: true,
+      opacity: 0.10,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  )
+  horizon.name = 'deep-space-horizon-arc'
+  horizon.position.set(0, -235, -315)
+  horizon.rotation.set(Math.PI * 0.58, 0.16, -0.22)
+  scene.add(horizon)
+  created.push(horizon)
+
+  return created
 }
 
 function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
@@ -330,6 +470,8 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
     if (!containerRef.current || graphRef.current) return undefined
 
     texturesRef.current.nodeGlow = makeGlowTexture({ color: '#ffffff' })
+    texturesRef.current.starGlow = makeRoundStarTexture()
+    texturesRef.current.cosmicBand = makeCosmicBandTexture()
 
     const fg = ForceGraph3D()(containerRef.current)
       .backgroundColor('rgba(0,0,0,0)')
@@ -376,7 +518,10 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
     violet.position.set(-180, -80, -120)
     scene.add(violet)
 
-    const stars = addStarField(scene)
+    const cosmicEnvironment = addCosmicEnvironment(scene, texturesRef)
+    sceneObjectsRef.current.push(...cosmicEnvironment)
+
+    const stars = addStarField(scene, texturesRef.current.starGlow)
     sceneObjectsRef.current.push(stars)
 
     Object.entries(nebulaTheme ?? {}).forEach(([keyName, theme], index) => {
@@ -424,6 +569,11 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
         if (object.name === 'deep-starfield') {
           object.rotation.y = t * 0.16
           object.rotation.x = Math.sin(t * 0.31) * 0.035
+        } else if (object.name === 'cosmic-band' || object.name === 'cosmic-aurora') {
+          object.material.rotation += object.name === 'cosmic-band' ? 0.000045 : -0.000035
+          object.material.opacity = (object.name === 'cosmic-band' ? 0.34 : 0.13) * (0.9 + Math.sin(t * 2 + object.userData.phase) * 0.08)
+        } else if (object.name === 'distant-celestial-glow') {
+          object.material.opacity = 0.15 + Math.sin(t * 1.7 + object.userData.phase) * 0.025
         } else if (object.isSprite) {
           object.material.rotation = t * 0.32 + object.userData.phase
           object.material.opacity = object.userData.baseOpacity * (0.84 + Math.sin(t * 3 + object.userData.phase) * 0.12)
