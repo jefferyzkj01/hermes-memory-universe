@@ -33,6 +33,37 @@ function colorFor(node, nebulaTheme) {
   return nebulaTheme?.[node.keywordCore]?.color ?? nebulaTheme?.[node.nebula]?.color ?? '#9ca3af'
 }
 
+function isCoreNode(node) {
+  return node.type === 'core' || node.type === 'keyword_core'
+}
+
+function selectedCoreKey(selectedNode) {
+  if (!selectedNode) return null
+  if (selectedNode.type === 'keyword_core') return selectedNode.keywordCore ?? selectedNode.nebula
+  return selectedNode.keywordCore ?? null
+}
+
+function matchesNebula(node, key) {
+  return node.keywordCore === key || node.nebula === key || (node.relatedNebulae ?? []).includes(key)
+}
+
+function shouldShowNode(node, selectedNode, activeNebula, detailMode) {
+  if (isCoreNode(node)) return true
+  if (selectedNode?.id === node.id) return true
+  const key = selectedCoreKey(selectedNode)
+  if (key && matchesNebula(node, key)) return true
+  if (activeNebula !== 'all' && matchesNebula(node, activeNebula)) return true
+  return detailMode
+}
+
+function softenColor(baseColor) {
+  const softened = new THREE.Color(baseColor)
+  const hsl = {}
+  softened.getHSL(hsl)
+  softened.setHSL(hsl.h, Math.min(0.24, hsl.s * 0.42), Math.max(0.62, Math.min(0.78, hsl.l + 0.16)))
+  return softened
+}
+
 function hashString(value = '') {
   let hash = 2166136261
   for (let i = 0; i < value.length; i += 1) {
@@ -333,14 +364,14 @@ function addCosmicEnvironment(scene, texturesRef) {
 function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const group = new THREE.Group()
   const baseColor = colorFor(node, nebulaTheme)
-  const color = new THREE.Color(baseColor)
+  const isCore = isCoreNode(node)
   const isSelected = selectedIdRef.current === node.id
-  const isCore = node.type === 'core' || node.type === 'keyword_core'
+  const color = isCore || isSelected ? new THREE.Color(baseColor) : softenColor(baseColor)
   const infoLight = Math.max(0.18, Math.min(1, Number(node.infoLight ?? 0.42)))
   const radius = isCore ? 2.35 + infoLight * 2.4 : 0.72 + infoLight * 1.12
-  const glowScale = isCore ? 8.8 + infoLight * 9.2 : 5.4 + infoLight * 8.8
-  const coreOpacity = isSelected ? 1 : isCore ? 0.98 : 0.74 + infoLight * 0.26
-  const haloOpacity = brightenOpacity((isSelected ? 1 : isCore ? 0.68 + infoLight * 0.25 : 0.28 + infoLight * 0.58) * GLOW_DECAY)
+  const glowScale = isCore ? 8.8 + infoLight * 9.2 : 7.4 + infoLight * 10.2
+  const coreOpacity = isSelected ? 1 : isCore ? 0.98 : 0.18 + infoLight * 0.18
+  const haloOpacity = brightenOpacity((isSelected ? 1 : isCore ? 0.68 + infoLight * 0.25 : 0.055 + infoLight * 0.07) * GLOW_DECAY, isCore || isSelected ? 1 : 0.24)
 
   const glowTexture = texturesRef.current.nodeGlow
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -362,11 +393,11 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
     blending: THREE.AdditiveBlending,
     depthWrite: false,
   }))
-  lightPoint.scale.set(radius * 2.7, radius * 2.7, 1)
-  group.add(lightPoint)
+  lightPoint.scale.set(radius * (isCore || isSelected ? 2.7 : 4.2), radius * (isCore || isSelected ? 2.7 : 4.2), 1)
+  if (isCore || isSelected) group.add(lightPoint)
 
-  const pinLight = new THREE.PointLight(color, (isSelected ? 1.05 : isCore ? 0.48 + infoLight * 0.5 : 0.08 + infoLight * 0.18) * GLOW_DECAY * GRAPH_BRIGHTNESS, isCore ? 86 : 42)
-  group.add(pinLight)
+  const pinLight = new THREE.PointLight(color, (isSelected ? 1.05 : isCore ? 0.48 + infoLight * 0.5 : 0.015 + infoLight * 0.035) * GLOW_DECAY * GRAPH_BRIGHTNESS, isCore ? 86 : 26)
+  if (isCore || isSelected) group.add(pinLight)
 
   if (isSelected || isCore) {
     const ring = new THREE.Mesh(
@@ -378,7 +409,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
     group.add(ring)
   }
 
-  const dustCount = isCore ? 18 : isSelected ? 12 : Math.round(2 + infoLight * 8)
+  const dustCount = isCore ? 18 : isSelected ? 12 : 0
   for (let i = 0; i < dustCount; i += 1) {
     const angle = (i / dustCount) * Math.PI * 2
     const orbit = radius * (2.55 + seededUnit(hashString(node.id) + i * 13) * 2.85)
@@ -458,6 +489,9 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
   const containerRef = useRef(null)
   const graphRef = useRef(null)
   const selectedIdRef = useRef(selectedNode?.id)
+  const selectedNodeRef = useRef(selectedNode)
+  const activeNebulaRef = useRef(activeNebula)
+  const detailModeRef = useRef(false)
   const animationRef = useRef(null)
   const sceneObjectsRef = useRef([])
   const texturesRef = useRef({})
@@ -467,7 +501,12 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
 
   useEffect(() => {
     selectedIdRef.current = selectedNode?.id
+    selectedNodeRef.current = selectedNode
   }, [selectedNode])
+
+  useEffect(() => {
+    activeNebulaRef.current = activeNebula
+  }, [activeNebula])
 
   useEffect(() => {
     if (!containerRef.current || graphRef.current) return undefined
@@ -481,6 +520,7 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
       .warmupTicks(160)
       .cooldownTicks(80)
       .nodeRelSize(0)
+      .nodeVisibility((node) => shouldShowNode(node, selectedNodeRef.current, activeNebulaRef.current, detailModeRef.current))
       .nodeThreeObject((node) => createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef))
       .nodeLabel((node) => `${node.label}<br/><span>${node.type} · ${node.keyword ? `keyword: ${node.keyword}` : node.nebula}</span>`)
       .linkWidth((link) => {
@@ -554,6 +594,17 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
     fg.controls().enableDamping = true
     fg.controls().dampingFactor = 0.055
 
+    const updateDetailMode = () => {
+      const distance = fg.camera().position.length()
+      const nextDetailMode = distance < 390
+      if (detailModeRef.current === nextDetailMode) return
+      detailModeRef.current = nextDetailMode
+      fg.nodeVisibility((node) => shouldShowNode(node, selectedNodeRef.current, activeNebulaRef.current, detailModeRef.current))
+      fg.refresh()
+    }
+    fg.controls().addEventListener('change', updateDetailMode)
+    updateDetailMode()
+
     graphRef.current = fg
 
     const resize = () => {
@@ -587,6 +638,7 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
 
     return () => {
       window.removeEventListener('resize', resize)
+      fg.controls().removeEventListener('change', updateDetailMode)
       if (animationRef.current) cancelAnimationFrame(animationRef.current)
       sceneObjectsRef.current.forEach((object) => {
         scene.remove(object)
@@ -603,11 +655,15 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
   useEffect(() => {
     if (!graphRef.current || !preparedGraph) return
     graphRef.current.graphData(preparedGraph)
+    graphRef.current.nodeVisibility((node) => shouldShowNode(node, selectedNodeRef.current, activeNebulaRef.current, detailModeRef.current))
+    graphRef.current.refresh()
   }, [preparedGraph, activeNebula])
 
   useEffect(() => {
     if (!graphRef.current) return
     selectedIdRef.current = selectedNode?.id
+    selectedNodeRef.current = selectedNode
+    graphRef.current.nodeVisibility((node) => shouldShowNode(node, selectedNodeRef.current, activeNebulaRef.current, detailModeRef.current))
     graphRef.current.nodeThreeObject((node) => createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef))
     graphRef.current.refresh()
   }, [selectedNode, nebulaTheme])
