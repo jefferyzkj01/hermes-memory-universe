@@ -7,7 +7,7 @@ import NodeDetail from './components/NodeDetail.jsx'
 import SearchCommand from './components/SearchCommand.jsx'
 import DataHealth from './components/DataHealth.jsx'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=fog-glow-v11`
+const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=no-speckles-v12`
 
 function App() {
   const [graph, setGraph] = useState(null)
@@ -89,7 +89,7 @@ function App() {
 
         <section className="universe-card">
           <div className="graph-toolbar">
-            <span><GitBranch size={14} /> 圓形柔光星塵・霧狀節點光暈・深空環境</span>
+            <span><GitBranch size={14} /> 無碎點節點・霧狀光暈・深空環境</span>
             <span><Filter size={14} /> {activeNebula === 'all' ? '全部星雲' : graph.nebulas[activeNebula]?.label}</span>
           </div>
           <UniverseGraph graph={filteredGraph} selectedNode={selectedNode} activeNebula={activeNebula} onSelect={setSelectedNode} nebulaTheme={graph.nebulas} />
