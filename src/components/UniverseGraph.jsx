@@ -381,17 +381,17 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const dustCount = isCore ? 18 : isSelected ? 12 : Math.round(2 + infoLight * 8)
   for (let i = 0; i < dustCount; i += 1) {
     const angle = (i / dustCount) * Math.PI * 2
-    const orbit = radius * (2.4 + seededUnit(hashString(node.id) + i * 13) * 2.6)
+    const orbit = radius * (2.55 + seededUnit(hashString(node.id) + i * 13) * 2.85)
     const dust = new THREE.Sprite(new THREE.SpriteMaterial({
       map: glowTexture,
       color,
       transparent: true,
-      opacity: brightenOpacity((isSelected ? 0.48 : 0.11 + infoLight * 0.22) * GLOW_DECAY, 0.82),
+      opacity: brightenOpacity((isSelected ? 0.22 : 0.045 + infoLight * 0.085) * GLOW_DECAY, 0.38),
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }))
     dust.position.set(Math.cos(angle) * orbit, Math.sin(angle * 1.7) * orbit * 0.25, Math.sin(angle) * orbit)
-    const size = radius * (0.28 + seededUnit(i + hashString(node.id)) * 0.64)
+    const size = radius * (0.12 + seededUnit(i + hashString(node.id)) * 0.26)
     dust.scale.set(size, size, 1)
     group.add(dust)
   }
