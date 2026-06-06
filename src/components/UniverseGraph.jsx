@@ -449,7 +449,7 @@ function prepareGraphData(graph, nebulaCoords) {
   }
 }
 
-export default function UniverseGraph({ graph, selectedNode, activeNebula, onSelect, nebulaTheme }) {
+export default function UniverseGraph({ graph, selectedNode, activeNebula, autoOrbit, onSelect, nebulaTheme }) {
   const containerRef = useRef(null)
   const graphRef = useRef(null)
   const selectedIdRef = useRef(selectedNode?.id)
@@ -544,8 +544,8 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
     })
 
     fg.cameraPosition({ x: 0, y: 58, z: 690 }, { x: 0, y: 0, z: 0 }, 0)
-    fg.controls().autoRotate = true
-    fg.controls().autoRotateSpeed = 0.28
+    fg.controls().autoRotate = false
+    fg.controls().autoRotateSpeed = 0.18
     fg.controls().enableDamping = true
     fg.controls().dampingFactor = 0.055
 
@@ -606,6 +606,17 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
     graphRef.current.nodeThreeObject((node) => createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef))
     graphRef.current.refresh()
   }, [selectedNode, nebulaTheme])
+
+  useEffect(() => {
+    if (!graphRef.current) return
+    const fg = graphRef.current
+    const controls = fg.controls()
+    controls.autoRotate = Boolean(autoOrbit)
+    controls.autoRotateSpeed = 0.18
+    if (autoOrbit) {
+      fg.cameraPosition({ x: 0, y: 70, z: 730 }, { x: 0, y: 0, z: 0 }, 1800)
+    }
+  }, [autoOrbit, activeNebula])
 
   return <div className="graph-canvas" ref={containerRef} />
 }

@@ -1,13 +1,13 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import MiniSearch from 'minisearch'
-import { Activity, Database, Filter, GitBranch, Info, Sparkles } from 'lucide-react'
+import { Activity, Database, Filter, GitBranch, Info, Maximize2, Minimize2, Sparkles } from 'lucide-react'
 import UniverseGraph from './components/UniverseGraph.jsx'
 import NebulaPanel from './components/NebulaPanel.jsx'
 import NodeDetail from './components/NodeDetail.jsx'
 import SearchCommand from './components/SearchCommand.jsx'
 import DataHealth from './components/DataHealth.jsx'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=no-node-noise-v16`
+const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=fullscreen-orbit-v17`
 
 function App() {
   const [graph, setGraph] = useState(null)
@@ -15,6 +15,33 @@ function App() {
   const [activeNebula, setActiveNebula] = useState('all')
   const [query, setQuery] = useState('')
   const [status, setStatus] = useState('loading')
+  const [isImmersive, setIsImmersive] = useState(false)
+  const [autoOrbit, setAutoOrbit] = useState(false)
+  const idleTimerRef = useRef(null)
+
+  const markInteraction = useCallback(() => {
+    setAutoOrbit(false)
+    if (idleTimerRef.current) window.clearTimeout(idleTimerRef.current)
+    idleTimerRef.current = window.setTimeout(() => {
+      setActiveNebula('all')
+      setSelectedNode(null)
+      setAutoOrbit(true)
+    }, 5000)
+  }, [])
+
+  const toggleImmersive = useCallback(async () => {
+    const nextValue = !isImmersive
+    setIsImmersive(nextValue)
+    try {
+      if (nextValue && document.documentElement.requestFullscreen && !document.fullscreenElement) {
+        await document.documentElement.requestFullscreen()
+      } else if (!nextValue && document.exitFullscreen && document.fullscreenElement) {
+        await document.exitFullscreen()
+      }
+    } catch {
+      // CSS immersive mode still works when browser fullscreen is unavailable.
+    }
+  }, [isImmersive])
 
   useEffect(() => {
     fetch(DATA_URL)
@@ -31,6 +58,28 @@ function App() {
         console.error(error)
         setStatus('error')
       })
+  }, [])
+
+  useEffect(() => {
+    idleTimerRef.current = window.setTimeout(() => {
+      setActiveNebula('all')
+      setSelectedNode(null)
+      setAutoOrbit(true)
+    }, 5000)
+    const events = ['pointerdown', 'click', 'keydown', 'wheel', 'touchstart']
+    events.forEach((eventName) => window.addEventListener(eventName, markInteraction, { passive: true }))
+    return () => {
+      if (idleTimerRef.current) window.clearTimeout(idleTimerRef.current)
+      events.forEach((eventName) => window.removeEventListener(eventName, markInteraction))
+    }
+  }, [markInteraction])
+
+  useEffect(() => {
+    const syncFullscreenState = () => {
+      if (!document.fullscreenElement) setIsImmersive(false)
+    }
+    document.addEventListener('fullscreenchange', syncFullscreenState)
+    return () => document.removeEventListener('fullscreenchange', syncFullscreenState)
   }, [])
 
   const miniSearch = useMemo(() => {
@@ -65,11 +114,11 @@ function App() {
   if (status === 'error') return <main className="loading error">graph.json 載入失敗，請先執行 npm run export:data。</main>
 
   return (
-    <main className="app-shell">
+    <main className={`app-shell${isImmersive ? ' immersive-mode' : ''}`}>
       <section className="topbar">
         <div>
-          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.5.1</p>
-          <h1>乾淨光暈・深空環境測試版</h1>
+          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.6</p>
+          <h1>無字全螢幕・閒置星雲環繞</h1>
         </div>
         <div className="topbar-meta">
           <span><Activity size={14} /> {graph.snapshot.generatedAt}</span>
@@ -89,10 +138,18 @@ function App() {
 
         <section className="universe-card">
           <div className="graph-toolbar">
-            <span><GitBranch size={14} /> 資料節點保留・光點周圍雜訊移除・改成柔霧光暈</span>
-            <span><Filter size={14} /> {activeNebula === 'all' ? '全部星雲' : graph.nebulas[activeNebula]?.label}</span>
+            <span><GitBranch size={14} /> 無字全螢幕・5 秒無操作後自動環繞全部星雲</span>
+            <span><Filter size={14} /> {autoOrbit ? '自動環繞中' : activeNebula === 'all' ? '全部星雲' : graph.nebulas[activeNebula]?.label}</span>
           </div>
-          <UniverseGraph graph={filteredGraph} selectedNode={selectedNode} activeNebula={activeNebula} onSelect={setSelectedNode} nebulaTheme={graph.nebulas} />
+          <button
+            aria-label={isImmersive ? '離開全螢幕模式' : '進入無字全螢幕模式'}
+            className="immersive-toggle"
+            type="button"
+            onClick={toggleImmersive}
+          >
+            {isImmersive ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+          </button>
+          <UniverseGraph graph={filteredGraph} selectedNode={selectedNode} activeNebula={activeNebula} autoOrbit={autoOrbit} onSelect={setSelectedNode} nebulaTheme={graph.nebulas} />
         </section>
 
         <aside className="right-panel panel">
