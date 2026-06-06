@@ -378,23 +378,18 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
     group.add(ring)
   }
 
-  const dustCount = isCore ? 18 : isSelected ? 12 : Math.round(2 + infoLight * 8)
-  for (let i = 0; i < dustCount; i += 1) {
-    const angle = (i / dustCount) * Math.PI * 2
-    const orbit = radius * (2.55 + seededUnit(hashString(node.id) + i * 13) * 2.85)
-    const dust = new THREE.Sprite(new THREE.SpriteMaterial({
-      map: glowTexture,
-      color,
-      transparent: true,
-      opacity: brightenOpacity((isSelected ? 0.22 : 0.045 + infoLight * 0.085) * GLOW_DECAY, 0.38),
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    }))
-    dust.position.set(Math.cos(angle) * orbit, Math.sin(angle * 1.7) * orbit * 0.25, Math.sin(angle) * orbit)
-    const size = radius * (0.12 + seededUnit(i + hashString(node.id)) * 0.26)
-    dust.scale.set(size, size, 1)
-    group.add(dust)
-  }
+  const fog = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: glowTexture,
+    color,
+    transparent: true,
+    opacity: brightenOpacity((isSelected ? 0.18 : isCore ? 0.12 + infoLight * 0.06 : 0.045 + infoLight * 0.055) * GLOW_DECAY, 0.28),
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  }))
+  fog.position.set(0, 0, -radius * 0.18)
+  fog.scale.set(radius * (isCore ? 13.5 : 9.2), radius * (isCore ? 8.4 : 5.8), 1)
+  fog.material.rotation = seededUnit(hashString(node.id) + 404) * Math.PI
+  group.add(fog)
 
   group.userData = { id: node.id }
   return group
