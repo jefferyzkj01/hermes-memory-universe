@@ -16,7 +16,7 @@ const NEBULA_COORDS = {
 
 const FALLBACK_COORDS = [84, 46, -22]
 const SPACE_SCALE = 1.6
-const GLOW_DECAY = 0.7
+const GLOW_DECAY = 0.9
 
 function endpointId(endpoint) {
   return typeof endpoint === 'object' ? endpoint.id : endpoint
@@ -84,18 +84,21 @@ function toRgba(hex, alpha) {
   return `rgba(${r},${g},${b},${alpha})`
 }
 
-function makeGlowTexture({ color = '#ffffff', core = 0.18, softness = 0.78 } = {}) {
+function makeGlowTexture({ color = '#ffffff' } = {}) {
   const canvas = document.createElement('canvas')
-  canvas.width = 192
-  canvas.height = 192
+  canvas.width = 256
+  canvas.height = 256
   const ctx = canvas.getContext('2d')
-  const gradient = ctx.createRadialGradient(96, 96, 0, 96, 96, 96)
+  const gradient = ctx.createRadialGradient(128, 128, 0, 128, 128, 128)
   gradient.addColorStop(0, 'rgba(255,255,255,1)')
-  gradient.addColorStop(core, toRgba(color, 0.84))
-  gradient.addColorStop(softness, toRgba(color, 0.22))
+  gradient.addColorStop(0.055, 'rgba(255,255,255,0.96)')
+  gradient.addColorStop(0.16, toRgba(color, 0.78))
+  gradient.addColorStop(0.34, toRgba(color, 0.38))
+  gradient.addColorStop(0.62, toRgba(color, 0.14))
+  gradient.addColorStop(0.86, toRgba(color, 0.035))
   gradient.addColorStop(1, 'rgba(0,0,0,0)')
   ctx.fillStyle = gradient
-  ctx.fillRect(0, 0, 192, 192)
+  ctx.fillRect(0, 0, 256, 256)
   const texture = new THREE.CanvasTexture(canvas)
   texture.colorSpace = THREE.SRGBColorSpace
   return texture
@@ -186,9 +189,9 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const isCore = node.type === 'core' || node.type === 'keyword_core'
   const infoLight = Math.max(0.18, Math.min(1, Number(node.infoLight ?? 0.42)))
   const radius = isCore ? 2.35 + infoLight * 2.4 : 0.72 + infoLight * 1.12
-  const glowScale = isCore ? 7.4 + infoLight * 7.6 : 4.4 + infoLight * 6.8
-  const coreOpacity = isSelected ? 1 : isCore ? 0.92 : 0.62 + infoLight * 0.33
-  const haloOpacity = (isSelected ? 0.95 : isCore ? 0.52 + infoLight * 0.26 : 0.18 + infoLight * 0.54) * GLOW_DECAY
+  const glowScale = isCore ? 8.8 + infoLight * 9.2 : 5.4 + infoLight * 8.8
+  const coreOpacity = isSelected ? 1 : isCore ? 0.98 : 0.74 + infoLight * 0.26
+  const haloOpacity = (isSelected ? 1 : isCore ? 0.68 + infoLight * 0.25 : 0.28 + infoLight * 0.58) * GLOW_DECAY
 
   const glowTexture = texturesRef.current.nodeGlow
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -210,10 +213,10 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
     blending: THREE.AdditiveBlending,
     depthWrite: false,
   }))
-  lightPoint.scale.set(radius * 3.2, radius * 3.2, 1)
+  lightPoint.scale.set(radius * 2.7, radius * 2.7, 1)
   group.add(lightPoint)
 
-  const pinLight = new THREE.PointLight(color, (isSelected ? 0.72 : isCore ? 0.32 + infoLight * 0.36 : 0.05 + infoLight * 0.12) * GLOW_DECAY, isCore ? 58 : 24)
+  const pinLight = new THREE.PointLight(color, (isSelected ? 1.05 : isCore ? 0.48 + infoLight * 0.5 : 0.08 + infoLight * 0.18) * GLOW_DECAY, isCore ? 76 : 32)
   group.add(pinLight)
 
   if (isSelected || isCore) {
@@ -234,7 +237,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
       map: glowTexture,
       color,
       transparent: true,
-      opacity: (isSelected ? 0.38 : 0.08 + infoLight * 0.18) * GLOW_DECAY,
+      opacity: (isSelected ? 0.48 : 0.11 + infoLight * 0.22) * GLOW_DECAY,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }))
