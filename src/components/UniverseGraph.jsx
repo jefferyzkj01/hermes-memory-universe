@@ -378,23 +378,18 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
     group.add(ring)
   }
 
-  const dustCount = isCore ? 18 : isSelected ? 12 : Math.round(2 + infoLight * 8)
-  for (let i = 0; i < dustCount; i += 1) {
-    const angle = (i / dustCount) * Math.PI * 2
-    const orbit = radius * (2.55 + seededUnit(hashString(node.id) + i * 13) * 2.85)
-    const dust = new THREE.Sprite(new THREE.SpriteMaterial({
-      map: glowTexture,
-      color,
-      transparent: true,
-      opacity: brightenOpacity((isSelected ? 0.22 : 0.045 + infoLight * 0.085) * GLOW_DECAY, 0.38),
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    }))
-    dust.position.set(Math.cos(angle) * orbit, Math.sin(angle * 1.7) * orbit * 0.25, Math.sin(angle) * orbit)
-    const size = radius * (0.12 + seededUnit(i + hashString(node.id)) * 0.26)
-    dust.scale.set(size, size, 1)
-    group.add(dust)
-  }
+  const atmosphere = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: glowTexture,
+    color,
+    transparent: true,
+    opacity: brightenOpacity((isSelected ? 0.13 : isCore ? 0.075 + infoLight * 0.045 : 0.035 + infoLight * 0.035) * GLOW_DECAY, 0.16),
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  }))
+  atmosphere.position.set(0, 0, -radius * 0.22)
+  const atmosphereScale = radius * (isCore ? 8.6 + infoLight * 4.2 : 5.8 + infoLight * 3.4)
+  atmosphere.scale.set(atmosphereScale, atmosphereScale, 1)
+  group.add(atmosphere)
 
   group.userData = { id: node.id }
   return group
