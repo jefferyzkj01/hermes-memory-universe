@@ -7,7 +7,7 @@ import NodeDetail from './components/NodeDetail.jsx'
 import SearchCommand from './components/SearchCommand.jsx'
 import DataHealth from './components/DataHealth.jsx'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json`
+const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=keyword-core-v3`
 
 function App() {
   const [graph, setGraph] = useState(null)
