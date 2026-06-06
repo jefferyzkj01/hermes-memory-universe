@@ -449,11 +449,13 @@ function prepareGraphData(graph, nebulaCoords) {
   }
 }
 
-export default function UniverseGraph({ graph, selectedNode, activeNebula, autoOrbit, onSelect, nebulaTheme }) {
+export default function UniverseGraph({ graph, selectedNode, activeNebula, autoOrbit, isImmersive, onSelect, nebulaTheme }) {
   const containerRef = useRef(null)
   const graphRef = useRef(null)
   const selectedIdRef = useRef(selectedNode?.id)
   const animationRef = useRef(null)
+  const resizeFrameRef = useRef(null)
+  const resizeGraphRef = useRef(() => {})
   const sceneObjectsRef = useRef([])
   const texturesRef = useRef({})
 
@@ -554,11 +556,24 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, autoO
     const resize = () => {
       if (!containerRef.current) return
       const rect = containerRef.current.getBoundingClientRect()
-      fg.width(rect.width)
-      fg.height(rect.height)
+      const width = Math.ceil(rect.width || window.visualViewport?.width || window.innerWidth)
+      const height = Math.ceil(rect.height || window.visualViewport?.height || window.innerHeight)
+      fg.width(width)
+      fg.height(height)
     }
+    const scheduleResize = () => {
+      if (resizeFrameRef.current) cancelAnimationFrame(resizeFrameRef.current)
+      resizeFrameRef.current = requestAnimationFrame(() => {
+        resize()
+        requestAnimationFrame(resize)
+      })
+    }
+    resizeGraphRef.current = scheduleResize
+    const resizeObserver = new ResizeObserver(scheduleResize)
     resize()
     window.addEventListener('resize', resize)
+    window.visualViewport?.addEventListener('resize', scheduleResize)
+    resizeObserver.observe(containerRef.current)
 
     const animate = (time) => {
       const t = time * 0.0001
@@ -582,6 +597,10 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, autoO
 
     return () => {
       window.removeEventListener('resize', resize)
+      window.visualViewport?.removeEventListener('resize', scheduleResize)
+      resizeObserver.disconnect()
+      if (resizeFrameRef.current) cancelAnimationFrame(resizeFrameRef.current)
+      resizeGraphRef.current = () => {}
       if (animationRef.current) cancelAnimationFrame(animationRef.current)
       sceneObjectsRef.current.forEach((object) => {
         scene.remove(object)
@@ -594,6 +613,12 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, autoO
       graphRef.current = null
     }
   }, [nebulaTheme, nebulaCoords, onSelect])
+
+  useEffect(() => {
+    resizeGraphRef.current()
+    const timer = window.setTimeout(() => resizeGraphRef.current(), 260)
+    return () => window.clearTimeout(timer)
+  }, [isImmersive])
 
   useEffect(() => {
     if (!graphRef.current || !preparedGraph) return

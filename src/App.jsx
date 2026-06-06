@@ -7,7 +7,7 @@ import NodeDetail from './components/NodeDetail.jsx'
 import SearchCommand from './components/SearchCommand.jsx'
 import DataHealth from './components/DataHealth.jsx'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=hide-top-title-v19`
+const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=mobile-fullscreen-resize-v20`
 
 function App() {
   const [graph, setGraph] = useState(null)
@@ -163,7 +163,7 @@ function App() {
           >
             {isImmersive ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
           </button>
-          <UniverseGraph graph={filteredGraph} selectedNode={selectedNode} activeNebula={activeNebula} autoOrbit={autoOrbit} onSelect={setSelectedNode} nebulaTheme={graph.nebulas} />
+          <UniverseGraph graph={filteredGraph} selectedNode={selectedNode} activeNebula={activeNebula} autoOrbit={autoOrbit} isImmersive={isImmersive} onSelect={setSelectedNode} nebulaTheme={graph.nebulas} />
         </section>
 
         <aside className="right-panel panel">
