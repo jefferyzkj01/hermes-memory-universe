@@ -54,13 +54,13 @@ function clamp(value, min, max) {
 }
 
 function calculateInfoLight(node, degree = 0) {
-  const textWeight = `${node.label ?? ''} ${node.summary ?? ''}`.length / 170
-  const tagWeight = (node.tags?.length ?? 0) * 0.08
-  const semanticWeight = (node.semanticKeywords?.length ?? 0) * 0.08
-  const sizeWeight = Math.max(0, Number(node.size ?? 4) - 4) / 9
-  const keywordWeight = Math.log1p(Math.max(0, Number(node.keywordScore ?? 0))) / 4.4
-  const linkWeight = Math.log1p(degree) / 3.2
-  return clamp(0.16 + textWeight + tagWeight + semanticWeight + sizeWeight + keywordWeight + linkWeight, 0.18, 1)
+  const textWeight = `${node.label ?? ''} ${node.summary ?? ''}`.length / 520
+  const tagWeight = (node.tags?.length ?? 0) * 0.025
+  const semanticWeight = (node.semanticKeywords?.length ?? 0) * 0.035
+  const sizeWeight = Math.max(0, Number(node.size ?? 4) - 4) / 18
+  const keywordWeight = Math.log1p(Math.max(0, Number(node.keywordScore ?? 0))) / 8
+  const linkWeight = Math.log1p(degree) / 5
+  return clamp(0.12 + textWeight + tagWeight + semanticWeight + sizeWeight + keywordWeight + linkWeight, 0.14, 1)
 }
 
 function toRgba(hex, alpha) {
@@ -174,8 +174,8 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const isSelected = selectedIdRef.current === node.id
   const isCore = node.type === 'core' || node.type === 'keyword_core'
   const infoLight = Math.max(0.18, Math.min(1, Number(node.infoLight ?? 0.42)))
-  const radius = isCore ? 4.8 + infoLight * 4.6 : 1.45 + infoLight * 2.45
-  const glowScale = isCore ? 15 + infoLight * 15 : 7.2 + infoLight * 13.6
+  const radius = isCore ? 2.35 + infoLight * 2.4 : 0.72 + infoLight * 1.12
+  const glowScale = isCore ? 7.4 + infoLight * 7.6 : 4.4 + infoLight * 6.8
   const coreOpacity = isSelected ? 1 : isCore ? 0.92 : 0.62 + infoLight * 0.33
   const haloOpacity = isSelected ? 0.95 : isCore ? 0.52 + infoLight * 0.26 : 0.18 + infoLight * 0.54
 
@@ -188,7 +188,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
     blending: THREE.AdditiveBlending,
     depthWrite: false,
   }))
-  halo.scale.set(radius * (isSelected ? glowScale * 1.55 : glowScale), radius * (isSelected ? glowScale * 1.55 : glowScale), 1)
+  halo.scale.set(radius * (isSelected ? glowScale * 1.14 : glowScale), radius * (isSelected ? glowScale * 1.14 : glowScale), 1)
   group.add(halo)
 
   const lightPoint = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -202,7 +202,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   lightPoint.scale.set(radius * 3.2, radius * 3.2, 1)
   group.add(lightPoint)
 
-  const pinLight = new THREE.PointLight(color, isSelected ? 1.25 : isCore ? 0.52 + infoLight * 0.72 : 0.08 + infoLight * 0.28, isCore ? 86 : 36)
+  const pinLight = new THREE.PointLight(color, isSelected ? 0.72 : isCore ? 0.32 + infoLight * 0.36 : 0.05 + infoLight * 0.12, isCore ? 58 : 24)
   group.add(pinLight)
 
   if (isSelected || isCore) {
