@@ -618,5 +618,5 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, autoO
     }
   }, [autoOrbit, activeNebula])
 
-  return <div className="graph-canvas" ref={containerRef} />
+  return <div className="graph-canvas" data-auto-orbit={autoOrbit ? 'true' : 'false'} ref={containerRef} />
 }
