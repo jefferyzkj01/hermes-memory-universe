@@ -1,0 +1,2743 @@
+{
+  "snapshot": {
+    "generatedAt": "2026-06-06T11:54:55+08:00",
+    "visibility": "public-safe",
+    "source": "local Hermes export",
+    "health": [
+      {
+        "label": "Skills indexed",
+        "status": "ok"
+      },
+      {
+        "label": "Raw sessions redacted",
+        "status": "ok"
+      },
+      {
+        "label": "Secrets / IDs redacted",
+        "status": "ok"
+      },
+      {
+        "label": "Investment raw records private",
+        "status": "ok"
+      }
+    ]
+  },
+  "nebulas": {
+    "memory": {
+      "label": "Memory Nebula",
+      "color": "#a78bfa"
+    },
+    "skills": {
+      "label": "Skill Nebula",
+      "color": "#22d3ee"
+    },
+    "tools": {
+      "label": "Tool Nebula",
+      "color": "#94a3b8"
+    },
+    "aesthetic": {
+      "label": "Aesthetic Nebula",
+      "color": "#c08497"
+    },
+    "investment": {
+      "label": "Investment Nebula",
+      "color": "#d6b36a"
+    },
+    "automation": {
+      "label": "Automation Nebula",
+      "color": "#5eead4"
+    },
+    "sessions": {
+      "label": "Session / Project Nebula",
+      "color": "#93c5fd"
+    }
+  },
+  "nodes": [
+    {
+      "id": "hermes-core",
+      "label": "Hermes Core",
+      "type": "core",
+      "nebula": "memory",
+      "size": 11,
+      "summary": "Hermes runtime, profiles, tools and memory entry point.",
+      "visibility": "public-safe",
+      "tags": [
+        "core",
+        "memory"
+      ]
+    },
+    {
+      "id": "jeffery-profile",
+      "label": "Jeffery Profile",
+      "type": "memory",
+      "nebula": "memory",
+      "size": 8,
+      "summary": "Public-safe preference summary only; raw profile is not exported.",
+      "visibility": "public-safe",
+      "tags": [
+        "memory",
+        "memory"
+      ]
+    },
+    {
+      "id": "holo-facts",
+      "label": "Holo Facts",
+      "type": "memory",
+      "nebula": "memory",
+      "size": 7,
+      "summary": "Structured fact graph summary; raw fact contents remain local unless explicitly allowlisted.",
+      "visibility": "public-safe",
+      "tags": [
+        "memory",
+        "memory"
+      ]
+    },
+    {
+      "id": "tool-registry",
+      "label": "Tool Registry",
+      "type": "tool",
+      "nebula": "tools",
+      "size": 8,
+      "summary": "Browser, terminal, file, web, vision, cron, delegation and other tool capabilities.",
+      "visibility": "public-safe",
+      "tags": [
+        "tool",
+        "tools"
+      ]
+    },
+    {
+      "id": "aesthetic-wiki",
+      "label": "Aesthetic Wiki",
+      "type": "knowledge_base",
+      "nebula": "aesthetic",
+      "size": 9,
+      "summary": "Visual taste and prompt reference system index.",
+      "visibility": "public-safe",
+      "tags": [
+        "knowledge_base",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "investment-os",
+      "label": "Investment OS",
+      "type": "database",
+      "nebula": "investment",
+      "size": 9,
+      "summary": "Investment research database summary node; raw records are private.",
+      "visibility": "public-safe",
+      "tags": [
+        "database",
+        "investment"
+      ]
+    },
+    {
+      "id": "cron-jobs",
+      "label": "Cron Jobs",
+      "type": "automation",
+      "nebula": "automation",
+      "size": 7,
+      "summary": "Scheduled jobs and daily sync status summary.",
+      "visibility": "public-safe",
+      "tags": [
+        "automation",
+        "automation"
+      ]
+    },
+    {
+      "id": "github-pages",
+      "label": "GitHub Pages",
+      "type": "deployment",
+      "nebula": "automation",
+      "size": 6,
+      "summary": "Static public-safe 3D Memory Universe deployment.",
+      "visibility": "public-safe",
+      "tags": [
+        "deployment",
+        "automation"
+      ]
+    },
+    {
+      "id": "sessions",
+      "label": "Session Search",
+      "type": "history",
+      "nebula": "sessions",
+      "size": 7,
+      "summary": "Conversation history search summary; raw transcripts are not exported.",
+      "visibility": "public-safe",
+      "tags": [
+        "history",
+        "sessions"
+      ]
+    },
+    {
+      "id": "skill-apple-notes",
+      "label": "apple-notes",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Manage Apple Notes via memo CLI: create, search, edit.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "apple"
+      ]
+    },
+    {
+      "id": "skill-apple-reminders",
+      "label": "apple-reminders",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Apple Reminders via remindctl: add, list, complete.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "apple"
+      ]
+    },
+    {
+      "id": "skill-findmy",
+      "label": "findmy",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Track Apple devices/AirTags via FindMy.app on macOS.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "apple"
+      ]
+    },
+    {
+      "id": "skill-imessage",
+      "label": "imessage",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Send and receive iMessages/SMS via the imsg CLI on macOS.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "apple"
+      ]
+    },
+    {
+      "id": "skill-macos-computer-use",
+      "label": "macos-computer-use",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "|",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "apple"
+      ]
+    },
+    {
+      "id": "skill-codex",
+      "label": "codex",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Delegate coding to OpenAI Codex CLI (features, PRs).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "autonomous-ai-agents"
+      ]
+    },
+    {
+      "id": "skill-dedicated-agent-profiles",
+      "label": "dedicated-agent-profiles",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Create and verify independent Hermes profile agents for a specific domain or workflow, with profile-local persona, skills, workspace, and launch alias.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "autonomous-ai-agents",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-hermes-agent",
+      "label": "hermes-agent",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Configure, extend, or contribute to Hermes Agent.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "autonomous-ai-agents",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-kanban-codex-lane",
+      "label": "kanban-codex-lane",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Use when a Hermes Kanban worker wants to run Codex CLI as an isolated implementation lane while Hermes keeps ownership of task lifecycle, reconciliation, testing, and handoff.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "autonomous-ai-agents",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-opencode",
+      "label": "opencode",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Delegate coding to OpenCode CLI (features, PR review).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "autonomous-ai-agents"
+      ]
+    },
+    {
+      "id": "skill-mobile-friendly-communication",
+      "label": "mobile-friendly-communication",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Format user-facing answers for phone readability: avoid wide tables, prefer compact bullets and short sections.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "communication"
+      ]
+    },
+    {
+      "id": "skill-architecture-diagram",
+      "label": "architecture-diagram",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-ascii-art",
+      "label": "ascii-art",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-ascii-video",
+      "label": "ascii-video",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "ASCII video: convert video/audio to colored ASCII MP4/GIF.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-baoyu-article-illustrator",
+      "label": "baoyu-article-illustrator",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Article illustrations: type × style × palette consistency.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-baoyu-comic",
+      "label": "baoyu-comic",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Knowledge comics (知识漫画): educational, biography, tutorial.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-baoyu-infographic",
+      "label": "baoyu-infographic",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Infographics: 21 layouts x 21 styles (信息图, 可视化).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-brandkit",
+      "label": "brandkit",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Premium brand-kit image generation skill for creating high-end brand-guidelines boards, logo systems, identity decks, and visual-world presentations. Trained for minimalist, cinematic, editorial, dark-tech, luxury, cultu",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-industrial-brutalist-ui",
+      "label": "industrial-brutalist-ui",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects. For data-heavy dashboards, portfolios, ",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-claude-design",
+      "label": "claude-design",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Design one-off HTML artifacts (landing, deck, prototype).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-comfyui",
+      "label": "comfyui",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Generate images, video, and audio with ComfyUI — install, launch, manage nodes/models, run workflows with parameter injection. Uses the official comfy-cli for lifecycle and direct REST/WebSocket API for execution.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-ideation",
+      "label": "ideation",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Generate project ideas via creative constraints.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-design-md",
+      "label": "design-md",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Author/validate/export Google's DESIGN.md token spec files.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-excalidraw",
+      "label": "excalidraw",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-gpt-taste",
+      "label": "gpt-taste",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Elite UX/UI & Advanced GSAP Motion Engineer. Enforces Python-driven true randomization for layout variance, strict AIDA page structure, wide editorial typography (bans 6-line wraps), gapless bento grids, strict GSAP Scro",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-humanizer",
+      "label": "humanizer",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Humanize text: strip AI-isms and add real voice.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-image-generation-workflow",
+      "label": "image-generation-workflow",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Generate images for the user with preferred provider selection, prompt shaping, verification, and fallback discipline.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-image-to-code",
+      "label": "image-to-code",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the design image(s) itself, deeply analyze them, then implement the website to match them as closely as possible. In C",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-imagegen-frontend-mobile",
+      "label": "imagegen-frontend-mobile",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Elite mobile app image-generation skill for creating premium, app-native screen concepts and flows. Designed for iOS, Android, and cross-platform mobile products. Prioritizes clean hierarchy, comfortably readable text, s",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-imagegen-frontend-web",
+      "label": "imagegen-frontend-web",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Elite frontend image-direction skill for generating premium, conversion-aware website design references. CRITICAL OUTPUT RULE — generate ONE separate horizontal image FOR EVERY section. A landing page with 8 sections pro",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-jeffery-visual-style-bible",
+      "label": "jeffery-visual-style-bible",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Use when generating, directing, or evaluating images for Jeffery. Applies his personal premium futuristic cyberpunk visual taste, references, prompt patterns, and quality checks.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-manim-video",
+      "label": "manim-video",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Manim CE animations: 3Blue1Brown math/algo videos.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-minimalist-ui",
+      "label": "minimalist-ui",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-full-output-enforcement",
+      "label": "full-output-enforcement",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged output.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-p5js",
+      "label": "p5js",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "p5.js sketches: gen art, shaders, interactive, 3D.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-pixel-art",
+      "label": "pixel-art",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Pixel art w/ era palettes (NES, Game Boy, PICO-8).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-popular-web-designs",
+      "label": "popular-web-designs",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-pretext",
+      "label": "pretext",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Use when building creative browser demos with @chenglou/pretext — DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produc",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-redesign-existing-projects",
+      "label": "redesign-existing-projects",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-sketch",
+      "label": "sketch",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Throwaway HTML mockups: 2-3 design variants to compare.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-high-end-visual-design",
+      "label": "high-end-visual-design",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel expensive. Blocks all the common defaults that make AI designs look che",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-songwriting-and-ai-music",
+      "label": "songwriting-and-ai-music",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Songwriting craft and Suno AI music prompts.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-spatial-visual-director",
+      "label": "spatial-visual-director",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Use when Jeffery asks for architecture, interior, spatial images, spatial presentation boards, walkthroughs, or AI video prompts. Directs the agent to read Jeffery's aesthetic wiki first, then produce high-end spatial im",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-stitch-design-taste",
+      "label": "stitch-design-taste",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, ",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-design-taste-frontend",
+      "label": "design-taste-frontend",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design systems when applicable, a",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-design-taste-frontend-v1",
+      "label": "design-taste-frontend-v1",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "The original v1 taste-skill, preserved for projects depending on its exact behavior. The current default is `design-taste-frontend` (v2 experimental), which is a substantial rewrite. Use this v1 install name only if you ",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-tighten",
+      "label": "tighten",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": ">",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ]
+    },
+    {
+      "id": "skill-touchdesigner-mcp",
+      "label": "touchdesigner-mcp",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Control a running TouchDesigner instance via twozero MCP — create operators, set parameters, wire connections, execute Python, build real-time visuals. 36 native tools.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-jupyter-live-kernel",
+      "label": "jupyter-live-kernel",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Iterative Python via live Jupyter kernel (hamelnb).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "data-science"
+      ]
+    },
+    {
+      "id": "skill-hermes-operations",
+      "label": "hermes-operations",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Use when configuring, extending, planning, or troubleshooting Hermes Agent operations: toolsets, web providers, profile agents, gateways, Discord delivery, cron routing, and platform verification.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "devops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-hermes-operations-playbook",
+      "label": "hermes-operations-playbook",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Operate and troubleshoot Hermes Agent capabilities, profiles, web tooling, and messaging gateways with class-level workflows and verification discipline.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "devops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-kanban-orchestrator",
+      "label": "kanban-orchestrator",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Decomposition playbook + anti-temptation rules for an orchestrator profile routing work through Kanban. The \"don't do the work yourself\" rule and the basic lifecycle are auto-injected into every kanban worker's system pr",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "devops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-kanban-worker",
+      "label": "kanban-worker",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Pitfalls, examples, and edge cases for Hermes Kanban workers. The lifecycle itself is auto-injected into every worker's system prompt as KANBAN_GUIDANCE (from agent/prompt_builder.py); this skill is what you load when yo",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "devops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-webhook-subscriptions",
+      "label": "webhook-subscriptions",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Webhook subscriptions: event-driven agent runs.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "devops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-dogfood",
+      "label": "dogfood",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Exploratory QA of web apps: find bugs, evidence, reports.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "dogfood"
+      ]
+    },
+    {
+      "id": "skill-himalaya",
+      "label": "himalaya",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Himalaya CLI: IMAP/SMTP email from terminal.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "email"
+      ]
+    },
+    {
+      "id": "skill-minecraft-modpack-server",
+      "label": "minecraft-modpack-server",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Host modded Minecraft servers (CurseForge, Modrinth).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "gaming"
+      ]
+    },
+    {
+      "id": "skill-pokemon-player",
+      "label": "pokemon-player",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Play Pokemon via headless emulator + RAM reads.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "gaming"
+      ]
+    },
+    {
+      "id": "skill-codebase-inspection",
+      "label": "codebase-inspection",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Inspect codebases w/ pygount: LOC, languages, ratios.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "github",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-github-auth",
+      "label": "github-auth",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "github",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-github-code-review",
+      "label": "github-code-review",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Review PRs: diffs, inline comments via gh or REST.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "github",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-github-issues",
+      "label": "github-issues",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Create, triage, label, assign GitHub issues via gh or REST.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "github",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-github-pr-workflow",
+      "label": "github-pr-workflow",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "GitHub PR lifecycle: branch, commit, open, CI, merge.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "github",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-github-repo-management",
+      "label": "github-repo-management",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Clone/create/fork repos; manage remotes, releases.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "github",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-native-mcp",
+      "label": "native-mcp",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "MCP client: connect servers, register tools (stdio/HTTP).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mcp"
+      ]
+    },
+    {
+      "id": "skill-heartmula",
+      "label": "heartmula",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "HeartMuLa: Suno-like song generation from lyrics + tags.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "media"
+      ]
+    },
+    {
+      "id": "skill-songsee",
+      "label": "songsee",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Audio spectrograms/features (mel, chroma, MFCC) via CLI.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "media"
+      ]
+    },
+    {
+      "id": "skill-youtube-content",
+      "label": "youtube-content",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "YouTube transcripts to summaries, threads, blogs.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "media"
+      ]
+    },
+    {
+      "id": "skill-evaluating-llms-harness",
+      "label": "evaluating-llms-harness",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-weights-and-biases",
+      "label": "weights-and-biases",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "W&B: log ML experiments, sweeps, model registry, dashboards.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-llama-cpp",
+      "label": "llama-cpp",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "llama.cpp local GGUF inference + HF Hub model discovery.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-obliteratus",
+      "label": "obliteratus",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "OBLITERATUS: abliterate LLM refusals (diff-in-means).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-serving-llms-vllm",
+      "label": "serving-llms-vllm",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "vLLM: high-throughput LLM serving, OpenAI API, quantization.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-audiocraft-audio-generation",
+      "label": "audiocraft-audio-generation",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "AudioCraft: MusicGen text-to-music, AudioGen text-to-sound.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-segment-anything-model",
+      "label": "segment-anything-model",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "SAM: zero-shot image segmentation via points, boxes, masks.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "aesthetic",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-dspy",
+      "label": "dspy",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "DSPy: declarative LM programs, auto-optimize prompts, RAG.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-obsidian",
+      "label": "obsidian",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Read, search, create, and edit notes in the Obsidian vault.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "note-taking"
+      ]
+    },
+    {
+      "id": "skill-google-workspace",
+      "label": "google-workspace",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Google OAuth2 client credentials (downloaded from Google Cloud Console)",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity"
+      ]
+    },
+    {
+      "id": "skill-investment-tracking-systems",
+      "label": "investment-tracking-systems",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "investment"
+      ],
+      "size": 4.5,
+      "summary": "Design and operate personal investment trackers using Google Sheets with cash accounts, holdings, allocation charts, and scheduled price updates.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity",
+        "aesthetic",
+        "investment"
+      ]
+    },
+    {
+      "id": "skill-maps",
+      "label": "maps",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity"
+      ]
+    },
+    {
+      "id": "skill-nano-pdf",
+      "label": "nano-pdf",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Edit PDF text/typos/titles via nano-pdf CLI (NL prompts).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity"
+      ]
+    },
+    {
+      "id": "skill-ocr-and-documents",
+      "label": "ocr-and-documents",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity"
+      ]
+    },
+    {
+      "id": "skill-powerpoint",
+      "label": "powerpoint",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Create, read, edit .pptx decks, slides, notes, templates.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity"
+      ]
+    },
+    {
+      "id": "skill-structured-document-design",
+      "label": "structured-document-design",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Create or restructure Word/Google Docs style planning documents so they are clear, fillable, reviewable, and not over-engineered.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-godmode",
+      "label": "godmode",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Jailbreak LLMs: Parseltongue, GODMODE, ULTRAPLINIAN.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "red-teaming"
+      ]
+    },
+    {
+      "id": "skill-agent-reach",
+      "label": "agent-reach",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": ">",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "research"
+      ]
+    },
+    {
+      "id": "skill-arxiv",
+      "label": "arxiv",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Search arXiv papers by keyword, author, category, or ID.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "research"
+      ]
+    },
+    {
+      "id": "skill-autocli",
+      "label": "autocli",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Use AutoCLI to fetch structured data from 55+ websites (Hacker News, arXiv, Wikipedia, YouTube, Bilibili, Reddit, Xiaohongshu, Zhihu, finance/news sites) with public commands where possible and browser-session commands w",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "research"
+      ]
+    },
+    {
+      "id": "skill-bb-browser",
+      "label": "bb-browser",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "强大的信息获取与浏览器自动化工具。通过浏览器 + 用户登录态，获取公域和私域信息。可访问任意网页、内部系统、登录后页面，执行表单填写、信息提取、页面操作。支持 site 系统（36 平台 103 命令一键调用）、带登录态的 fetch、网络请求拦截与 mock、操作录制等高级功能。",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "research"
+      ]
+    },
+    {
+      "id": "skill-blogwatcher",
+      "label": "blogwatcher",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "research"
+      ]
+    },
+    {
+      "id": "skill-llm-wiki",
+      "label": "llm-wiki",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Karpathy's LLM Wiki: build/query interlinked markdown KB.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "research"
+      ]
+    },
+    {
+      "id": "skill-polymarket",
+      "label": "polymarket",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Query Polymarket: markets, prices, orderbooks, history.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "research"
+      ]
+    },
+    {
+      "id": "skill-research-paper-writing",
+      "label": "research-paper-writing",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Write ML papers for NeurIPS/ICML/ICLR: design→submit.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "research",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-openhue",
+      "label": "openhue",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Control Philips Hue lights, scenes, rooms via OpenHue CLI.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "smart-home"
+      ]
+    },
+    {
+      "id": "skill-virtual-kol-team-operations",
+      "label": "virtual-kol-team-operations",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Design operating protocols for virtual KOL teams using Codex, read-only cloud brains, and lightweight quality gates.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "social-media",
+        "aesthetic"
+      ]
+    },
+    {
+      "id": "skill-debugging-hermes-tui-commands",
+      "label": "debugging-hermes-tui-commands",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Debug Hermes TUI slash commands: Python, gateway, Ink UI.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-discord-bot-utilities",
+      "label": "discord-bot-utilities",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Build and verify small Discord utility bots: status meters, channel updaters, slash/simple commands, and lightweight automations.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-hermes-agent-skill-authoring",
+      "label": "hermes-agent-skill-authoring",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Author in-repo SKILL.md: frontmatter, validator, structure.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-hermes-s6-container-supervision",
+      "label": "hermes-s6-container-supervision",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Modify, debug, or extend the s6-overlay supervision tree inside the Hermes Agent Docker image — adding new services, debugging profile gateways, understanding the Architecture B main-program pattern.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "aesthetic",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-node-inspect-debugger",
+      "label": "node-inspect-debugger",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ]
+    },
+    {
+      "id": "skill-plan",
+      "label": "plan",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Plan mode: write markdown plan to .hermes/plans/, no exec.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "automation"
+      ]
+    },
+    {
+      "id": "skill-python-debugpy",
+      "label": "python-debugpy",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Debug Python: pdb REPL + debugpy remote (DAP).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ]
+    },
+    {
+      "id": "skill-requesting-code-review",
+      "label": "requesting-code-review",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Pre-commit review: security scan, quality gates, auto-fix.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ]
+    },
+    {
+      "id": "skill-spike",
+      "label": "spike",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Throwaway experiments to validate an idea before build.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ]
+    },
+    {
+      "id": "skill-subagent-driven-development",
+      "label": "subagent-driven-development",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Execute plans via delegate_task subagents (2-stage review).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ]
+    },
+    {
+      "id": "skill-systematic-debugging",
+      "label": "systematic-debugging",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "4-phase root cause debugging: understand bugs before fixing.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ]
+    },
+    {
+      "id": "skill-test-driven-development",
+      "label": "test-driven-development",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ]
+    },
+    {
+      "id": "skill-writing-plans",
+      "label": "writing-plans",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Write implementation plans: bite-sized tasks, paths, code.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ]
+    },
+    {
+      "id": "skill-yuanbao",
+      "label": "yuanbao",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Yuanbao (元宝) groups: @mention users, query info/members.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "yuanbao"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "hermes-core",
+      "target": "skill-apple-notes",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-apple-reminders",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-findmy",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-imessage",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-macos-computer-use",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-codex",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-dedicated-agent-profiles",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-hermes-agent",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-kanban-codex-lane",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-opencode",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-mobile-friendly-communication",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-architecture-diagram",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-ascii-art",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-ascii-art",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-ascii-video",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-ascii-video",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-baoyu-article-illustrator",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-baoyu-comic",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-baoyu-infographic",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-brandkit",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-brandkit",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-industrial-brutalist-ui",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-industrial-brutalist-ui",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-claude-design",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-claude-design",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-comfyui",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-comfyui",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-ideation",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-design-md",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-design-md",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-excalidraw",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-gpt-taste",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-humanizer",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-image-generation-workflow",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-image-generation-workflow",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-image-to-code",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-image-to-code",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-imagegen-frontend-mobile",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-imagegen-frontend-mobile",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-imagegen-frontend-web",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-imagegen-frontend-web",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-jeffery-visual-style-bible",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-jeffery-visual-style-bible",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-manim-video",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-manim-video",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-minimalist-ui",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-full-output-enforcement",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-p5js",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-pixel-art",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-popular-web-designs",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-popular-web-designs",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-pretext",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-redesign-existing-projects",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-redesign-existing-projects",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-sketch",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-sketch",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-high-end-visual-design",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-high-end-visual-design",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-songwriting-and-ai-music",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-spatial-visual-director",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-spatial-visual-director",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-stitch-design-taste",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-stitch-design-taste",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-design-taste-frontend",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-design-taste-frontend",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-design-taste-frontend-v1",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-design-taste-frontend-v1",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-tighten",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-touchdesigner-mcp",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-touchdesigner-mcp",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-jupyter-live-kernel",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-hermes-operations",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-hermes-operations-playbook",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-kanban-orchestrator",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-kanban-worker",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-webhook-subscriptions",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-dogfood",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-himalaya",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-minecraft-modpack-server",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-pokemon-player",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-codebase-inspection",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-github-auth",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-github-code-review",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-github-issues",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-github-pr-workflow",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-github-repo-management",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-native-mcp",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-heartmula",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-songsee",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-youtube-content",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-evaluating-llms-harness",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-weights-and-biases",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-llama-cpp",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-obliteratus",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-serving-llms-vllm",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-audiocraft-audio-generation",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-segment-anything-model",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-segment-anything-model",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-dspy",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-obsidian",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-google-workspace",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-investment-tracking-systems",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-investment-tracking-systems",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "skill-investment-tracking-systems",
+      "target": "investment-os",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-maps",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-nano-pdf",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-ocr-and-documents",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-powerpoint",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-structured-document-design",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-structured-document-design",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-godmode",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-agent-reach",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-arxiv",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-autocli",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-bb-browser",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-blogwatcher",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-llm-wiki",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-polymarket",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-research-paper-writing",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-research-paper-writing",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-openhue",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-virtual-kol-team-operations",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-virtual-kol-team-operations",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-debugging-hermes-tui-commands",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-discord-bot-utilities",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-hermes-agent-skill-authoring",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-hermes-s6-container-supervision",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-hermes-s6-container-supervision",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-node-inspect-debugger",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-plan",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-python-debugpy",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-requesting-code-review",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-spike",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-subagent-driven-development",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-systematic-debugging",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-test-driven-development",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-writing-plans",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-yuanbao",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "jeffery-profile",
+      "type": "preference",
+      "strength": 0.8
+    },
+    {
+      "source": "hermes-core",
+      "target": "holo-facts",
+      "type": "memory",
+      "strength": 0.8
+    },
+    {
+      "source": "hermes-core",
+      "target": "tool-registry",
+      "type": "capability",
+      "strength": 0.7
+    },
+    {
+      "source": "hermes-core",
+      "target": "cron-jobs",
+      "type": "bridge",
+      "strength": 0.6
+    },
+    {
+      "source": "cron-jobs",
+      "target": "github-pages",
+      "type": "deploy",
+      "strength": 0.7
+    },
+    {
+      "source": "sessions",
+      "target": "holo-facts",
+      "type": "recall",
+      "strength": 0.45
+    },
+    {
+      "source": "jeffery-profile",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.72
+    },
+    {
+      "source": "jeffery-profile",
+      "target": "investment-os",
+      "type": "bridge",
+      "strength": 0.72
+    }
+  ]
+}
