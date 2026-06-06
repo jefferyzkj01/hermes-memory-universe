@@ -18,6 +18,7 @@ const FALLBACK_COORDS = [84, 46, -22]
 const SPACE_SCALE = 1.6
 const GLOW_DECAY = 0.9
 const GRAPH_BRIGHTNESS = 1.8
+const STAR_DENSITY = 1.5
 
 function endpointId(endpoint) {
   return typeof endpoint === 'object' ? endpoint.id : endpoint
@@ -195,6 +196,68 @@ function makeNebulaTexture(colorA, colorB) {
   return texture
 }
 
+function addStarField(scene) {
+  const count = Math.round(2700 * STAR_DENSITY)
+  const positions = new Float32Array(count * 3)
+  const colors = new Float32Array(count * 3)
+  const color = new THREE.Color()
+
+  for (let i = 0; i < count; i += 1) {
+    const r = 420 + seededUnit(i * 19 + 7) * 720
+    const theta = seededUnit(i * 31 + 11) * Math.PI * 2
+    const phi = Math.acos(2 * seededUnit(i * 53 + 17) - 1)
+    positions[i * 3] = r * Math.sin(phi) * Math.cos(theta)
+    positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta)
+    positions[i * 3 + 2] = r * Math.cos(phi)
+    color.setHSL(0.58 + seededUnit(i * 71) * 0.12, 0.18, 0.58 + seededUnit(i * 97) * 0.36)
+    colors[i * 3] = color.r
+    colors[i * 3 + 1] = color.g
+    colors[i * 3 + 2] = color.b
+  }
+
+  const geometry = new THREE.BufferGeometry()
+  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
+  const material = new THREE.ShaderMaterial({
+    vertexColors: true,
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    uniforms: {
+      size: { value: 4.8 },
+      opacity: { value: 0.88 },
+    },
+    vertexShader: `
+      varying vec3 vColor;
+      uniform float size;
+      void main() {
+        vColor = color;
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_PointSize = size * (520.0 / max(80.0, -mvPosition.z));
+        gl_Position = projectionMatrix * mvPosition;
+      }
+    `,
+    fragmentShader: `
+      varying vec3 vColor;
+      uniform float opacity;
+      void main() {
+        vec2 uv = gl_PointCoord - vec2(0.5);
+        float dist = length(uv);
+        if (dist > 0.5) discard;
+        float core = smoothstep(0.5, 0.0, dist);
+        float halo = smoothstep(0.5, 0.18, dist) * 0.34;
+        float alpha = min(1.0, core * core + halo) * opacity;
+        gl_FragColor = vec4(vColor, alpha);
+      }
+    `,
+  })
+  const stars = new THREE.Points(geometry, material)
+  stars.name = 'deep-starfield'
+  scene.add(stars)
+  return stars
+}
+
+
 function addCosmicEnvironment(scene, texturesRef) {
   const created = []
   const bandTexture = texturesRef.current.cosmicBand
@@ -277,11 +340,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const radius = isCore ? 2.35 + infoLight * 2.4 : 0.72 + infoLight * 1.12
   const glowScale = isCore ? 8.8 + infoLight * 9.2 : 5.4 + infoLight * 8.8
   const coreOpacity = isSelected ? 1 : isCore ? 0.98 : 0.74 + infoLight * 0.26
-  const haloOpacity = isSelected
-    ? brightenOpacity(1 * GLOW_DECAY)
-    : isCore
-      ? brightenOpacity((0.68 + infoLight * 0.25) * GLOW_DECAY)
-      : brightenOpacity((0.045 + infoLight * 0.075) * GLOW_DECAY, 0.28)
+  const haloOpacity = brightenOpacity((isSelected ? 1 : isCore ? 0.68 + infoLight * 0.25 : 0.28 + infoLight * 0.58) * GLOW_DECAY)
 
   const glowTexture = texturesRef.current.nodeGlow
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -295,18 +354,16 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   halo.scale.set(radius * (isSelected ? glowScale * 1.14 : glowScale), radius * (isSelected ? glowScale * 1.14 : glowScale), 1)
   group.add(halo)
 
-  if (isSelected || isCore) {
-    const lightPoint = new THREE.Sprite(new THREE.SpriteMaterial({
-      map: glowTexture,
-      color: isSelected ? '#ffffff' : color,
-      transparent: true,
-      opacity: brightenOpacity(coreOpacity),
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    }))
-    lightPoint.scale.set(radius * 2.7, radius * 2.7, 1)
-    group.add(lightPoint)
-  }
+  const lightPoint = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: glowTexture,
+    color: isSelected ? '#ffffff' : color,
+    transparent: true,
+    opacity: brightenOpacity(coreOpacity),
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  }))
+  lightPoint.scale.set(radius * 2.7, radius * 2.7, 1)
+  group.add(lightPoint)
 
   const pinLight = new THREE.PointLight(color, (isSelected ? 1.05 : isCore ? 0.48 + infoLight * 0.5 : 0.08 + infoLight * 0.18) * GLOW_DECAY * GRAPH_BRIGHTNESS, isCore ? 86 : 42)
   group.add(pinLight)
@@ -321,18 +378,23 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
     group.add(ring)
   }
 
-  const fog = new THREE.Sprite(new THREE.SpriteMaterial({
-    map: glowTexture,
-    color,
-    transparent: true,
-    opacity: brightenOpacity((isSelected ? 0.18 : isCore ? 0.12 + infoLight * 0.06 : 0.045 + infoLight * 0.055) * GLOW_DECAY, 0.28),
-    blending: THREE.AdditiveBlending,
-    depthWrite: false,
-  }))
-  fog.position.set(0, 0, -radius * 0.18)
-  fog.scale.set(radius * (isCore ? 13.5 : 9.2), radius * (isCore ? 8.4 : 5.8), 1)
-  fog.material.rotation = seededUnit(hashString(node.id) + 404) * Math.PI
-  group.add(fog)
+  const dustCount = isCore ? 18 : isSelected ? 12 : Math.round(2 + infoLight * 8)
+  for (let i = 0; i < dustCount; i += 1) {
+    const angle = (i / dustCount) * Math.PI * 2
+    const orbit = radius * (2.55 + seededUnit(hashString(node.id) + i * 13) * 2.85)
+    const dust = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: glowTexture,
+      color,
+      transparent: true,
+      opacity: brightenOpacity((isSelected ? 0.22 : 0.045 + infoLight * 0.085) * GLOW_DECAY, 0.38),
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }))
+    dust.position.set(Math.cos(angle) * orbit, Math.sin(angle * 1.7) * orbit * 0.25, Math.sin(angle) * orbit)
+    const size = radius * (0.12 + seededUnit(i + hashString(node.id)) * 0.26)
+    dust.scale.set(size, size, 1)
+    group.add(dust)
+  }
 
   group.userData = { id: node.id }
   return group
@@ -461,6 +523,9 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
     const cosmicEnvironment = addCosmicEnvironment(scene, texturesRef)
     sceneObjectsRef.current.push(...cosmicEnvironment)
 
+    const stars = addStarField(scene)
+    sceneObjectsRef.current.push(stars)
+
     Object.entries(nebulaTheme ?? {}).forEach(([keyName, theme], index) => {
       const center = nebulaCoords[keyName]
       if (!center) return
@@ -503,7 +568,10 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
     const animate = (time) => {
       const t = time * 0.0001
       sceneObjectsRef.current.forEach((object) => {
-        if (object.name === 'cosmic-band' || object.name === 'cosmic-aurora') {
+        if (object.name === 'deep-starfield') {
+          object.rotation.y = t * 0.16
+          object.rotation.x = Math.sin(t * 0.31) * 0.035
+        } else if (object.name === 'cosmic-band' || object.name === 'cosmic-aurora') {
           object.material.rotation += object.name === 'cosmic-band' ? 0.000045 : -0.000035
           object.material.opacity = (object.name === 'cosmic-band' ? 0.52 : 0.20) * (0.9 + Math.sin(t * 2 + object.userData.phase) * 0.08)
         } else if (object.name === 'distant-celestial-glow') {
