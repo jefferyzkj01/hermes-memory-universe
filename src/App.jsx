@@ -7,7 +7,7 @@ import NodeDetail from './components/NodeDetail.jsx'
 import SearchCommand from './components/SearchCommand.jsx'
 import DataHealth from './components/DataHealth.jsx'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=fullscreen-orbit-v17`
+const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=fullscreen-dblclick-exit-v18`
 
 function App() {
   const [graph, setGraph] = useState(null)
@@ -42,6 +42,24 @@ function App() {
       // CSS immersive mode still works when browser fullscreen is unavailable.
     }
   }, [isImmersive])
+
+  const exitImmersive = useCallback(async () => {
+    if (!isImmersive) return
+    setIsImmersive(false)
+    try {
+      if (document.exitFullscreen && document.fullscreenElement) {
+        await document.exitFullscreen()
+      }
+    } catch {
+      // CSS immersive mode exits even if browser fullscreen cannot be closed programmatically.
+    }
+  }, [isImmersive])
+
+  const handleImmersiveDoubleClick = useCallback((event) => {
+    if (!isImmersive) return
+    event.preventDefault()
+    exitImmersive()
+  }, [exitImmersive, isImmersive])
 
   useEffect(() => {
     fetch(DATA_URL)
@@ -114,10 +132,10 @@ function App() {
   if (status === 'error') return <main className="loading error">graph.json 載入失敗，請先執行 npm run export:data。</main>
 
   return (
-    <main className={`app-shell${isImmersive ? ' immersive-mode' : ''}`}>
+    <main className={`app-shell${isImmersive ? ' immersive-mode' : ''}`} onDoubleClick={handleImmersiveDoubleClick}>
       <section className="topbar">
         <div>
-          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.6</p>
+          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.6.1</p>
           <h1>無字全螢幕・閒置星雲環繞</h1>
         </div>
         <div className="topbar-meta">
