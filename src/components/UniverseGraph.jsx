@@ -358,13 +358,13 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
         map: texture,
         color: '#ffffff',
         transparent: true,
-        opacity: keyName === 'core' ? 0.34 : 0.24,
+        opacity: keyName === 'core' ? 0.13 : 0.085,
         blending: THREE.AdditiveBlending,
         depthWrite: false,
       })
       const sprite = new THREE.Sprite(material)
       sprite.position.set(center[0], center[1], center[2] - 30)
-      const scale = keyName === 'core' ? 310 : 230
+      const scale = keyName === 'core' ? 175 : 138
       sprite.scale.set(scale * 1.35, scale, 1)
       sprite.userData.phase = index * 0.71
       sprite.userData.baseOpacity = material.opacity
