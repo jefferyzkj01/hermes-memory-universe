@@ -49,6 +49,20 @@ function deterministicOffset(id, radius = 38) {
   ]
 }
 
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value))
+}
+
+function calculateInfoLight(node, degree = 0) {
+  const textWeight = `${node.label ?? ''} ${node.summary ?? ''}`.length / 170
+  const tagWeight = (node.tags?.length ?? 0) * 0.08
+  const semanticWeight = (node.semanticKeywords?.length ?? 0) * 0.08
+  const sizeWeight = Math.max(0, Number(node.size ?? 4) - 4) / 9
+  const keywordWeight = Math.log1p(Math.max(0, Number(node.keywordScore ?? 0))) / 4.4
+  const linkWeight = Math.log1p(degree) / 3.2
+  return clamp(0.16 + textWeight + tagWeight + semanticWeight + sizeWeight + keywordWeight + linkWeight, 0.18, 1)
+}
+
 function toRgba(hex, alpha) {
   const clean = hex.replace('#', '')
   const expanded = clean.length === 3 ? clean.split('').map((char) => char + char).join('') : clean
@@ -159,37 +173,41 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const color = new THREE.Color(baseColor)
   const isSelected = selectedIdRef.current === node.id
   const isCore = node.type === 'core' || node.type === 'keyword_core'
-  const weight = Math.max(1, Number(node.size ?? 5))
-  const radius = Math.max(2.6, weight * (isCore ? 1.28 : 0.82))
+  const infoLight = Math.max(0.18, Math.min(1, Number(node.infoLight ?? 0.42)))
+  const radius = isCore ? 4.8 + infoLight * 4.6 : 1.45 + infoLight * 2.45
+  const glowScale = isCore ? 15 + infoLight * 15 : 7.2 + infoLight * 13.6
+  const coreOpacity = isSelected ? 1 : isCore ? 0.92 : 0.62 + infoLight * 0.33
+  const haloOpacity = isSelected ? 0.95 : isCore ? 0.52 + infoLight * 0.26 : 0.18 + infoLight * 0.54
 
   const glowTexture = texturesRef.current.nodeGlow
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({
     map: glowTexture,
     color,
     transparent: true,
-    opacity: isSelected ? 0.92 : isCore ? 0.56 : 0.35,
+    opacity: haloOpacity,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
   }))
-  halo.scale.set(radius * (isSelected ? 9.4 : isCore ? 8.2 : 5.2), radius * (isSelected ? 9.4 : isCore ? 8.2 : 5.2), 1)
+  halo.scale.set(radius * (isSelected ? glowScale * 1.55 : glowScale), radius * (isSelected ? glowScale * 1.55 : glowScale), 1)
   group.add(halo)
 
-  const geometry = new THREE.SphereGeometry(radius, 32, 32)
-  const material = new THREE.MeshPhysicalMaterial({
-    color,
-    emissive: color,
-    emissiveIntensity: isSelected ? 2.15 : isCore ? 1.38 : 0.72,
-    roughness: 0.34,
-    metalness: 0.0,
-    clearcoat: 0.4,
+  const lightPoint = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: glowTexture,
+    color: isSelected ? '#ffffff' : color,
     transparent: true,
-    opacity: isSelected ? 1 : 0.94,
-  })
-  group.add(new THREE.Mesh(geometry, material))
+    opacity: coreOpacity,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  }))
+  lightPoint.scale.set(radius * 3.2, radius * 3.2, 1)
+  group.add(lightPoint)
+
+  const pinLight = new THREE.PointLight(color, isSelected ? 1.25 : isCore ? 0.52 + infoLight * 0.72 : 0.08 + infoLight * 0.28, isCore ? 86 : 36)
+  group.add(pinLight)
 
   if (isSelected || isCore) {
     const ring = new THREE.Mesh(
-      new THREE.TorusGeometry(radius * 2.05, Math.max(0.04, radius * 0.035), 8, 96),
+      new THREE.TorusGeometry(radius * 1.95, Math.max(0.018, radius * 0.018), 8, 96),
       new THREE.MeshBasicMaterial({ color: isSelected ? '#ffffff' : baseColor, transparent: true, opacity: 0.42, blending: THREE.AdditiveBlending, depthWrite: false }),
     )
     ring.rotation.x = Math.PI / 2.7
@@ -197,7 +215,7 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
     group.add(ring)
   }
 
-  const dustCount = isCore ? 18 : isSelected ? 14 : 6
+  const dustCount = isCore ? 18 : isSelected ? 12 : Math.round(2 + infoLight * 8)
   for (let i = 0; i < dustCount; i += 1) {
     const angle = (i / dustCount) * Math.PI * 2
     const orbit = radius * (2.4 + seededUnit(hashString(node.id) + i * 13) * 2.6)
@@ -205,12 +223,12 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
       map: glowTexture,
       color,
       transparent: true,
-      opacity: isSelected ? 0.44 : 0.18,
+      opacity: isSelected ? 0.38 : 0.08 + infoLight * 0.18,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }))
     dust.position.set(Math.cos(angle) * orbit, Math.sin(angle * 1.7) * orbit * 0.25, Math.sin(angle) * orbit)
-    const size = radius * (0.55 + seededUnit(i + hashString(node.id)) * 0.8)
+    const size = radius * (0.28 + seededUnit(i + hashString(node.id)) * 0.64)
     dust.scale.set(size, size, 1)
     group.add(dust)
   }
@@ -238,6 +256,14 @@ function buildNebulaCoords(graph) {
 }
 
 function prepareGraphData(graph, nebulaCoords) {
+  const degree = new Map()
+  graph.links.forEach((link) => {
+    const source = typeof link.source === 'object' ? link.source.id : link.source
+    const target = typeof link.target === 'object' ? link.target.id : link.target
+    degree.set(source, (degree.get(source) ?? 0) + 1)
+    degree.set(target, (degree.get(target) ?? 0) + 1)
+  })
+
   return {
     nodes: graph.nodes.map((node) => {
       const semanticKey = node.keywordCore ?? (node.type === 'core' ? 'kw-orbit' : node.nebula)
@@ -254,6 +280,7 @@ function prepareGraphData(graph, nebulaCoords) {
         fx: x,
         fy: y,
         fz: z,
+        infoLight: calculateInfoLight(node, degree.get(node.id) ?? 0),
       }
     }),
     links: graph.links.map((link) => ({ ...link })),
@@ -304,11 +331,11 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, onSel
         const distRatio = 1 + distance / denom
         fg.cameraPosition({ x: node.x * distRatio, y: node.y * distRatio + 18, z: node.z * distRatio }, node, 1200)
       })
-      .enableNodeDrag(true)
+      .enableNodeDrag(false)
 
-    fg.d3Force('charge').strength(-34)
-    fg.d3Force('link').distance((link) => (link.type === 'bridge' ? 150 : 62))
-    fg.d3Force('center').strength(0.014)
+    fg.d3Force('charge').strength(0)
+    fg.d3Force('link').strength(0)
+    fg.d3Force('center').strength(0)
 
     const scene = fg.scene()
     scene.fog = new THREE.FogExp2(0x02040a, 0.00145)

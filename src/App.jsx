@@ -7,7 +7,7 @@ import NodeDetail from './components/NodeDetail.jsx'
 import SearchCommand from './components/SearchCommand.jsx'
 import DataHealth from './components/DataHealth.jsx'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=keyword-core-v3`
+const DATA_URL = `${import.meta.env.BASE_URL}data/graph.json?v=fixed-light-v4`
 
 function App() {
   const [graph, setGraph] = useState(null)
@@ -68,8 +68,8 @@ function App() {
     <main className="app-shell">
       <section className="topbar">
         <div>
-          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.0</p>
-          <h1>關鍵字核心星雲測試版</h1>
+          <p className="eyebrow"><Sparkles size={14} /> Hermes Memory Universe 3.1</p>
+          <h1>固定光點星圖測試版</h1>
         </div>
         <div className="topbar-meta">
           <span><Activity size={14} /> {graph.snapshot.generatedAt}</span>
@@ -89,7 +89,7 @@ function App() {
 
         <section className="universe-card">
           <div className="graph-toolbar">
-            <span><GitBranch size={14} /> 拖動旋轉・滾輪縮放・點節點展開</span>
+            <span><GitBranch size={14} /> 固定光點・亮度代表資訊量・拖動旋轉</span>
             <span><Filter size={14} /> {activeNebula === 'all' ? '全部星雲' : graph.nebulas[activeNebula]?.label}</span>
           </div>
           <UniverseGraph graph={filteredGraph} selectedNode={selectedNode} activeNebula={activeNebula} onSelect={setSelectedNode} nebulaTheme={graph.nebulas} />
