@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-06T21:52:04+08:00",
+    "generatedAt": "2026-06-08T10:34:35+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -58,16 +58,16 @@
     }
   },
   "nebulas": {
-    "kw-aesthetic": {
-      "label": "Aesthetic Core",
-      "color": "#b7c7ff",
-      "keyword": "aesthetic",
-      "computed": true
-    },
     "kw-software": {
       "label": "Software Core",
-      "color": "#7dd3fc",
+      "color": "#b7c7ff",
       "keyword": "software",
+      "computed": true
+    },
+    "kw-aesthetic": {
+      "label": "Aesthetic Core",
+      "color": "#7dd3fc",
+      "keyword": "aesthetic",
       "computed": true
     },
     "kw-research": {
@@ -109,18 +109,18 @@
   },
   "keywordCores": [
     {
-      "key": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "label": "Aesthetic Core",
-      "color": "#b7c7ff",
-      "count": 32
-    },
-    {
       "key": "kw-software",
       "keyword": "software",
       "label": "Software Core",
+      "color": "#b7c7ff",
+      "count": 29
+    },
+    {
+      "key": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "label": "Aesthetic Core",
       "color": "#7dd3fc",
-      "count": 28
+      "count": 33
     },
     {
       "key": "kw-research",
@@ -180,7 +180,7 @@
       ],
       "keywordCore": "kw-software",
       "keyword": "software",
-      "keywordScore": 28.88,
+      "keywordScore": 30.4,
       "semanticKeywords": [
         "software",
         "aesthetic",
@@ -260,7 +260,7 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 28.32,
+      "keywordScore": 29.08,
       "semanticKeywords": [
         "aesthetic",
         "software",
@@ -600,11 +600,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "aesthetic"
+        "software"
       ]
     },
     {
@@ -666,11 +666,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "software"
+        "research"
       ]
     },
     {
@@ -686,11 +686,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "mlops"
       ]
     },
     {
@@ -706,11 +706,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "productivity"
       ]
     },
     {
@@ -818,11 +818,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-devops",
+      "keyword": "devops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "devops"
       ]
     },
     {
@@ -861,11 +861,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-devops",
-      "keyword": "devops",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "devops"
+        "use"
       ]
     },
     {
@@ -881,11 +881,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "software"
       ]
     },
     {
@@ -901,11 +901,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "software"
+        "research"
       ]
     },
     {
@@ -1095,11 +1095,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "mlops"
       ]
     },
     {
@@ -1138,11 +1138,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "productivity"
       ]
     },
     {
@@ -1158,11 +1158,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-devops",
+      "keyword": "devops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "devops"
       ]
     },
     {
@@ -1290,11 +1290,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-devops",
-      "keyword": "devops",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "devops"
+        "research"
       ]
     },
     {
@@ -1410,11 +1410,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "mlops"
       ]
     },
     {
@@ -1477,11 +1477,11 @@
         "skill",
         "data-science"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "productivity"
       ]
     },
     {
@@ -1642,11 +1642,11 @@
         "skill",
         "dogfood"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "use"
       ]
     },
     {
@@ -1662,11 +1662,11 @@
         "skill",
         "email"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "software"
       ]
     },
     {
@@ -1682,11 +1682,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "software"
+        "research"
       ]
     },
     {
@@ -1702,11 +1702,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "mlops"
       ]
     },
     {
@@ -1750,11 +1750,11 @@
         "github",
         "automation"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "productivity"
       ]
     },
     {
@@ -1798,11 +1798,11 @@
         "github",
         "automation"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "use"
       ]
     },
     {
@@ -1821,11 +1821,11 @@
         "github",
         "automation"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "research"
       ]
     },
     {
@@ -1844,11 +1844,11 @@
         "github",
         "automation"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "mlops"
       ]
     },
     {
@@ -1864,11 +1864,11 @@
         "skill",
         "mcp"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "productivity"
       ]
     },
     {
@@ -1884,11 +1884,11 @@
         "skill",
         "media"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "use"
       ]
     },
     {
@@ -1904,11 +1904,11 @@
         "skill",
         "media"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-autonomous",
+      "keyword": "autonomous",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "autonomous"
       ]
     },
     {
@@ -1924,11 +1924,11 @@
         "skill",
         "media"
       ],
-      "keywordCore": "kw-autonomous",
-      "keyword": "autonomous",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "autonomous"
+        "research"
       ]
     },
     {
@@ -2131,11 +2131,11 @@
         "skill",
         "note-taking"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "productivity"
       ]
     },
     {
@@ -2627,6 +2627,32 @@
       ]
     },
     {
+      "id": "skill-immersive-webgl-visualizations",
+      "label": "immersive-webgl-visualizations",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Build and debug immersive/fullscreen WebGL visualizations, especially React + Three.js / 3d-force-graph experiences on desktop and mobile browsers.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "aesthetic",
+        "software"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 4.0,
+      "semanticKeywords": [
+        "software",
+        "aesthetic"
+      ]
+    },
+    {
       "id": "skill-node-inspect-debugger",
       "label": "node-inspect-debugger",
       "type": "skill",
@@ -2659,7 +2685,7 @@
         "software"
       ],
       "size": 4.5,
-      "summary": "Plan mode: write markdown plan to .hermes/plans/, no exec.",
+      "summary": "Plan mode: write an actionable markdown plan to .hermes/plans/, no execution. Bite-sized tasks, exact paths, complete code.",
       "visibility": "public-safe",
       "tags": [
         "skill",
@@ -2853,24 +2879,6 @@
       ]
     },
     {
-      "id": "keyword-core-aesthetic",
-      "label": "Aesthetic Core",
-      "type": "keyword_core",
-      "nebula": "kw-aesthetic",
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "size": 12,
-      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: aesthetic.",
-      "visibility": "public-safe",
-      "tags": [
-        "computed-core",
-        "aesthetic"
-      ],
-      "semanticKeywords": [
-        "aesthetic"
-      ]
-    },
-    {
       "id": "keyword-core-software",
       "label": "Software Core",
       "type": "keyword_core",
@@ -2886,6 +2894,24 @@
       ],
       "semanticKeywords": [
         "software"
+      ]
+    },
+    {
+      "id": "keyword-core-aesthetic",
+      "label": "Aesthetic Core",
+      "type": "keyword_core",
+      "nebula": "kw-aesthetic",
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "size": 12,
+      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: aesthetic.",
+      "visibility": "public-safe",
+      "tags": [
+        "computed-core",
+        "aesthetic"
+      ],
+      "semanticKeywords": [
+        "aesthetic"
       ]
     },
     {
@@ -3804,6 +3830,18 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-immersive-webgl-visualizations",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-immersive-webgl-visualizations",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-node-inspect-debugger",
       "type": "skill",
       "strength": 0.32
@@ -3911,6 +3949,138 @@
       "strength": 0.72
     },
     {
+      "source": "keyword-core-software",
+      "target": "hermes-core",
+      "type": "semantic-gravity",
+      "strength": 0.75
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-apple-reminders",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-architecture-diagram",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-gpt-taste",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-full-output-enforcement",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-himalaya",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-codebase-inspection",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-github-code-review",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-debugging-hermes-tui-commands",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-discord-bot-utilities",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-hermes-agent-skill-authoring",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-hermes-s6-container-supervision",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-immersive-webgl-visualizations",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-node-inspect-debugger",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-plan",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-python-debugpy",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-requesting-code-review",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-spike",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-subagent-driven-development",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-systematic-debugging",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-test-driven-development",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-writing-plans",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
       "source": "keyword-core-aesthetic",
       "target": "jeffery-profile",
       "type": "semantic-gravity",
@@ -3921,12 +4091,6 @@
       "target": "aesthetic-wiki",
       "type": "semantic-gravity",
       "strength": 0.75
-    },
-    {
-      "source": "keyword-core-aesthetic",
-      "target": "skill-architecture-diagram",
-      "type": "semantic-gravity",
-      "strength": 0.258
     },
     {
       "source": "keyword-core-aesthetic",
@@ -4109,132 +4273,6 @@
       "strength": 0.5316000000000001
     },
     {
-      "source": "keyword-core-software",
-      "target": "hermes-core",
-      "type": "semantic-gravity",
-      "strength": 0.75
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-apple-reminders",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-baoyu-article-illustrator",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-humanizer",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-full-output-enforcement",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-minecraft-modpack-server",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-codebase-inspection",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-github-code-review",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-debugging-hermes-tui-commands",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-discord-bot-utilities",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-hermes-agent-skill-authoring",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-hermes-s6-container-supervision",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-node-inspect-debugger",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-plan",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-python-debugpy",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-requesting-code-review",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-spike",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-subagent-driven-development",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-systematic-debugging",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-test-driven-development",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-writing-plans",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
       "source": "keyword-core-research",
       "target": "holo-facts",
       "type": "semantic-gravity",
@@ -4248,37 +4286,37 @@
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-baoyu-comic",
+      "target": "skill-baoyu-article-illustrator",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-minimalist-ui",
+      "target": "skill-humanizer",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-tighten",
+      "target": "skill-songwriting-and-ai-music",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-pokemon-player",
+      "target": "skill-minecraft-modpack-server",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-github-repo-management",
+      "target": "skill-github-pr-workflow",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-obsidian",
+      "target": "skill-youtube-content",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4338,31 +4376,31 @@
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-baoyu-infographic",
+      "target": "skill-baoyu-comic",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-p5js",
+      "target": "skill-minimalist-ui",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-jupyter-live-kernel",
+      "target": "skill-tighten",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-github-auth",
+      "target": "skill-pokemon-player",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-native-mcp",
+      "target": "skill-github-repo-management",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4422,31 +4460,37 @@
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-ideation",
+      "target": "skill-baoyu-infographic",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-pixel-art",
+      "target": "skill-p5js",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-dogfood",
+      "target": "skill-jupyter-live-kernel",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-github-issues",
+      "target": "skill-github-auth",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-heartmula",
+      "target": "skill-native-mcp",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-obsidian",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4494,13 +4538,13 @@
     },
     {
       "source": "keyword-core-devops",
-      "target": "skill-excalidraw",
+      "target": "skill-ideation",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-devops",
-      "target": "skill-songwriting-and-ai-music",
+      "target": "skill-pixel-art",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4548,7 +4592,7 @@
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-gpt-taste",
+      "target": "skill-excalidraw",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4560,19 +4604,19 @@
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-himalaya",
+      "target": "skill-dogfood",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-github-pr-workflow",
+      "target": "skill-github-issues",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-songsee",
+      "target": "skill-heartmula",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4626,7 +4670,7 @@
     },
     {
       "source": "keyword-core-autonomous",
-      "target": "skill-youtube-content",
+      "target": "skill-songsee",
       "type": "semantic-gravity",
       "strength": 0.258
     },
