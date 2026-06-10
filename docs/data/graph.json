@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-10T04:00:14+08:00",
+    "generatedAt": "2026-06-11T04:00:38+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -70,40 +70,40 @@
       "keyword": "aesthetic",
       "computed": true
     },
+    "kw-use": {
+      "label": "Use Core",
+      "color": "#c4b5fd",
+      "keyword": "use",
+      "computed": true
+    },
     "kw-mlops": {
       "label": "Mlops Core",
-      "color": "#c4b5fd",
+      "color": "#f0c987",
       "keyword": "mlops",
       "computed": true
     },
-    "kw-use": {
-      "label": "Use Core",
-      "color": "#f0c987",
-      "keyword": "use",
+    "kw-media": {
+      "label": "Media Core",
+      "color": "#8ee6d1",
+      "keyword": "media",
       "computed": true
     },
     "kw-research": {
       "label": "Research Core",
-      "color": "#8ee6d1",
+      "color": "#f2a8c2",
       "keyword": "research",
       "computed": true
     },
     "kw-investment": {
       "label": "Investment Core",
-      "color": "#f2a8c2",
+      "color": "#a7f3d0",
       "keyword": "investment",
       "computed": true
     },
     "kw-taste": {
       "label": "Taste Core",
-      "color": "#a7f3d0",
-      "keyword": "taste",
-      "computed": true
-    },
-    "kw-productivity": {
-      "label": "Productivity Core",
       "color": "#fca5a5",
-      "keyword": "productivity",
+      "keyword": "taste",
       "computed": true
     }
   },
@@ -113,56 +113,56 @@
       "keyword": "software",
       "label": "Software Core",
       "color": "#b7c7ff",
-      "count": 23
+      "count": 27
     },
     {
       "key": "kw-aesthetic",
       "keyword": "aesthetic",
       "label": "Aesthetic Core",
       "color": "#7dd3fc",
-      "count": 24
-    },
-    {
-      "key": "kw-mlops",
-      "keyword": "mlops",
-      "label": "Mlops Core",
-      "color": "#c4b5fd",
-      "count": 8
+      "count": 27
     },
     {
       "key": "kw-use",
       "keyword": "use",
       "label": "Use Core",
+      "color": "#c4b5fd",
+      "count": 19
+    },
+    {
+      "key": "kw-mlops",
+      "keyword": "mlops",
+      "label": "Mlops Core",
       "color": "#f0c987",
-      "count": 13
+      "count": 9
+    },
+    {
+      "key": "kw-media",
+      "keyword": "media",
+      "label": "Media Core",
+      "color": "#8ee6d1",
+      "count": 6
     },
     {
       "key": "kw-research",
       "keyword": "research",
       "label": "Research Core",
-      "color": "#8ee6d1",
+      "color": "#f2a8c2",
       "count": 5
     },
     {
       "key": "kw-investment",
       "keyword": "investment",
       "label": "Investment Core",
-      "color": "#f2a8c2",
+      "color": "#a7f3d0",
       "count": 2
     },
     {
       "key": "kw-taste",
       "keyword": "taste",
       "label": "Taste Core",
-      "color": "#a7f3d0",
-      "count": 6
-    },
-    {
-      "key": "kw-productivity",
-      "keyword": "productivity",
-      "label": "Productivity Core",
       "color": "#fca5a5",
-      "count": 5
+      "count": 6
     }
   ],
   "nodes": [
@@ -180,12 +180,12 @@
       ],
       "keywordCore": "kw-software",
       "keyword": "software",
-      "keywordScore": 25.08,
+      "keywordScore": 28.88,
       "semanticKeywords": [
         "software",
         "aesthetic",
-        "mlops",
-        "use"
+        "use",
+        "mlops"
       ]
     },
     {
@@ -206,8 +206,8 @@
       "semanticKeywords": [
         "investment",
         "aesthetic",
-        "taste",
-        "research"
+        "research",
+        "taste"
       ]
     },
     {
@@ -241,11 +241,11 @@
         "tool",
         "tools"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "use"
       ]
     },
     {
@@ -262,7 +262,7 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 21.86,
+      "keywordScore": 24.14,
       "semanticKeywords": [
         "aesthetic",
         "software",
@@ -288,7 +288,6 @@
       "semanticKeywords": [
         "investment",
         "research",
-        "productivity",
         "aesthetic"
       ]
     },
@@ -304,11 +303,11 @@
         "automation",
         "automation"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "mlops"
       ]
     },
     {
@@ -323,11 +322,11 @@
         "deployment",
         "automation"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "media"
       ]
     },
     {
@@ -342,11 +341,592 @@
         "history",
         "sessions"
       ],
+      "keywordCore": "kw-research",
+      "keyword": "research",
+      "keywordScore": 0.1,
+      "semanticKeywords": [
+        "research"
+      ]
+    },
+    {
+      "id": "skill-architecture-diagram",
+      "label": "architecture-diagram",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ],
       "keywordCore": "kw-taste",
       "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
         "taste"
+      ]
+    },
+    {
+      "id": "skill-ascii-art",
+      "label": "ascii-art",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "taste"
+      ]
+    },
+    {
+      "id": "skill-ascii-video",
+      "label": "ascii-video",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "ASCII video: convert video/audio to colored ASCII MP4/GIF.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "taste"
+      ]
+    },
+    {
+      "id": "skill-baoyu-infographic",
+      "label": "baoyu-infographic",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Infographics: 21 layouts x 21 styles (信息图, 可视化).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 0.1,
+      "semanticKeywords": [
+        "software"
+      ]
+    },
+    {
+      "id": "skill-design-md",
+      "label": "design-md",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Author/validate/export Google's DESIGN.md token spec files.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "taste"
+      ]
+    },
+    {
+      "id": "skill-excalidraw",
+      "label": "excalidraw",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ],
+      "keywordCore": "kw-use",
+      "keyword": "use",
+      "keywordScore": 0.1,
+      "semanticKeywords": [
+        "use"
+      ]
+    },
+    {
+      "id": "skill-interactive-data-visualization",
+      "label": "interactive-data-visualization",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Build, refine, and verify interactive data visualizations, especially graph/universe/star-map UIs using React, Three.js, force graphs, Canvas/SVG/WebGL, or static GitHub Pages deployments. Use for visualizing memory syst",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic",
+        "automation"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "use",
+        "taste"
+      ]
+    },
+    {
+      "id": "skill-manim-video",
+      "label": "manim-video",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Manim CE animations: 3Blue1Brown math/algo videos.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "taste"
+      ]
+    },
+    {
+      "id": "skill-p5js",
+      "label": "p5js",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "p5.js sketches: gen art, shaders, interactive, 3D.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ],
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
+      "keywordScore": 0.1,
+      "semanticKeywords": [
+        "mlops"
+      ]
+    },
+    {
+      "id": "skill-pretext",
+      "label": "pretext",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Use when building creative browser demos with @chenglou/pretext — DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produc",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative"
+      ],
+      "keywordCore": "kw-use",
+      "keyword": "use",
+      "keywordScore": 1.0,
+      "semanticKeywords": [
+        "use"
+      ]
+    },
+    {
+      "id": "skill-songwriting-and-ai-music",
+      "label": "songwriting-and-ai-music",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Songwriting craft and Suno AI music prompts.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "media"
+      ],
+      "keywordCore": "kw-media",
+      "keyword": "media",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "media"
+      ]
+    },
+    {
+      "id": "skill-touchdesigner-mcp",
+      "label": "touchdesigner-mcp",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Control a running TouchDesigner instance via twozero MCP — create operators, set parameters, wire connections, execute Python, build real-time visuals. 36 native tools.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "taste"
+      ]
+    },
+    {
+      "id": "skill-dogfood",
+      "label": "dogfood",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Exploratory QA of web apps: find bugs, evidence, reports.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "software"
+      ]
+    },
+    {
+      "id": "skill-heartmula",
+      "label": "heartmula",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "HeartMuLa: Suno-like song generation from lyrics + tags.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "media"
+      ],
+      "keywordCore": "kw-media",
+      "keyword": "media",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "media"
+      ]
+    },
+    {
+      "id": "skill-songsee",
+      "label": "songsee",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Audio spectrograms/features (mel, chroma, MFCC) via CLI.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "media"
+      ],
+      "keywordCore": "kw-media",
+      "keyword": "media",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "media"
+      ]
+    },
+    {
+      "id": "skill-weights-and-biases",
+      "label": "weights-and-biases",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "W&B: log ML experiments, sweeps, model registry, dashboards.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ],
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "mlops"
+      ]
+    },
+    {
+      "id": "skill-llama-cpp",
+      "label": "llama-cpp",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "llama.cpp local GGUF inference + HF Hub model discovery.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ],
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "mlops"
+      ]
+    },
+    {
+      "id": "skill-obliteratus",
+      "label": "obliteratus",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "OBLITERATUS: abliterate LLM refusals (diff-in-means).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ],
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "mlops"
+      ]
+    },
+    {
+      "id": "skill-immersive-webgl-visualizations",
+      "label": "immersive-webgl-visualizations",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Build and debug immersive/fullscreen WebGL visualizations, especially React + Three.js / 3d-force-graph experiences on desktop and mobile browsers.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic",
+        "software"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "software",
+        "taste"
+      ]
+    },
+    {
+      "id": "skill-node-inspect-debugger",
+      "label": "node-inspect-debugger",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "software"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 4.0,
+      "semanticKeywords": [
+        "software"
+      ]
+    },
+    {
+      "id": "skill-python-debugpy",
+      "label": "python-debugpy",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Debug Python: pdb REPL + debugpy remote (DAP).",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "software"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 4.0,
+      "semanticKeywords": [
+        "software"
+      ]
+    },
+    {
+      "id": "skill-requesting-code-review",
+      "label": "requesting-code-review",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Pre-commit review: security scan, quality gates, auto-fix.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "software"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 4.0,
+      "semanticKeywords": [
+        "software"
+      ]
+    },
+    {
+      "id": "skill-simplify-code",
+      "label": "simplify-code",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Parallel 3-agent cleanup of recent code changes.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "software"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 4.0,
+      "semanticKeywords": [
+        "software"
+      ]
+    },
+    {
+      "id": "skill-spike",
+      "label": "spike",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Throwaway experiments to validate an idea before build.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "software"
+      ]
+    },
+    {
+      "id": "skill-systematic-debugging",
+      "label": "systematic-debugging",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "4-phase root cause debugging: understand bugs before fixing.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "software"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 4.0,
+      "semanticKeywords": [
+        "software"
+      ]
+    },
+    {
+      "id": "skill-test-driven-development",
+      "label": "test-driven-development",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "software"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 4.0,
+      "semanticKeywords": [
+        "software"
       ]
     },
     {
@@ -369,8 +949,7 @@
       "keyword": "use",
       "keywordScore": 1.0,
       "semanticKeywords": [
-        "use",
-        "productivity"
+        "use"
       ]
     },
     {
@@ -435,11 +1014,11 @@
         "autonomous-ai-agents",
         "automation"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "research"
       ]
     },
     {
@@ -455,78 +1034,10 @@
         "skill",
         "communication"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
-      ]
-    },
-    {
-      "id": "skill-architecture-diagram",
-      "label": "architecture-diagram",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative"
-      ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
-      "keywordScore": 0.1,
-      "semanticKeywords": [
-        "research"
-      ]
-    },
-    {
-      "id": "skill-ascii-art",
-      "label": "ascii-art",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic"
-      ],
-      "size": 4.5,
-      "summary": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative",
-        "aesthetic"
-      ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "keywordScore": 3.52,
-      "semanticKeywords": [
-        "aesthetic",
-        "taste"
-      ]
-    },
-    {
-      "id": "skill-ascii-video",
-      "label": "ascii-video",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic"
-      ],
-      "size": 4.5,
-      "summary": "ASCII video: convert video/audio to colored ASCII MP4/GIF.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative",
-        "aesthetic"
-      ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "keywordScore": 3.52,
-      "semanticKeywords": [
-        "aesthetic",
         "taste"
       ]
     },
@@ -543,11 +1054,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "research"
       ]
     },
     {
@@ -563,31 +1074,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
-      ]
-    },
-    {
-      "id": "skill-baoyu-infographic",
-      "label": "baoyu-infographic",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Infographics: 21 layouts x 21 styles (信息图, 可视化).",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 0.1,
-      "semanticKeywords": [
-        "software"
+        "investment"
       ]
     },
     {
@@ -603,11 +1094,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "taste"
       ]
     },
     {
@@ -679,47 +1170,31 @@
       ]
     },
     {
-      "id": "skill-design-md",
-      "label": "design-md",
+      "id": "skill-creative-media-production",
+      "label": "creative-media-production",
       "type": "skill",
       "nebula": "skills",
       "relatedNebulae": [
-        "aesthetic"
+        "aesthetic",
+        "software"
       ],
       "size": 4.5,
-      "summary": "Author/validate/export Google's DESIGN.md token spec files.",
+      "summary": "Use when creating diagrams, infographics, ASCII/typographic art, creative-code sketches, explanatory animations, immersive visualizations, or real-time media pieces. Umbrella for visual production workflows with tool-spe",
       "visibility": "public-safe",
       "tags": [
         "skill",
         "creative",
-        "aesthetic"
+        "aesthetic",
+        "software"
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "taste"
-      ]
-    },
-    {
-      "id": "skill-excalidraw",
-      "label": "excalidraw",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative"
-      ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
-      "keywordScore": 0.1,
-      "semanticKeywords": [
-        "investment"
+        "media",
+        "software",
+        "use"
       ]
     },
     {
@@ -763,11 +1238,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "investment"
       ]
     },
     {
@@ -791,33 +1266,6 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "taste"
-      ]
-    },
-    {
-      "id": "skill-interactive-data-visualization",
-      "label": "interactive-data-visualization",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic",
-        "automation"
-      ],
-      "size": 4.5,
-      "summary": "Build, refine, and verify interactive data visualizations, especially graph/universe/star-map UIs using React, Three.js, force graphs, Canvas/SVG/WebGL, or static GitHub Pages deployments. Use for visualizing memory syst",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative",
-        "aesthetic",
-        "automation"
-      ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "keywordScore": 3.52,
-      "semanticKeywords": [
-        "aesthetic",
-        "use",
         "taste"
       ]
     },
@@ -847,30 +1295,6 @@
       ]
     },
     {
-      "id": "skill-manim-video",
-      "label": "manim-video",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic"
-      ],
-      "size": 4.5,
-      "summary": "Manim CE animations: 3Blue1Brown math/algo videos.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative",
-        "aesthetic"
-      ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "keywordScore": 3.52,
-      "semanticKeywords": [
-        "aesthetic",
-        "taste"
-      ]
-    },
-    {
       "id": "skill-full-output-enforcement",
       "label": "full-output-enforcement",
       "type": "skill",
@@ -894,26 +1318,6 @@
       ]
     },
     {
-      "id": "skill-p5js",
-      "label": "p5js",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "p5.js sketches: gen art, shaders, interactive, 3D.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative"
-      ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
-      "keywordScore": 0.1,
-      "semanticKeywords": [
-        "productivity"
-      ]
-    },
-    {
       "id": "skill-pixel-art",
       "label": "pixel-art",
       "type": "skill",
@@ -926,31 +1330,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
-      ]
-    },
-    {
-      "id": "skill-pretext",
-      "label": "pretext",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Use when building creative browser demos with @chenglou/pretext — DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produc",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative"
-      ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
-      "keywordScore": 1.0,
-      "semanticKeywords": [
-        "use"
+        "taste"
       ]
     },
     {
@@ -1002,23 +1386,31 @@
       ]
     },
     {
-      "id": "skill-songwriting-and-ai-music",
-      "label": "songwriting-and-ai-music",
+      "id": "skill-spatial-presentation-board",
+      "label": "spatial-presentation-board",
       "type": "skill",
       "nebula": "skills",
-      "relatedNebulae": [],
+      "relatedNebulae": [
+        "aesthetic",
+        "software"
+      ],
       "size": 4.5,
-      "summary": "Songwriting craft and Suno AI music prompts.",
+      "summary": "Use when Jeffery asks to turn interior/architecture references, floor plans, room dimensions, furniture sizes, or schematic measurements into premium spatial presentation boards/decks. Produces deterministic, readable la",
       "visibility": "public-safe",
       "tags": [
         "skill",
-        "creative"
+        "creative",
+        "aesthetic",
+        "software"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
-      "keywordScore": 0.1,
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
       "semanticKeywords": [
-        "research"
+        "aesthetic",
+        "software",
+        "use",
+        "taste"
       ]
     },
     {
@@ -1138,23 +1530,23 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "media"
       ]
     },
     {
-      "id": "skill-touchdesigner-mcp",
-      "label": "touchdesigner-mcp",
+      "id": "skill-visual-production-orchestrator",
+      "label": "visual-production-orchestrator",
       "type": "skill",
       "nebula": "skills",
       "relatedNebulae": [
         "aesthetic"
       ],
       "size": 4.5,
-      "summary": "Control a running TouchDesigner instance via twozero MCP — create operators, set parameters, wire connections, execute Python, build real-time visuals. 36 native tools.",
+      "summary": "Use when Jeffery asks to run or design the integrated Visual Production OS: image recognition, image editing, image generation, Blender/3D modeling, video prompting/production, Kanban routing, QA, training memory, and ae",
       "visibility": "public-safe",
       "tags": [
         "skill",
@@ -1166,6 +1558,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
+        "use",
         "taste"
       ]
     },
@@ -1182,11 +1575,11 @@
         "skill",
         "data-science"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "research"
       ]
     },
     {
@@ -1280,31 +1673,11 @@
         "devops",
         "automation"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
-      ]
-    },
-    {
-      "id": "skill-dogfood",
-      "label": "dogfood",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Exploratory QA of web apps: find bugs, evidence, reports.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "dogfood"
-      ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
-      "keywordScore": 0.1,
-      "semanticKeywords": [
-        "mlops"
+        "investment"
       ]
     },
     {
@@ -1320,11 +1693,11 @@
         "skill",
         "email"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "taste"
       ]
     },
     {
@@ -1340,11 +1713,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "mlops"
       ]
     },
     {
@@ -1360,11 +1733,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "media"
       ]
     },
     {
@@ -1406,50 +1779,31 @@
         "skill",
         "mcp"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "research"
       ]
     },
     {
-      "id": "skill-heartmula",
-      "label": "heartmula",
+      "id": "skill-audio-music-production",
+      "label": "audio-music-production",
       "type": "skill",
       "nebula": "skills",
       "relatedNebulae": [],
       "size": 4.5,
-      "summary": "HeartMuLa: Suno-like song generation from lyrics + tags.",
+      "summary": "Use when creating, analyzing, or prompting music/audio: songwriting craft, AI music prompts, open-source song generation, spectrograms, audio features, and media postproduction routing.",
       "visibility": "public-safe",
       "tags": [
         "skill",
         "media"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
-      "keywordScore": 0.1,
+      "keywordCore": "kw-media",
+      "keyword": "media",
+      "keywordScore": 3.0,
       "semanticKeywords": [
-        "mlops"
-      ]
-    },
-    {
-      "id": "skill-songsee",
-      "label": "songsee",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Audio spectrograms/features (mel, chroma, MFCC) via CLI.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "media"
-      ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
-      "keywordScore": 0.1,
-      "semanticKeywords": [
+        "media",
         "use"
       ]
     },
@@ -1463,75 +1817,6 @@
       ],
       "size": 4.5,
       "summary": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.).",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "mlops",
-        "automation"
-      ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
-      "keywordScore": 2.0,
-      "semanticKeywords": [
-        "mlops"
-      ]
-    },
-    {
-      "id": "skill-weights-and-biases",
-      "label": "weights-and-biases",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "automation"
-      ],
-      "size": 4.5,
-      "summary": "W&B: log ML experiments, sweeps, model registry, dashboards.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "mlops",
-        "automation"
-      ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
-      "keywordScore": 2.0,
-      "semanticKeywords": [
-        "mlops"
-      ]
-    },
-    {
-      "id": "skill-llama-cpp",
-      "label": "llama-cpp",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "automation"
-      ],
-      "size": 4.5,
-      "summary": "llama.cpp local GGUF inference + HF Hub model discovery.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "mlops",
-        "automation"
-      ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
-      "keywordScore": 2.0,
-      "semanticKeywords": [
-        "mlops"
-      ]
-    },
-    {
-      "id": "skill-obliteratus",
-      "label": "obliteratus",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "automation"
-      ],
-      "size": 4.5,
-      "summary": "OBLITERATUS: abliterate LLM refusals (diff-in-means).",
       "visibility": "public-safe",
       "tags": [
         "skill",
@@ -1566,6 +1851,30 @@
       "keywordScore": 2.0,
       "semanticKeywords": [
         "mlops"
+      ]
+    },
+    {
+      "id": "skill-ml-experiment-inference-ops",
+      "label": "ml-experiment-inference-ops",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Use when running ML experiments, tracking results, evaluating LLMs, serving/quantizing local models, or applying model-surgery workflows. Umbrella for W&B, llama.cpp/GGUF, vLLM-style serving, and abliteration/model-analy",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "mlops",
+        "automation"
+      ],
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "mlops",
+        "use"
       ]
     },
     {
@@ -1654,11 +1963,11 @@
         "skill",
         "note-taking"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "investment"
       ]
     },
     {
@@ -1677,11 +1986,10 @@
         "productivity",
         "software"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 2.0,
       "semanticKeywords": [
-        "productivity",
         "software",
         "use"
       ]
@@ -1699,11 +2007,11 @@
         "skill",
         "productivity"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
-      "keywordScore": 2.0,
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
+      "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "taste"
       ]
     },
     {
@@ -1730,7 +2038,7 @@
       "semanticKeywords": [
         "investment",
         "aesthetic",
-        "productivity",
+        "research",
         "taste"
       ]
     },
@@ -1750,11 +2058,10 @@
         "productivity",
         "software"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 2.0,
       "semanticKeywords": [
-        "productivity",
         "software"
       ]
     },
@@ -1771,11 +2078,11 @@
         "skill",
         "red-teaming"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "use"
       ]
     },
     {
@@ -1876,11 +2183,11 @@
         "skill",
         "smart-home"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "software"
+        "taste"
       ]
     },
     {
@@ -1906,6 +2213,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
+        "media",
         "software",
         "taste"
       ]
@@ -1957,56 +2265,6 @@
       ]
     },
     {
-      "id": "skill-immersive-webgl-visualizations",
-      "label": "immersive-webgl-visualizations",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic",
-        "software"
-      ],
-      "size": 4.5,
-      "summary": "Build and debug immersive/fullscreen WebGL visualizations, especially React + Three.js / 3d-force-graph experiences on desktop and mobile browsers.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "software-development",
-        "aesthetic",
-        "software"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 4.0,
-      "semanticKeywords": [
-        "software",
-        "aesthetic",
-        "taste"
-      ]
-    },
-    {
-      "id": "skill-node-inspect-debugger",
-      "label": "node-inspect-debugger",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "software"
-      ],
-      "size": 4.5,
-      "summary": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "software-development",
-        "software"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 4.0,
-      "semanticKeywords": [
-        "software"
-      ]
-    },
-    {
       "id": "skill-plan",
       "label": "plan",
       "type": "skill",
@@ -2032,15 +2290,15 @@
       ]
     },
     {
-      "id": "skill-python-debugpy",
-      "label": "python-debugpy",
+      "id": "skill-software-debugging-and-quality",
+      "label": "software-debugging-and-quality",
       "type": "skill",
       "nebula": "skills",
       "relatedNebulae": [
         "software"
       ],
       "size": 4.5,
-      "summary": "Debug Python: pdb REPL + debugpy remote (DAP).",
+      "summary": "Use when validating, debugging, reviewing, testing, simplifying, or spiking software changes. Umbrella for root-cause debugging, language debuggers, TDD, pre-commit review, simplify-code passes, and exploratory QA.",
       "visibility": "public-safe",
       "tags": [
         "skill",
@@ -2049,75 +2307,10 @@
       ],
       "keywordCore": "kw-software",
       "keyword": "software",
-      "keywordScore": 4.0,
+      "keywordScore": 6.0,
       "semanticKeywords": [
-        "software"
-      ]
-    },
-    {
-      "id": "skill-requesting-code-review",
-      "label": "requesting-code-review",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "software"
-      ],
-      "size": 4.5,
-      "summary": "Pre-commit review: security scan, quality gates, auto-fix.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "software-development",
-        "software"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 4.0,
-      "semanticKeywords": [
-        "software"
-      ]
-    },
-    {
-      "id": "skill-simplify-code",
-      "label": "simplify-code",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "software"
-      ],
-      "size": 4.5,
-      "summary": "Parallel 3-agent cleanup of recent code changes.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "software-development",
-        "software"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 4.0,
-      "semanticKeywords": [
-        "software"
-      ]
-    },
-    {
-      "id": "skill-spike",
-      "label": "spike",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Throwaway experiments to validate an idea before build.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "software-development"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 2.0,
-      "semanticKeywords": [
-        "software"
+        "software",
+        "use"
       ]
     },
     {
@@ -2130,52 +2323,6 @@
       ],
       "size": 4.5,
       "summary": "Execute plans via delegate_task subagents (2-stage review).",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "software-development",
-        "software"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 4.0,
-      "semanticKeywords": [
-        "software"
-      ]
-    },
-    {
-      "id": "skill-systematic-debugging",
-      "label": "systematic-debugging",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "software"
-      ],
-      "size": 4.5,
-      "summary": "4-phase root cause debugging: understand bugs before fixing.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "software-development",
-        "software"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 4.0,
-      "semanticKeywords": [
-        "software"
-      ]
-    },
-    {
-      "id": "skill-test-driven-development",
-      "label": "test-driven-development",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "software"
-      ],
-      "size": 4.5,
-      "summary": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
       "visibility": "public-safe",
       "tags": [
         "skill",
@@ -2269,6 +2416,24 @@
       ]
     },
     {
+      "id": "keyword-core-use",
+      "label": "Use Core",
+      "type": "keyword_core",
+      "nebula": "kw-use",
+      "keywordCore": "kw-use",
+      "keyword": "use",
+      "size": 12,
+      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: use.",
+      "visibility": "public-safe",
+      "tags": [
+        "computed-core",
+        "use"
+      ],
+      "semanticKeywords": [
+        "use"
+      ]
+    },
+    {
       "id": "keyword-core-mlops",
       "label": "Mlops Core",
       "type": "keyword_core",
@@ -2287,21 +2452,21 @@
       ]
     },
     {
-      "id": "keyword-core-use",
-      "label": "Use Core",
+      "id": "keyword-core-media",
+      "label": "Media Core",
       "type": "keyword_core",
-      "nebula": "kw-use",
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "nebula": "kw-media",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "size": 12,
-      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: use.",
+      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: media.",
       "visibility": "public-safe",
       "tags": [
         "computed-core",
-        "use"
+        "media"
       ],
       "semanticKeywords": [
-        "use"
+        "media"
       ]
     },
     {
@@ -2357,57 +2522,9 @@
       "semanticKeywords": [
         "taste"
       ]
-    },
-    {
-      "id": "keyword-core-productivity",
-      "label": "Productivity Core",
-      "type": "keyword_core",
-      "nebula": "kw-productivity",
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
-      "size": 12,
-      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: productivity.",
-      "visibility": "public-safe",
-      "tags": [
-        "computed-core",
-        "productivity"
-      ],
-      "semanticKeywords": [
-        "productivity"
-      ]
     }
   ],
   "links": [
-    {
-      "source": "hermes-core",
-      "target": "skill-apple-ecosystem-automation",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-macos-computer-use",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-autonomous-coding-agents",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-hermes-agent",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-mobile-friendly-communication",
-      "type": "skill",
-      "strength": 0.32
-    },
     {
       "source": "hermes-core",
       "target": "skill-architecture-diagram",
@@ -2440,6 +2557,204 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-baoyu-infographic",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-design-md",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-design-md",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-excalidraw",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-interactive-data-visualization",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-interactive-data-visualization",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-manim-video",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-manim-video",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-p5js",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-pretext",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-songwriting-and-ai-music",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-touchdesigner-mcp",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-touchdesigner-mcp",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-dogfood",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-heartmula",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-songsee",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-weights-and-biases",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-llama-cpp",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-obliteratus",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-immersive-webgl-visualizations",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-immersive-webgl-visualizations",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-node-inspect-debugger",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-python-debugpy",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-requesting-code-review",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-simplify-code",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-spike",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-systematic-debugging",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-test-driven-development",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-apple-ecosystem-automation",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-macos-computer-use",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-autonomous-coding-agents",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-hermes-agent",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-mobile-friendly-communication",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-baoyu-article-illustrator",
       "type": "skill",
       "strength": 0.32
@@ -2447,12 +2762,6 @@
     {
       "source": "hermes-core",
       "target": "skill-baoyu-comic",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-baoyu-infographic",
       "type": "skill",
       "strength": 0.32
     },
@@ -2494,6 +2803,54 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-creative-media-production",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-creative-media-production",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-architecture-diagram",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-ascii-art",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-ascii-art",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-ascii-video",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-ascii-video",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-baoyu-infographic",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-design-md",
       "type": "skill",
       "strength": 0.32
@@ -2509,6 +2866,66 @@
       "target": "skill-excalidraw",
       "type": "skill",
       "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-immersive-webgl-visualizations",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-immersive-webgl-visualizations",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-interactive-data-visualization",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-interactive-data-visualization",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-manim-video",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-manim-video",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-p5js",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-pretext",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-touchdesigner-mcp",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-touchdesigner-mcp",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
     },
     {
       "source": "hermes-core",
@@ -2542,18 +2959,6 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-interactive-data-visualization",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "skill-interactive-data-visualization",
-      "target": "aesthetic-wiki",
-      "type": "bridge",
-      "strength": 0.42
-    },
-    {
-      "source": "hermes-core",
       "target": "skill-jeffery-visual-style-bible",
       "type": "skill",
       "strength": 0.32
@@ -2566,37 +2971,13 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-manim-video",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "skill-manim-video",
-      "target": "aesthetic-wiki",
-      "type": "bridge",
-      "strength": 0.42
-    },
-    {
-      "source": "hermes-core",
       "target": "skill-full-output-enforcement",
       "type": "skill",
       "strength": 0.32
     },
     {
       "source": "hermes-core",
-      "target": "skill-p5js",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
       "target": "skill-pixel-art",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-pretext",
       "type": "skill",
       "strength": 0.32
     },
@@ -2626,9 +3007,15 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-songwriting-and-ai-music",
+      "target": "skill-spatial-presentation-board",
       "type": "skill",
       "strength": 0.32
+    },
+    {
+      "source": "skill-spatial-presentation-board",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
     },
     {
       "source": "hermes-core",
@@ -2686,12 +3073,12 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-touchdesigner-mcp",
+      "target": "skill-visual-production-orchestrator",
       "type": "skill",
       "strength": 0.32
     },
     {
-      "source": "skill-touchdesigner-mcp",
+      "source": "skill-visual-production-orchestrator",
       "target": "aesthetic-wiki",
       "type": "bridge",
       "strength": 0.42
@@ -2734,12 +3121,6 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-dogfood",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
       "target": "skill-himalaya",
       "type": "skill",
       "strength": 0.32
@@ -2770,6 +3151,12 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-audio-music-production",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-heartmula",
       "type": "skill",
       "strength": 0.32
@@ -2782,13 +3169,25 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-songwriting-and-ai-music",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-evaluating-llms-harness",
       "type": "skill",
       "strength": 0.32
     },
     {
       "source": "hermes-core",
-      "target": "skill-weights-and-biases",
+      "target": "skill-serving-llms-vllm",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-ml-experiment-inference-ops",
       "type": "skill",
       "strength": 0.32
     },
@@ -2806,7 +3205,7 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-serving-llms-vllm",
+      "target": "skill-weights-and-biases",
       "type": "skill",
       "strength": 0.32
     },
@@ -2944,25 +3343,25 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-immersive-webgl-visualizations",
+      "target": "skill-plan",
       "type": "skill",
       "strength": 0.32
     },
     {
-      "source": "skill-immersive-webgl-visualizations",
-      "target": "aesthetic-wiki",
-      "type": "bridge",
-      "strength": 0.42
+      "source": "hermes-core",
+      "target": "skill-software-debugging-and-quality",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-dogfood",
+      "type": "skill",
+      "strength": 0.32
     },
     {
       "source": "hermes-core",
       "target": "skill-node-inspect-debugger",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-plan",
       "type": "skill",
       "strength": 0.32
     },
@@ -2992,12 +3391,6 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-subagent-driven-development",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
       "target": "skill-systematic-debugging",
       "type": "skill",
       "strength": 0.32
@@ -3005,6 +3398,12 @@
     {
       "source": "hermes-core",
       "target": "skill-test-driven-development",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-subagent-driven-development",
       "type": "skill",
       "strength": 0.32
     },
@@ -3076,67 +3475,19 @@
     },
     {
       "source": "keyword-core-software",
-      "target": "skill-autonomous-coding-agents",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
       "target": "skill-baoyu-infographic",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-software",
-      "target": "skill-full-output-enforcement",
+      "target": "skill-dogfood",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-hermes-operations",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-github-operations",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-openhue",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-discord-bot-utilities",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-hermes-agent-skill-authoring",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-immersive-webgl-visualizations",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
     },
     {
       "source": "keyword-core-software",
       "target": "skill-node-inspect-debugger",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-plan",
       "type": "semantic-gravity",
       "strength": 0.5700000000000001
     },
@@ -3166,12 +3517,6 @@
     },
     {
       "source": "keyword-core-software",
-      "target": "skill-subagent-driven-development",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-software",
       "target": "skill-systematic-debugging",
       "type": "semantic-gravity",
       "strength": 0.5700000000000001
@@ -3179,6 +3524,72 @@
     {
       "source": "keyword-core-software",
       "target": "skill-test-driven-development",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-autonomous-coding-agents",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-full-output-enforcement",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-hermes-operations",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-github-operations",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-document-workflows",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-maps",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-discord-bot-utilities",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-hermes-agent-skill-authoring",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-plan",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-software-debugging-and-quality",
+      "type": "semantic-gravity",
+      "strength": 0.73
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-subagent-driven-development",
       "type": "semantic-gravity",
       "strength": 0.5700000000000001
     },
@@ -3214,6 +3625,36 @@
     },
     {
       "source": "keyword-core-aesthetic",
+      "target": "skill-design-md",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
+      "target": "skill-interactive-data-visualization",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
+      "target": "skill-manim-video",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
+      "target": "skill-touchdesigner-mcp",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
+      "target": "skill-immersive-webgl-visualizations",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
       "target": "skill-brandkit",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
@@ -3226,7 +3667,7 @@
     },
     {
       "source": "keyword-core-aesthetic",
-      "target": "skill-design-md",
+      "target": "skill-creative-media-production",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
     },
@@ -3244,19 +3685,7 @@
     },
     {
       "source": "keyword-core-aesthetic",
-      "target": "skill-interactive-data-visualization",
-      "type": "semantic-gravity",
-      "strength": 0.5316000000000001
-    },
-    {
-      "source": "keyword-core-aesthetic",
       "target": "skill-jeffery-visual-style-bible",
-      "type": "semantic-gravity",
-      "strength": 0.5316000000000001
-    },
-    {
-      "source": "keyword-core-aesthetic",
-      "target": "skill-manim-video",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
     },
@@ -3269,6 +3698,12 @@
     {
       "source": "keyword-core-aesthetic",
       "target": "skill-high-end-visual-design",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
+      "target": "skill-spatial-presentation-board",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
     },
@@ -3298,7 +3733,7 @@
     },
     {
       "source": "keyword-core-aesthetic",
-      "target": "skill-touchdesigner-mcp",
+      "target": "skill-visual-production-orchestrator",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
     },
@@ -3327,46 +3762,64 @@
       "strength": 0.5316000000000001
     },
     {
-      "source": "keyword-core-mlops",
+      "source": "keyword-core-use",
       "target": "tool-registry",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-mlops",
-      "target": "skill-mobile-friendly-communication",
+      "source": "keyword-core-use",
+      "target": "skill-excalidraw",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-use",
+      "target": "skill-pretext",
+      "type": "semantic-gravity",
+      "strength": 0.33
+    },
+    {
+      "source": "keyword-core-use",
+      "target": "skill-apple-ecosystem-automation",
+      "type": "semantic-gravity",
+      "strength": 0.33
+    },
+    {
+      "source": "keyword-core-use",
+      "target": "skill-macos-computer-use",
+      "type": "semantic-gravity",
+      "strength": 0.33
+    },
+    {
+      "source": "keyword-core-use",
+      "target": "skill-hermes-kanban-collaboration",
+      "type": "semantic-gravity",
+      "strength": 0.33
+    },
+    {
+      "source": "keyword-core-use",
+      "target": "skill-godmode",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-use",
+      "target": "skill-yuanbao",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-blender-architecture-interior-modeling-agent",
+      "target": "cron-jobs",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-pixel-art",
+      "target": "skill-p5js",
       "type": "semantic-gravity",
       "strength": 0.258
-    },
-    {
-      "source": "keyword-core-mlops",
-      "target": "skill-dogfood",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-mlops",
-      "target": "skill-heartmula",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-mlops",
-      "target": "skill-evaluating-llms-harness",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
     },
     {
       "source": "keyword-core-mlops",
@@ -3388,7 +3841,25 @@
     },
     {
       "source": "keyword-core-mlops",
+      "target": "skill-minecraft-modpack-server",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-mlops",
+      "target": "skill-evaluating-llms-harness",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-mlops",
       "target": "skill-serving-llms-vllm",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-mlops",
+      "target": "skill-ml-experiment-inference-ops",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
     },
@@ -3405,56 +3876,62 @@
       "strength": 0.41000000000000003
     },
     {
-      "source": "keyword-core-use",
-      "target": "cron-jobs",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-use",
-      "target": "skill-apple-ecosystem-automation",
-      "type": "semantic-gravity",
-      "strength": 0.33
-    },
-    {
-      "source": "keyword-core-use",
-      "target": "skill-macos-computer-use",
-      "type": "semantic-gravity",
-      "strength": 0.33
-    },
-    {
-      "source": "keyword-core-use",
-      "target": "skill-pretext",
-      "type": "semantic-gravity",
-      "strength": 0.33
-    },
-    {
-      "source": "keyword-core-use",
-      "target": "skill-hermes-kanban-collaboration",
-      "type": "semantic-gravity",
-      "strength": 0.33
-    },
-    {
-      "source": "keyword-core-use",
-      "target": "skill-songsee",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-use",
-      "target": "skill-yuanbao",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-research",
+      "source": "keyword-core-media",
       "target": "github-pages",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
+      "source": "keyword-core-media",
+      "target": "skill-songwriting-and-ai-music",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-media",
+      "target": "skill-heartmula",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-media",
+      "target": "skill-songsee",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-media",
+      "target": "skill-tighten",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-media",
+      "target": "skill-pokemon-player",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-media",
+      "target": "skill-audio-music-production",
+      "type": "semantic-gravity",
+      "strength": 0.49
+    },
+    {
       "source": "keyword-core-research",
-      "target": "skill-architecture-diagram",
+      "target": "sessions",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-research",
+      "target": "skill-hermes-agent",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-research",
+      "target": "skill-baoyu-article-illustrator",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -3466,19 +3943,13 @@
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-songwriting-and-ai-music",
+      "target": "skill-jupyter-live-kernel",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-himalaya",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-research",
-      "target": "skill-obsidian",
+      "target": "skill-native-mcp",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -3514,19 +3985,25 @@
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-excalidraw",
+      "target": "skill-baoyu-comic",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-tighten",
+      "target": "skill-humanizer",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-minecraft-modpack-server",
+      "target": "skill-webhook-subscriptions",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-investment",
+      "target": "skill-obsidian",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -3538,87 +4015,45 @@
     },
     {
       "source": "keyword-core-taste",
-      "target": "sessions",
+      "target": "skill-architecture-diagram",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-baoyu-article-illustrator",
+      "target": "skill-mobile-friendly-communication",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-humanizer",
+      "target": "skill-blender-architecture-interior-modeling-agent",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-jupyter-live-kernel",
+      "target": "skill-pixel-art",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-pokemon-player",
+      "target": "skill-himalaya",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-godmode",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-hermes-agent",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-baoyu-comic",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-p5js",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-webhook-subscriptions",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-native-mcp",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-document-workflows",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-productivity",
       "target": "skill-google-workspace",
       "type": "semantic-gravity",
-      "strength": 0.41000000000000003
+      "strength": 0.258
     },
     {
-      "source": "keyword-core-productivity",
-      "target": "skill-maps",
+      "source": "keyword-core-taste",
+      "target": "skill-openhue",
       "type": "semantic-gravity",
-      "strength": 0.41000000000000003
+      "strength": 0.258
     }
   ]
 }
