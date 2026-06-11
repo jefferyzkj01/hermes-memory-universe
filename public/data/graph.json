@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-11T04:00:38+08:00",
+    "generatedAt": "2026-06-12T04:00:03+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -113,7 +113,7 @@
       "keyword": "software",
       "label": "Software Core",
       "color": "#b7c7ff",
-      "count": 27
+      "count": 26
     },
     {
       "key": "kw-aesthetic",
@@ -180,7 +180,7 @@
       ],
       "keywordCore": "kw-software",
       "keyword": "software",
-      "keywordScore": 28.88,
+      "keywordScore": 28.12,
       "semanticKeywords": [
         "software",
         "aesthetic",
@@ -206,8 +206,8 @@
       "semanticKeywords": [
         "investment",
         "aesthetic",
-        "research",
-        "taste"
+        "taste",
+        "research"
       ]
     },
     {
@@ -930,6 +930,29 @@
       ]
     },
     {
+      "id": "skill-hermes-agent-skill-authoring",
+      "label": "hermes-agent-skill-authoring",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation"
+      ],
+      "size": 4.5,
+      "summary": "Author in-repo SKILL.md: frontmatter, validator, structure.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        ".archive",
+        "automation"
+      ],
+      "keywordCore": "kw-research",
+      "keyword": "research",
+      "keywordScore": 0.1,
+      "semanticKeywords": [
+        "research"
+      ]
+    },
+    {
       "id": "skill-apple-ecosystem-automation",
       "label": "apple-ecosystem-automation",
       "type": "skill",
@@ -1014,11 +1037,11 @@
         "autonomous-ai-agents",
         "automation"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "taste"
       ]
     },
     {
@@ -1034,11 +1057,11 @@
         "skill",
         "communication"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "research"
       ]
     },
     {
@@ -1054,11 +1077,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "investment"
       ]
     },
     {
@@ -1074,11 +1097,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "taste"
       ]
     },
     {
@@ -1094,11 +1117,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "research"
       ]
     },
     {
@@ -1162,11 +1185,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "investment"
       ]
     },
     {
@@ -1238,11 +1261,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "taste"
       ]
     },
     {
@@ -1330,11 +1353,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "media"
       ]
     },
     {
@@ -1530,11 +1553,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-media",
-      "keyword": "media",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "media"
+        "research"
       ]
     },
     {
@@ -1575,11 +1598,11 @@
         "skill",
         "data-science"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "investment"
       ]
     },
     {
@@ -1673,11 +1696,11 @@
         "devops",
         "automation"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "taste"
       ]
     },
     {
@@ -1693,11 +1716,11 @@
         "skill",
         "email"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "mlops"
       ]
     },
     {
@@ -1713,11 +1736,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "media"
       ]
     },
     {
@@ -1733,11 +1756,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-media",
-      "keyword": "media",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "media"
+        "research"
       ]
     },
     {
@@ -1779,11 +1802,11 @@
         "skill",
         "mcp"
       ],
-      "keywordCore": "kw-research",
-      "keyword": "research",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "research"
+        "investment"
       ]
     },
     {
@@ -1963,11 +1986,11 @@
         "skill",
         "note-taking"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-taste",
+      "keyword": "taste",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "taste"
       ]
     },
     {
@@ -2007,11 +2030,11 @@
         "skill",
         "productivity"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "use"
       ]
     },
     {
@@ -2038,8 +2061,8 @@
       "semanticKeywords": [
         "investment",
         "aesthetic",
-        "research",
-        "taste"
+        "taste",
+        "research"
       ]
     },
     {
@@ -2078,11 +2101,11 @@
         "skill",
         "red-teaming"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-research",
+      "keyword": "research",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "research"
       ]
     },
     {
@@ -2228,29 +2251,6 @@
       ],
       "size": 4.5,
       "summary": "Build and verify small Discord utility bots: status meters, channel updaters, slash/simple commands, and lightweight automations.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "software-development",
-        "automation"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 2.0,
-      "semanticKeywords": [
-        "software"
-      ]
-    },
-    {
-      "id": "skill-hermes-agent-skill-authoring",
-      "label": "hermes-agent-skill-authoring",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "automation"
-      ],
-      "size": 4.5,
-      "summary": "Author in-repo SKILL.md: frontmatter, validator, structure.",
       "visibility": "public-safe",
       "tags": [
         "skill",
@@ -2720,6 +2720,12 @@
     {
       "source": "hermes-core",
       "target": "skill-test-driven-development",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-hermes-agent-skill-authoring",
       "type": "skill",
       "strength": 0.32
     },
@@ -3337,12 +3343,6 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-hermes-agent-skill-authoring",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
       "target": "skill-plan",
       "type": "skill",
       "strength": 0.32
@@ -3571,12 +3571,6 @@
     },
     {
       "source": "keyword-core-software",
-      "target": "skill-hermes-agent-skill-authoring",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
       "target": "skill-plan",
       "type": "semantic-gravity",
       "strength": 0.5700000000000001
@@ -3799,7 +3793,7 @@
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-godmode",
+      "target": "skill-google-workspace",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -3841,7 +3835,7 @@
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-minecraft-modpack-server",
+      "target": "skill-himalaya",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -3901,13 +3895,13 @@
     },
     {
       "source": "keyword-core-media",
-      "target": "skill-tighten",
+      "target": "skill-pixel-art",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-media",
-      "target": "skill-pokemon-player",
+      "target": "skill-minecraft-modpack-server",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -3925,31 +3919,37 @@
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-hermes-agent",
+      "target": "skill-hermes-agent-skill-authoring",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-baoyu-article-illustrator",
+      "target": "skill-mobile-friendly-communication",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-ideation",
+      "target": "skill-blender-architecture-interior-modeling-agent",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-jupyter-live-kernel",
+      "target": "skill-tighten",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-research",
-      "target": "skill-native-mcp",
+      "target": "skill-pokemon-player",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-research",
+      "target": "skill-godmode",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -3985,25 +3985,25 @@
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-baoyu-comic",
+      "target": "skill-baoyu-article-illustrator",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-humanizer",
+      "target": "skill-ideation",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-webhook-subscriptions",
+      "target": "skill-jupyter-live-kernel",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-obsidian",
+      "target": "skill-native-mcp",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4021,31 +4021,31 @@
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-mobile-friendly-communication",
+      "target": "skill-hermes-agent",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-blender-architecture-interior-modeling-agent",
+      "target": "skill-baoyu-comic",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-pixel-art",
+      "target": "skill-humanizer",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-himalaya",
+      "target": "skill-webhook-subscriptions",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-taste",
-      "target": "skill-google-workspace",
+      "target": "skill-obsidian",
       "type": "semantic-gravity",
       "strength": 0.258
     },
