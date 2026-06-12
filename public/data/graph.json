@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-12T04:00:03+08:00",
+    "generatedAt": "2026-06-13T04:00:03+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -206,8 +206,8 @@
       "semanticKeywords": [
         "investment",
         "aesthetic",
-        "taste",
-        "research"
+        "research",
+        "taste"
       ]
     },
     {
@@ -262,7 +262,7 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 24.14,
+      "keywordScore": 24.52,
       "semanticKeywords": [
         "aesthetic",
         "software",
@@ -1301,7 +1301,7 @@
         "aesthetic"
       ],
       "size": 4.5,
-      "summary": "Use when generating, directing, or evaluating images for Jeffery. Applies his personal premium futuristic cyberpunk visual taste, references, prompt patterns, and quality checks.",
+      "summary": "Use when generating, directing, or evaluating visual outputs for Jeffery: images, videos, websites, decks, documents, boards, and 3D. Applies the Aesthetic Director OS v2 taste anchor, reference citation rules, prompt pa",
       "visibility": "public-safe",
       "tags": [
         "skill",
@@ -1310,7 +1310,7 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 3.52,
+      "keywordScore": 4.52,
       "semanticKeywords": [
         "aesthetic",
         "taste",
@@ -2061,8 +2061,8 @@
       "semanticKeywords": [
         "investment",
         "aesthetic",
-        "taste",
-        "research"
+        "research",
+        "taste"
       ]
     },
     {
@@ -3681,7 +3681,7 @@
       "source": "keyword-core-aesthetic",
       "target": "skill-jeffery-visual-style-bible",
       "type": "semantic-gravity",
-      "strength": 0.5316000000000001
+      "strength": 0.6115999999999999
     },
     {
       "source": "keyword-core-aesthetic",
