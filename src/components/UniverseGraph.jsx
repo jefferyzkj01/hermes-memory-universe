@@ -20,7 +20,8 @@ const GLOW_DECAY = 0.9
 const GRAPH_BRIGHTNESS = 1.8
 const STAR_DENSITY = 1.5
 const CONNECTION_ORBIT_SPEED = 0.085
-const GRAVITY_PULL_STRENGTH = 0.28
+const GRAVITY_PULL_STRENGTH = 0.18
+const ALL_POINT_GRAVITY_FLOW = 0.34
 
 function endpointId(endpoint) {
   return typeof endpoint === 'object' ? endpoint.id : endpoint
@@ -90,6 +91,67 @@ function connectionMassFromDegree(degree, maxDegree) {
   return Math.pow(normalized, 1.28)
 }
 
+function gravityWeightFromMass(mass) {
+  return 0.24 + clamp(Number(mass ?? 0), 0, 1) * 4.8
+}
+
+function calculateSystemGravityCenter(rawNodes, degree, maxDegree) {
+  const center = rawNodes.reduce((acc, entry) => {
+    const mass = connectionMassFromDegree(degree.get(entry.node.id) ?? 0, maxDegree)
+    const weight = gravityWeightFromMass(mass)
+    acc.x += entry.x * weight
+    acc.y += entry.y * weight
+    acc.z += entry.z * weight
+    acc.weight += weight
+    return acc
+  }, { x: 0, y: 0, z: 0, weight: 0 })
+
+  const weight = Math.max(0.0001, center.weight)
+  return { x: center.x / weight, y: center.y / weight, z: center.z / weight }
+}
+
+function calculateAllPointGravityDrift(entry, rawNodes, degree, maxDegree) {
+  const selfMass = connectionMassFromDegree(degree.get(entry.node.id) ?? 0, maxDegree)
+  const field = rawNodes.reduce((acc, other) => {
+    if (other.node.id === entry.node.id) return acc
+    const otherMass = connectionMassFromDegree(degree.get(other.node.id) ?? 0, maxDegree)
+    const otherWeight = gravityWeightFromMass(otherMass)
+    const dx = other.x - entry.x
+    const dy = other.y - entry.y
+    const dz = other.z - entry.z
+    const distanceSq = dx * dx + dy * dy + dz * dz + 3600
+    const strength = otherWeight / Math.pow(distanceSq, 0.72)
+    acc.x += dx * strength
+    acc.y += dy * strength
+    acc.z += dz * strength
+    acc.weight += strength
+    return acc
+  }, { x: 0, y: 0, z: 0, weight: 0 })
+
+  if (!field.weight) return { x: 0, y: 0, z: 0 }
+  const inertia = 1 - selfMass * 0.38
+  const scale = ALL_POINT_GRAVITY_FLOW * inertia
+  return {
+    x: (field.x / field.weight) * scale,
+    y: (field.y / field.weight) * scale * 0.58,
+    z: (field.z / field.weight) * scale,
+  }
+}
+
+function calculateOrbitCenter(nodes) {
+  const center = nodes.reduce((acc, node) => {
+    const weight = Number(node.systemGravityWeight ?? gravityWeightFromMass(node.connectionMass))
+    acc.x += Number(node.baseOrbitX ?? node.x ?? 0) * weight
+    acc.y += Number(node.baseOrbitY ?? node.y ?? 0) * weight
+    acc.z += Number(node.baseOrbitZ ?? node.z ?? 0) * weight
+    acc.weight += weight
+    return acc
+  }, { x: 0, y: 0, z: 0, weight: 0 })
+
+  const weight = Math.max(0.0001, center.weight)
+  return { x: center.x / weight, y: center.y / weight, z: center.z / weight }
+}
+
 function rotateAroundY(x, z, angle) {
   const cos = Math.cos(angle)
   const sin = Math.sin(angle)
@@ -101,23 +163,20 @@ function animateConnectionOrbit(fg, time) {
   if (!data?.nodes?.length) return
 
   const orbitAngle = time * 0.0001 * CONNECTION_ORBIT_SPEED
+  const orbitCenter = calculateOrbitCenter(data.nodes)
   data.nodes.forEach((node) => {
-    const baseX = Number(node.baseOrbitX ?? node.x ?? 0)
-    const baseY = Number(node.baseOrbitY ?? node.y ?? 0)
-    const baseZ = Number(node.baseOrbitZ ?? node.z ?? 0)
+    const baseX = Number(node.baseOrbitX ?? node.x ?? 0) - orbitCenter.x
+    const baseY = Number(node.baseOrbitY ?? node.y ?? 0) - orbitCenter.y
+    const baseZ = Number(node.baseOrbitZ ?? node.z ?? 0) - orbitCenter.z
     const mass = clamp(Number(node.connectionMass ?? 0), 0, 1)
     const phase = Number(node.orbitPhase ?? 0)
 
-    let x = 0
-    let z = 0
-    if (!node.isConnectionHub) {
-      ;[x, z] = rotateAroundY(baseX, baseZ, orbitAngle)
-    }
-    const y = (node.isConnectionHub ? 0 : baseY) + Math.sin(time * 0.00013 + phase) * (0.55 + mass * 1.35)
+    const [x, z] = rotateAroundY(baseX, baseZ, orbitAngle)
+    const y = baseY + Math.sin(time * 0.00013 + phase) * (0.55 + mass * 1.35)
 
-    node.x = node.fx = x
-    node.y = node.fy = y
-    node.z = node.fz = z
+    node.x = node.fx = orbitCenter.x + x
+    node.y = node.fy = orbitCenter.y + y
+    node.z = node.fz = orbitCenter.z + z
   })
 }
 
@@ -495,18 +554,21 @@ function prepareGraphData(graph, nebulaCoords) {
       z: center[2] + (node.type === 'keyword_core' ? 0 : oz),
     }
   })
-  const hubRaw = rawNodes.find((entry) => entry.node.id === hubId) ?? { x: 0, y: 0, z: 0 }
+  const systemGravityCenter = calculateSystemGravityCenter(rawNodes, degree, maxDegree)
 
   return {
-    nodes: rawNodes.map(({ node, x: rawX, y: rawY, z: rawZ }) => {
+    nodes: rawNodes.map((entry) => {
+      const { node, x: rawX, y: rawY, z: rawZ } = entry
       const connectionDegree = degree.get(node.id) ?? 0
       const connectionMass = connectionMassFromDegree(connectionDegree, maxDegree)
       const isConnectionHub = node.id === hubId
-      const pull = isConnectionHub ? 1 : 1 - connectionMass * GRAVITY_PULL_STRENGTH
-      const x = isConnectionHub ? 0 : (rawX - hubRaw.x) * pull
-      const y = isConnectionHub ? 0 : (rawY - hubRaw.y) * (0.96 - connectionMass * 0.08)
-      const z = isConnectionHub ? 0 : (rawZ - hubRaw.z) * pull
+      const drift = calculateAllPointGravityDrift(entry, rawNodes, degree, maxDegree)
+      const pull = 1 - connectionMass * GRAVITY_PULL_STRENGTH
+      const x = (rawX - systemGravityCenter.x) * pull + drift.x
+      const y = (rawY - systemGravityCenter.y) * (0.98 - connectionMass * 0.06) + drift.y
+      const z = (rawZ - systemGravityCenter.z) * pull + drift.z
       const orbitPhase = seededUnit(hashString(`${node.id}:orbit`)) * Math.PI * 2
+      const systemGravityWeight = gravityWeightFromMass(connectionMass)
       return {
         ...node,
         x,
@@ -522,6 +584,7 @@ function prepareGraphData(graph, nebulaCoords) {
         connectionDegree,
         maxConnectionDegree: maxDegree,
         connectionMass,
+        systemGravityWeight,
         isConnectionHub,
         connectionHubId: hubId,
         infoLight: calculateInfoLight({ ...node, maxConnectionDegree: maxDegree }, connectionDegree),
