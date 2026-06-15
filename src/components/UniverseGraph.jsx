@@ -19,6 +19,8 @@ const SPACE_SCALE = 1.6
 const GLOW_DECAY = 0.9
 const GRAPH_BRIGHTNESS = 1.8
 const STAR_DENSITY = 1.5
+const CONNECTION_ORBIT_SPEED = 0.085
+const GRAVITY_PULL_STRENGTH = 0.28
 
 function endpointId(endpoint) {
   return typeof endpoint === 'object' ? endpoint.id : endpoint
@@ -71,13 +73,52 @@ function brightenOpacity(value, cap = 1) {
 }
 
 function calculateInfoLight(node, degree = 0) {
+  const maxDegree = Math.max(1, Number(node.maxConnectionDegree ?? degree ?? 1))
+  const connectionNorm = clamp(Math.log1p(Math.max(0, degree)) / Math.log1p(maxDegree), 0, 1)
   const textWeight = `${node.label ?? ''} ${node.summary ?? ''}`.length / 520
   const tagWeight = (node.tags?.length ?? 0) * 0.025
   const semanticWeight = (node.semanticKeywords?.length ?? 0) * 0.035
   const sizeWeight = Math.max(0, Number(node.size ?? 4) - 4) / 18
   const keywordWeight = Math.log1p(Math.max(0, Number(node.keywordScore ?? 0))) / 8
-  const linkWeight = Math.log1p(degree) / 5
+  const linkWeight = Math.pow(connectionNorm, 0.72) * 0.46
   return clamp(0.12 + textWeight + tagWeight + semanticWeight + sizeWeight + keywordWeight + linkWeight, 0.14, 1)
+}
+
+function connectionMassFromDegree(degree, maxDegree) {
+  if (!maxDegree) return 0
+  const normalized = clamp(Math.log1p(Math.max(0, degree)) / Math.log1p(maxDegree), 0, 1)
+  return Math.pow(normalized, 1.28)
+}
+
+function rotateAroundY(x, z, angle) {
+  const cos = Math.cos(angle)
+  const sin = Math.sin(angle)
+  return [x * cos - z * sin, x * sin + z * cos]
+}
+
+function animateConnectionOrbit(fg, time) {
+  const data = fg?.graphData?.()
+  if (!data?.nodes?.length) return
+
+  const orbitAngle = time * 0.0001 * CONNECTION_ORBIT_SPEED
+  data.nodes.forEach((node) => {
+    const baseX = Number(node.baseOrbitX ?? node.x ?? 0)
+    const baseY = Number(node.baseOrbitY ?? node.y ?? 0)
+    const baseZ = Number(node.baseOrbitZ ?? node.z ?? 0)
+    const mass = clamp(Number(node.connectionMass ?? 0), 0, 1)
+    const phase = Number(node.orbitPhase ?? 0)
+
+    let x = 0
+    let z = 0
+    if (!node.isConnectionHub) {
+      ;[x, z] = rotateAroundY(baseX, baseZ, orbitAngle)
+    }
+    const y = (node.isConnectionHub ? 0 : baseY) + Math.sin(time * 0.00013 + phase) * (0.55 + mass * 1.35)
+
+    node.x = node.fx = x
+    node.y = node.fy = y
+    node.z = node.fz = z
+  })
 }
 
 function toRgba(hex, alpha) {
@@ -336,11 +377,14 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   const color = new THREE.Color(baseColor)
   const isSelected = selectedIdRef.current === node.id
   const isCore = node.type === 'core' || node.type === 'keyword_core'
+  const isConnectionHub = Boolean(node.isConnectionHub)
+  const connectionMass = clamp(Number(node.connectionMass ?? 0), 0, 1)
   const infoLight = Math.max(0.18, Math.min(1, Number(node.infoLight ?? 0.42)))
-  const radius = isCore ? 2.35 + infoLight * 2.4 : 0.72 + infoLight * 1.12
-  const glowScale = isCore ? 8.8 + infoLight * 9.2 : 5.4 + infoLight * 8.8
-  const coreOpacity = isSelected ? 1 : isCore ? 0.98 : 0.74 + infoLight * 0.26
-  const haloOpacity = brightenOpacity((isSelected ? 1 : isCore ? 0.68 + infoLight * 0.25 : 0.28 + infoLight * 0.58) * GLOW_DECAY)
+  const gravityBoost = isConnectionHub ? 1.34 : 1
+  const radius = (isCore ? 2.35 + infoLight * 2.25 : 0.66 + infoLight * 0.98) + connectionMass * (isCore ? 1.75 : 1.36) * gravityBoost
+  const glowScale = (isCore ? 8.8 + infoLight * 8.2 : 5.3 + infoLight * 7.9) + connectionMass * 5.2 * gravityBoost
+  const coreOpacity = isSelected || isConnectionHub ? 1 : isCore ? 0.98 : 0.68 + infoLight * 0.22 + connectionMass * 0.18
+  const haloOpacity = brightenOpacity((isSelected ? 1 : isConnectionHub ? 0.95 : isCore ? 0.62 + infoLight * 0.22 : 0.22 + infoLight * 0.45 + connectionMass * 0.33) * GLOW_DECAY)
 
   const glowTexture = texturesRef.current.nodeGlow
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -365,13 +409,17 @@ function createNodeObject(node, nebulaTheme, selectedIdRef, texturesRef) {
   lightPoint.scale.set(radius * 2.7, radius * 2.7, 1)
   group.add(lightPoint)
 
-  const pinLight = new THREE.PointLight(color, (isSelected ? 1.05 : isCore ? 0.48 + infoLight * 0.5 : 0.08 + infoLight * 0.18) * GLOW_DECAY * GRAPH_BRIGHTNESS, isCore ? 86 : 42)
+  const pinLight = new THREE.PointLight(
+    color,
+    (isSelected ? 1.05 : isConnectionHub ? 1.1 : isCore ? 0.42 + infoLight * 0.46 : 0.06 + infoLight * 0.13 + connectionMass * 0.42) * GLOW_DECAY * GRAPH_BRIGHTNESS,
+    isConnectionHub ? 142 : isCore ? 94 + connectionMass * 42 : 38 + connectionMass * 74,
+  )
   group.add(pinLight)
 
-  if (isSelected || isCore) {
+  if (isSelected || isCore || connectionMass > 0.62) {
     const ring = new THREE.Mesh(
-      new THREE.TorusGeometry(radius * 1.95, Math.max(0.018, radius * 0.018), 8, 96),
-      new THREE.MeshBasicMaterial({ color: isSelected ? '#ffffff' : baseColor, transparent: true, opacity: brightenOpacity(0.42 * GLOW_DECAY), blending: THREE.AdditiveBlending, depthWrite: false }),
+      new THREE.TorusGeometry(radius * (isConnectionHub ? 2.55 : 1.95), Math.max(0.018, radius * 0.018), 8, 96),
+      new THREE.MeshBasicMaterial({ color: isSelected || isConnectionHub ? '#ffffff' : baseColor, transparent: true, opacity: brightenOpacity((0.24 + connectionMass * 0.32) * GLOW_DECAY), blending: THREE.AdditiveBlending, depthWrite: false }),
     )
     ring.rotation.x = Math.PI / 2.7
     ring.rotation.y = Math.PI / 5
@@ -426,14 +474,39 @@ function prepareGraphData(graph, nebulaCoords) {
     degree.set(target, (degree.get(target) ?? 0) + 1)
   })
 
+  const maxDegree = Math.max(1, ...graph.nodes.map((node) => degree.get(node.id) ?? 0))
+  const hubNode = graph.nodes.reduce((best, node) => {
+    if (!best) return node
+    const currentDegree = degree.get(node.id) ?? 0
+    const bestDegree = degree.get(best.id) ?? 0
+    if (currentDegree !== bestDegree) return currentDegree > bestDegree ? node : best
+    return String(node.label ?? node.id).localeCompare(String(best.label ?? best.id)) < 0 ? node : best
+  }, null)
+  const hubId = hubNode?.id
+
+  const rawNodes = graph.nodes.map((node) => {
+    const semanticKey = node.keywordCore ?? (node.type === 'core' ? 'kw-orbit' : node.nebula)
+    const center = nebulaCoords[semanticKey] ?? nebulaCoords[node.nebula] ?? FALLBACK_COORDS
+    const [ox, oy, oz] = deterministicOffset(node.id, node.type === 'keyword_core' ? 2 : 46 * SPACE_SCALE)
+    return {
+      node,
+      x: center[0] + (node.type === 'keyword_core' ? 0 : ox),
+      y: center[1] + (node.type === 'keyword_core' ? 0 : oy),
+      z: center[2] + (node.type === 'keyword_core' ? 0 : oz),
+    }
+  })
+  const hubRaw = rawNodes.find((entry) => entry.node.id === hubId) ?? { x: 0, y: 0, z: 0 }
+
   return {
-    nodes: graph.nodes.map((node) => {
-      const semanticKey = node.keywordCore ?? (node.type === 'core' ? 'kw-orbit' : node.nebula)
-      const center = nebulaCoords[semanticKey] ?? nebulaCoords[node.nebula] ?? FALLBACK_COORDS
-      const [ox, oy, oz] = deterministicOffset(node.id, node.type === 'keyword_core' ? 2 : 46 * SPACE_SCALE)
-      const x = center[0] + (node.type === 'keyword_core' ? 0 : ox)
-      const y = center[1] + (node.type === 'keyword_core' ? 0 : oy)
-      const z = center[2] + (node.type === 'keyword_core' ? 0 : oz)
+    nodes: rawNodes.map(({ node, x: rawX, y: rawY, z: rawZ }) => {
+      const connectionDegree = degree.get(node.id) ?? 0
+      const connectionMass = connectionMassFromDegree(connectionDegree, maxDegree)
+      const isConnectionHub = node.id === hubId
+      const pull = isConnectionHub ? 1 : 1 - connectionMass * GRAVITY_PULL_STRENGTH
+      const x = isConnectionHub ? 0 : (rawX - hubRaw.x) * pull
+      const y = isConnectionHub ? 0 : (rawY - hubRaw.y) * (0.96 - connectionMass * 0.08)
+      const z = isConnectionHub ? 0 : (rawZ - hubRaw.z) * pull
+      const orbitPhase = seededUnit(hashString(`${node.id}:orbit`)) * Math.PI * 2
       return {
         ...node,
         x,
@@ -442,7 +515,16 @@ function prepareGraphData(graph, nebulaCoords) {
         fx: x,
         fy: y,
         fz: z,
-        infoLight: calculateInfoLight(node, degree.get(node.id) ?? 0),
+        baseOrbitX: x,
+        baseOrbitY: y,
+        baseOrbitZ: z,
+        orbitPhase,
+        connectionDegree,
+        maxConnectionDegree: maxDegree,
+        connectionMass,
+        isConnectionHub,
+        connectionHubId: hubId,
+        infoLight: calculateInfoLight({ ...node, maxConnectionDegree: maxDegree }, connectionDegree),
       }
     }),
     links: graph.links.map((link) => ({ ...link })),
@@ -577,6 +659,7 @@ export default function UniverseGraph({ graph, selectedNode, activeNebula, autoO
 
     const animate = (time) => {
       const t = time * 0.0001
+      animateConnectionOrbit(graphRef.current, time)
       sceneObjectsRef.current.forEach((object) => {
         if (object.name === 'deep-starfield') {
           object.rotation.y = t * 0.16
