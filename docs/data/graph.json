@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-17T18:28:23+08:00",
+    "generatedAt": "2026-06-18T04:00:12+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -82,28 +82,28 @@
       "keyword": "mlops",
       "computed": true
     },
+    "kw-investment": {
+      "label": "Investment Core",
+      "color": "#8ee6d1",
+      "keyword": "investment",
+      "computed": true
+    },
     "kw-media": {
       "label": "Media Core",
-      "color": "#8ee6d1",
+      "color": "#f2a8c2",
       "keyword": "media",
       "computed": true
     },
     "kw-jeffery": {
       "label": "Jeffery Core",
-      "color": "#f2a8c2",
+      "color": "#a7f3d0",
       "keyword": "jeffery",
       "computed": true
     },
     "kw-productivity": {
       "label": "Productivity Core",
-      "color": "#a7f3d0",
-      "keyword": "productivity",
-      "computed": true
-    },
-    "kw-taste": {
-      "label": "Taste Core",
       "color": "#fca5a5",
-      "keyword": "taste",
+      "keyword": "productivity",
       "computed": true
     }
   },
@@ -120,14 +120,14 @@
       "keyword": "aesthetic",
       "label": "Aesthetic Core",
       "color": "#7dd3fc",
-      "count": 30
+      "count": 31
     },
     {
       "key": "kw-use",
       "keyword": "use",
       "label": "Use Core",
       "color": "#c4b5fd",
-      "count": 23
+      "count": 24
     },
     {
       "key": "kw-mlops",
@@ -137,32 +137,32 @@
       "count": 9
     },
     {
+      "key": "kw-investment",
+      "keyword": "investment",
+      "label": "Investment Core",
+      "color": "#8ee6d1",
+      "count": 3
+    },
+    {
       "key": "kw-media",
       "keyword": "media",
       "label": "Media Core",
-      "color": "#8ee6d1",
+      "color": "#f2a8c2",
       "count": 6
     },
     {
       "key": "kw-jeffery",
       "keyword": "jeffery",
       "label": "Jeffery Core",
-      "color": "#f2a8c2",
-      "count": 9
+      "color": "#a7f3d0",
+      "count": 10
     },
     {
       "key": "kw-productivity",
       "keyword": "productivity",
       "label": "Productivity Core",
-      "color": "#a7f3d0",
-      "count": 6
-    },
-    {
-      "key": "kw-taste",
-      "keyword": "taste",
-      "label": "Taste Core",
       "color": "#fca5a5",
-      "count": 7
+      "count": 6
     }
   ],
   "nodes": [
@@ -200,13 +200,13 @@
         "memory",
         "memory"
       ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "keywordScore": 1.52,
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
+      "keywordScore": 1.9,
       "semanticKeywords": [
+        "investment",
         "aesthetic",
-        "jeffery",
-        "taste"
+        "jeffery"
       ]
     },
     {
@@ -221,11 +221,11 @@
         "memory",
         "memory"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "aesthetic"
       ]
     },
     {
@@ -240,11 +240,11 @@
         "tool",
         "tools"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "use"
       ]
     },
     {
@@ -261,12 +261,12 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 27.56,
+      "keywordScore": 28.7,
       "semanticKeywords": [
         "aesthetic",
         "software",
         "use",
-        "taste"
+        "jeffery"
       ]
     },
     {
@@ -281,13 +281,14 @@
         "database",
         "investment"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
-      "keywordScore": 0.76,
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
+      "keywordScore": 7.66,
       "semanticKeywords": [
-        "productivity",
+        "investment",
         "aesthetic",
-        "jeffery"
+        "jeffery",
+        "productivity"
       ]
     },
     {
@@ -302,11 +303,11 @@
         "automation",
         "automation"
       ],
-      "keywordCore": "kw-media",
-      "keyword": "media",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "media"
+        "mlops"
       ]
     },
     {
@@ -321,11 +322,11 @@
         "deployment",
         "automation"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "media"
       ]
     },
     {
@@ -340,11 +341,11 @@
         "history",
         "sessions"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "jeffery"
       ]
     },
     {
@@ -360,11 +361,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "software"
+        "productivity"
       ]
     },
     {
@@ -387,8 +388,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -411,8 +411,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -428,11 +427,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "software"
       ]
     },
     {
@@ -455,8 +454,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -472,11 +470,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "use"
       ]
     },
     {
@@ -502,8 +500,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "use",
-        "taste"
+        "use"
       ]
     },
     {
@@ -526,8 +523,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -543,11 +539,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-media",
-      "keyword": "media",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "media"
+        "mlops"
       ]
     },
     {
@@ -610,8 +606,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -766,8 +761,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "software",
-        "taste"
+        "software"
       ]
     },
     {
@@ -1022,6 +1016,34 @@
       ]
     },
     {
+      "id": "skill-context-retrieval-hygiene",
+      "label": "context-retrieval-hygiene",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "investment"
+      ],
+      "size": 4.5,
+      "summary": "Use when a task may need Jeffery's aesthetic wiki, investment database, visual production memory, or other local knowledge libraries. Enforces query-first retrieval instead of loading whole libraries.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "autonomous-ai-agents",
+        "aesthetic",
+        "investment"
+      ],
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
+      "keywordScore": 4.9,
+      "semanticKeywords": [
+        "investment",
+        "aesthetic",
+        "use",
+        "jeffery"
+      ]
+    },
+    {
       "id": "skill-hermes-agent",
       "label": "hermes-agent",
       "type": "skill",
@@ -1068,8 +1090,7 @@
       "semanticKeywords": [
         "aesthetic",
         "use",
-        "jeffery",
-        "taste"
+        "jeffery"
       ]
     },
     {
@@ -1085,11 +1106,11 @@
         "skill",
         "communication"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "jeffery"
       ]
     },
     {
@@ -1135,11 +1156,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "productivity"
       ]
     },
     {
@@ -1155,11 +1176,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "investment"
       ]
     },
     {
@@ -1202,8 +1223,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -1226,8 +1246,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -1243,11 +1262,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "productivity"
       ]
     },
     {
@@ -1302,7 +1321,6 @@
       "semanticKeywords": [
         "aesthetic",
         "software",
-        "taste",
         "use"
       ]
     },
@@ -1319,11 +1337,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "investment"
       ]
     },
     {
@@ -1346,8 +1364,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -1372,7 +1389,6 @@
       "semanticKeywords": [
         "aesthetic",
         "jeffery",
-        "taste",
         "use"
       ]
     },
@@ -1412,11 +1428,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "media"
       ]
     },
     {
@@ -1439,8 +1455,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -1463,8 +1478,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -1517,8 +1531,7 @@
       "semanticKeywords": [
         "aesthetic",
         "jeffery",
-        "use",
-        "taste"
+        "use"
       ]
     },
     {
@@ -1541,8 +1554,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -1568,8 +1580,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "software",
-        "taste"
+        "software"
       ]
     },
     {
@@ -1595,7 +1606,6 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "taste",
         "software",
         "use"
       ]
@@ -1642,8 +1652,7 @@
       "semanticKeywords": [
         "aesthetic",
         "use",
-        "jeffery",
-        "taste"
+        "jeffery"
       ]
     },
     {
@@ -1688,8 +1697,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -1757,11 +1765,11 @@
         "devops",
         "automation"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "mlops"
       ]
     },
     {
@@ -1777,11 +1785,11 @@
         "skill",
         "email"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "investment"
       ]
     },
     {
@@ -2007,8 +2015,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "mlops",
-        "taste"
+        "mlops"
       ]
     },
     {
@@ -2047,11 +2054,11 @@
         "skill",
         "note-taking"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "use"
       ]
     },
     {
@@ -2117,13 +2124,13 @@
         "aesthetic",
         "investment"
       ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "keywordScore": 3.52,
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
+      "keywordScore": 5.9,
       "semanticKeywords": [
+        "investment",
         "aesthetic",
-        "productivity",
-        "taste"
+        "productivity"
       ]
     },
     {
@@ -2174,8 +2181,8 @@
       "semanticKeywords": [
         "aesthetic",
         "productivity",
-        "taste",
-        "use"
+        "use",
+        "jeffery"
       ]
     },
     {
@@ -2191,11 +2198,11 @@
         "skill",
         "red-teaming"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "jeffery"
       ]
     },
     {
@@ -2211,11 +2218,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "use"
       ]
     },
     {
@@ -2231,11 +2238,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "taste"
+        "investment"
       ]
     },
     {
@@ -2251,11 +2258,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "media"
       ]
     },
     {
@@ -2278,8 +2285,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "taste"
+        "aesthetic"
       ]
     },
     {
@@ -2295,11 +2301,11 @@
         "skill",
         "smart-home"
       ],
-      "keywordCore": "kw-media",
-      "keyword": "media",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "media"
+        "jeffery"
       ]
     },
     {
@@ -2326,8 +2332,7 @@
       "semanticKeywords": [
         "aesthetic",
         "media",
-        "software",
-        "taste"
+        "software"
       ]
     },
     {
@@ -2487,11 +2492,11 @@
         "skill",
         "yuanbao"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-use",
+      "keyword": "use",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "use"
       ]
     },
     {
@@ -2567,6 +2572,24 @@
       ]
     },
     {
+      "id": "keyword-core-investment",
+      "label": "Investment Core",
+      "type": "keyword_core",
+      "nebula": "kw-investment",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
+      "size": 12,
+      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: investment.",
+      "visibility": "public-safe",
+      "tags": [
+        "computed-core",
+        "investment"
+      ],
+      "semanticKeywords": [
+        "investment"
+      ]
+    },
+    {
       "id": "keyword-core-media",
       "label": "Media Core",
       "type": "keyword_core",
@@ -2618,24 +2641,6 @@
       ],
       "semanticKeywords": [
         "productivity"
-      ]
-    },
-    {
-      "id": "keyword-core-taste",
-      "label": "Taste Core",
-      "type": "keyword_core",
-      "nebula": "kw-taste",
-      "keywordCore": "kw-taste",
-      "keyword": "taste",
-      "size": 12,
-      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: taste.",
-      "visibility": "public-safe",
-      "tags": [
-        "computed-core",
-        "taste"
-      ],
-      "semanticKeywords": [
-        "taste"
       ]
     }
   ],
@@ -2861,6 +2866,24 @@
       "target": "skill-autonomous-coding-agents",
       "type": "skill",
       "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-context-retrieval-hygiene",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-context-retrieval-hygiene",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "skill-context-retrieval-hygiene",
+      "target": "investment-os",
+      "type": "bridge",
+      "strength": 0.42
     },
     {
       "source": "hermes-core",
@@ -3632,7 +3655,7 @@
     },
     {
       "source": "keyword-core-software",
-      "target": "skill-architecture-diagram",
+      "target": "skill-baoyu-infographic",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -3746,9 +3769,9 @@
     },
     {
       "source": "keyword-core-aesthetic",
-      "target": "jeffery-profile",
+      "target": "holo-facts",
       "type": "semantic-gravity",
-      "strength": 0.3716
+      "strength": 0.258
     },
     {
       "source": "keyword-core-aesthetic",
@@ -3908,12 +3931,6 @@
     },
     {
       "source": "keyword-core-aesthetic",
-      "target": "skill-investment-tracking-systems",
-      "type": "semantic-gravity",
-      "strength": 0.5316000000000001
-    },
-    {
-      "source": "keyword-core-aesthetic",
       "target": "skill-open-slide-deck-production",
       "type": "semantic-gravity",
       "strength": 0.6115999999999999
@@ -3932,13 +3949,13 @@
     },
     {
       "source": "keyword-core-use",
-      "target": "holo-facts",
+      "target": "tool-registry",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-baoyu-infographic",
+      "target": "skill-excalidraw",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -3968,25 +3985,31 @@
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-godmode",
+      "target": "skill-obsidian",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-polymarket",
+      "target": "skill-agent-reach",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-use",
+      "target": "skill-yuanbao",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-mlops",
-      "target": "tool-registry",
+      "target": "cron-jobs",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-excalidraw",
+      "target": "skill-p5js",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4010,7 +4033,7 @@
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-himalaya",
+      "target": "skill-webhook-subscriptions",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4045,14 +4068,56 @@
       "strength": 0.41000000000000003
     },
     {
-      "source": "keyword-core-media",
-      "target": "cron-jobs",
+      "source": "keyword-core-investment",
+      "target": "jeffery-profile",
+      "type": "semantic-gravity",
+      "strength": 0.402
+    },
+    {
+      "source": "keyword-core-investment",
+      "target": "investment-os",
+      "type": "semantic-gravity",
+      "strength": 0.75
+    },
+    {
+      "source": "keyword-core-investment",
+      "target": "skill-context-retrieval-hygiene",
+      "type": "semantic-gravity",
+      "strength": 0.642
+    },
+    {
+      "source": "keyword-core-investment",
+      "target": "skill-baoyu-comic",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-investment",
+      "target": "skill-humanizer",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-investment",
+      "target": "skill-himalaya",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-investment",
+      "target": "skill-investment-tracking-systems",
+      "type": "semantic-gravity",
+      "strength": 0.722
+    },
+    {
+      "source": "keyword-core-investment",
+      "target": "skill-llm-wiki",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-media",
-      "target": "skill-p5js",
+      "target": "github-pages",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4076,6 +4141,12 @@
     },
     {
       "source": "keyword-core-media",
+      "target": "skill-pixel-art",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-media",
       "target": "skill-minecraft-modpack-server",
       "type": "semantic-gravity",
       "strength": 0.258
@@ -4088,13 +4159,13 @@
     },
     {
       "source": "keyword-core-media",
-      "target": "skill-openhue",
+      "target": "skill-polymarket",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-jeffery",
-      "target": "github-pages",
+      "target": "sessions",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4106,7 +4177,7 @@
     },
     {
       "source": "keyword-core-jeffery",
-      "target": "skill-baoyu-article-illustrator",
+      "target": "skill-mobile-friendly-communication",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4130,21 +4201,21 @@
     },
     {
       "source": "keyword-core-jeffery",
-      "target": "skill-agent-reach",
+      "target": "skill-godmode",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-jeffery",
-      "target": "skill-yuanbao",
+      "target": "skill-openhue",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-productivity",
-      "target": "investment-os",
+      "target": "skill-architecture-diagram",
       "type": "semantic-gravity",
-      "strength": 0.3108
+      "strength": 0.258
     },
     {
       "source": "keyword-core-productivity",
@@ -4154,13 +4225,13 @@
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-baoyu-comic",
+      "target": "skill-baoyu-article-illustrator",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-humanizer",
+      "target": "skill-ideation",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4193,48 +4264,6 @@
       "target": "skill-maps",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-taste",
-      "target": "sessions",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-taste",
-      "target": "skill-mobile-friendly-communication",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-taste",
-      "target": "skill-ideation",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-taste",
-      "target": "skill-pixel-art",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-taste",
-      "target": "skill-webhook-subscriptions",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-taste",
-      "target": "skill-obsidian",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-taste",
-      "target": "skill-llm-wiki",
-      "type": "semantic-gravity",
-      "strength": 0.258
     }
   ]
 }
