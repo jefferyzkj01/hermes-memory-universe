@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-16T04:00:05+08:00",
+    "generatedAt": "2026-06-17T18:28:23+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -113,7 +113,7 @@
       "keyword": "software",
       "label": "Software Core",
       "color": "#b7c7ff",
-      "count": 27
+      "count": 28
     },
     {
       "key": "kw-aesthetic",
@@ -127,7 +127,7 @@
       "keyword": "use",
       "label": "Use Core",
       "color": "#c4b5fd",
-      "count": 22
+      "count": 23
     },
     {
       "key": "kw-mlops",
@@ -180,7 +180,7 @@
       ],
       "keywordCore": "kw-software",
       "keyword": "software",
-      "keywordScore": 28.88,
+      "keywordScore": 30.4,
       "semanticKeywords": [
         "software",
         "aesthetic",
@@ -2354,6 +2354,32 @@
       ]
     },
     {
+      "id": "skill-hermes-pragmatic-engineer",
+      "label": "hermes-pragmatic-engineer",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation",
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Hermes engineering standard for Codex and AI coding agents working on Hermes code. Use when implementing, reviewing, refactoring, debugging, or planning changes in the Hermes repository, especially architecture, UI, AI w",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "software-development",
+        "automation",
+        "software"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 4.0,
+      "semanticKeywords": [
+        "software",
+        "use"
+      ]
+    },
+    {
       "id": "skill-plan",
       "label": "plan",
       "type": "skill",
@@ -3468,6 +3494,12 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-hermes-pragmatic-engineer",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-plan",
       "type": "skill",
       "strength": 0.32
@@ -3681,6 +3713,12 @@
       "target": "skill-discord-bot-utilities",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-hermes-pragmatic-engineer",
+      "type": "semantic-gravity",
+      "strength": 0.5700000000000001
     },
     {
       "source": "keyword-core-software",
