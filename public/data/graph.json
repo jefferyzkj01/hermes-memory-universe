@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-18T04:00:12+08:00",
+    "generatedAt": "2026-06-19T04:00:14+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -82,22 +82,22 @@
       "keyword": "mlops",
       "computed": true
     },
+    "kw-jeffery": {
+      "label": "Jeffery Core",
+      "color": "#8ee6d1",
+      "keyword": "jeffery",
+      "computed": true
+    },
     "kw-investment": {
       "label": "Investment Core",
-      "color": "#8ee6d1",
+      "color": "#f2a8c2",
       "keyword": "investment",
       "computed": true
     },
     "kw-media": {
       "label": "Media Core",
-      "color": "#f2a8c2",
-      "keyword": "media",
-      "computed": true
-    },
-    "kw-jeffery": {
-      "label": "Jeffery Core",
       "color": "#a7f3d0",
-      "keyword": "jeffery",
+      "keyword": "media",
       "computed": true
     },
     "kw-productivity": {
@@ -113,21 +113,21 @@
       "keyword": "software",
       "label": "Software Core",
       "color": "#b7c7ff",
-      "count": 28
+      "count": 29
     },
     {
       "key": "kw-aesthetic",
       "keyword": "aesthetic",
       "label": "Aesthetic Core",
       "color": "#7dd3fc",
-      "count": 31
+      "count": 32
     },
     {
       "key": "kw-use",
       "keyword": "use",
       "label": "Use Core",
       "color": "#c4b5fd",
-      "count": 24
+      "count": 25
     },
     {
       "key": "kw-mlops",
@@ -137,25 +137,25 @@
       "count": 9
     },
     {
+      "key": "kw-jeffery",
+      "keyword": "jeffery",
+      "label": "Jeffery Core",
+      "color": "#8ee6d1",
+      "count": 11
+    },
+    {
       "key": "kw-investment",
       "keyword": "investment",
       "label": "Investment Core",
-      "color": "#8ee6d1",
+      "color": "#f2a8c2",
       "count": 3
     },
     {
       "key": "kw-media",
       "keyword": "media",
       "label": "Media Core",
-      "color": "#f2a8c2",
-      "count": 6
-    },
-    {
-      "key": "kw-jeffery",
-      "keyword": "jeffery",
-      "label": "Jeffery Core",
       "color": "#a7f3d0",
-      "count": 10
+      "count": 6
     },
     {
       "key": "kw-productivity",
@@ -180,7 +180,7 @@
       ],
       "keywordCore": "kw-software",
       "keyword": "software",
-      "keywordScore": 30.4,
+      "keywordScore": 31.16,
       "semanticKeywords": [
         "software",
         "aesthetic",
@@ -261,7 +261,7 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 28.7,
+      "keywordScore": 29.46,
       "semanticKeywords": [
         "aesthetic",
         "software",
@@ -322,11 +322,11 @@
         "deployment",
         "automation"
       ],
-      "keywordCore": "kw-media",
-      "keyword": "media",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "media"
+        "jeffery"
       ]
     },
     {
@@ -341,11 +341,11 @@
         "history",
         "sessions"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "media"
       ]
     },
     {
@@ -1144,6 +1144,34 @@
       ]
     },
     {
+      "id": "skill-architectural-image-plan-understanding",
+      "label": "architectural-image-plan-understanding",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic",
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Use when Jeffery uploads or discusses architectural/interior reference photos, floor plans, sections, elevations, scanned drawings, PDFs, or asks the agent to infer spatial structure, dimensions, topology, or prepare a B",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic",
+        "software"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "software",
+        "use",
+        "jeffery"
+      ]
+    },
+    {
       "id": "skill-baoyu-article-illustrator",
       "label": "baoyu-article-illustrator",
       "type": "skill",
@@ -1176,11 +1204,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "jeffery"
       ]
     },
     {
@@ -1262,11 +1290,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "investment"
       ]
     },
     {
@@ -1337,11 +1365,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "productivity"
       ]
     },
     {
@@ -1428,11 +1456,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-media",
-      "keyword": "media",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "media"
+        "investment"
       ]
     },
     {
@@ -1623,11 +1651,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "media"
       ]
     },
     {
@@ -1785,11 +1813,11 @@
         "skill",
         "email"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "jeffery"
       ]
     },
     {
@@ -1805,11 +1833,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-media",
-      "keyword": "media",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "media"
+        "investment"
       ]
     },
     {
@@ -1825,11 +1853,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "media"
       ]
     },
     {
@@ -2238,11 +2266,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "jeffery"
       ]
     },
     {
@@ -2258,11 +2286,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-media",
-      "keyword": "media",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "media"
+        "investment"
       ]
     },
     {
@@ -2301,11 +2329,11 @@
         "skill",
         "smart-home"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-media",
+      "keyword": "media",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "media"
       ]
     },
     {
@@ -2480,26 +2508,6 @@
       ]
     },
     {
-      "id": "skill-yuanbao",
-      "label": "yuanbao",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Yuanbao (元宝) groups: @mention users, query info/members.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "yuanbao"
-      ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
-      "keywordScore": 0.1,
-      "semanticKeywords": [
-        "use"
-      ]
-    },
-    {
       "id": "keyword-core-software",
       "label": "Software Core",
       "type": "keyword_core",
@@ -2572,6 +2580,24 @@
       ]
     },
     {
+      "id": "keyword-core-jeffery",
+      "label": "Jeffery Core",
+      "type": "keyword_core",
+      "nebula": "kw-jeffery",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
+      "size": 12,
+      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: jeffery.",
+      "visibility": "public-safe",
+      "tags": [
+        "computed-core",
+        "jeffery"
+      ],
+      "semanticKeywords": [
+        "jeffery"
+      ]
+    },
+    {
       "id": "keyword-core-investment",
       "label": "Investment Core",
       "type": "keyword_core",
@@ -2605,24 +2631,6 @@
       ],
       "semanticKeywords": [
         "media"
-      ]
-    },
-    {
-      "id": "keyword-core-jeffery",
-      "label": "Jeffery Core",
-      "type": "keyword_core",
-      "nebula": "kw-jeffery",
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
-      "size": 12,
-      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: jeffery.",
-      "visibility": "public-safe",
-      "tags": [
-        "computed-core",
-        "jeffery"
-      ],
-      "semanticKeywords": [
-        "jeffery"
       ]
     },
     {
@@ -2917,6 +2925,18 @@
     },
     {
       "source": "skill-aesthetic-enforcement-layer",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-architectural-image-plan-understanding",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-architectural-image-plan-understanding",
       "target": "aesthetic-wiki",
       "type": "bridge",
       "strength": 0.42
@@ -3595,12 +3615,6 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-yuanbao",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
       "target": "jeffery-profile",
       "type": "preference",
       "strength": 0.8
@@ -3835,6 +3849,12 @@
     },
     {
       "source": "keyword-core-aesthetic",
+      "target": "skill-architectural-image-plan-understanding",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
       "target": "skill-brandkit",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
@@ -3996,12 +4016,6 @@
       "strength": 0.258
     },
     {
-      "source": "keyword-core-use",
-      "target": "skill-yuanbao",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
       "source": "keyword-core-mlops",
       "target": "cron-jobs",
       "type": "semantic-gravity",
@@ -4068,6 +4082,54 @@
       "strength": 0.41000000000000003
     },
     {
+      "source": "keyword-core-jeffery",
+      "target": "github-pages",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-jeffery",
+      "target": "skill-hermes-agent-skill-authoring",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-jeffery",
+      "target": "skill-mobile-friendly-communication",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-jeffery",
+      "target": "skill-baoyu-comic",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-jeffery",
+      "target": "skill-blender-architecture-interior-modeling-agent",
+      "type": "semantic-gravity",
+      "strength": 0.33
+    },
+    {
+      "source": "keyword-core-jeffery",
+      "target": "skill-himalaya",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-jeffery",
+      "target": "skill-godmode",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-jeffery",
+      "target": "skill-llm-wiki",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
       "source": "keyword-core-investment",
       "target": "jeffery-profile",
       "type": "semantic-gravity",
@@ -4087,19 +4149,19 @@
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-baoyu-comic",
+      "target": "skill-ideation",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-humanizer",
+      "target": "skill-pixel-art",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-himalaya",
+      "target": "skill-minecraft-modpack-server",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4111,13 +4173,13 @@
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-llm-wiki",
+      "target": "skill-polymarket",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-media",
-      "target": "github-pages",
+      "target": "sessions",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4141,13 +4203,13 @@
     },
     {
       "source": "keyword-core-media",
-      "target": "skill-pixel-art",
+      "target": "skill-tighten",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-media",
-      "target": "skill-minecraft-modpack-server",
+      "target": "skill-pokemon-player",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4159,54 +4221,6 @@
     },
     {
       "source": "keyword-core-media",
-      "target": "skill-polymarket",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-jeffery",
-      "target": "sessions",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-jeffery",
-      "target": "skill-hermes-agent-skill-authoring",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-jeffery",
-      "target": "skill-mobile-friendly-communication",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-jeffery",
-      "target": "skill-blender-architecture-interior-modeling-agent",
-      "type": "semantic-gravity",
-      "strength": 0.33
-    },
-    {
-      "source": "keyword-core-jeffery",
-      "target": "skill-tighten",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-jeffery",
-      "target": "skill-pokemon-player",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-jeffery",
-      "target": "skill-godmode",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-jeffery",
       "target": "skill-openhue",
       "type": "semantic-gravity",
       "strength": 0.258
@@ -4231,7 +4245,7 @@
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-ideation",
+      "target": "skill-humanizer",
       "type": "semantic-gravity",
       "strength": 0.258
     },
