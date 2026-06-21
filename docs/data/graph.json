@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-21T04:00:20+08:00",
+    "generatedAt": "2026-06-22T04:00:32+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -82,28 +82,28 @@
       "keyword": "use",
       "computed": true
     },
-    "kw-prompt": {
-      "label": "Prompt Core",
+    "kw-jeffery": {
+      "label": "Jeffery Core",
       "color": "#8ee6d1",
-      "keyword": "prompt",
-      "computed": true
-    },
-    "kw-asks": {
-      "label": "Asks Core",
-      "color": "#f2a8c2",
-      "keyword": "asks",
+      "keyword": "jeffery",
       "computed": true
     },
     "kw-mlops": {
       "label": "Mlops Core",
-      "color": "#a7f3d0",
+      "color": "#f2a8c2",
       "keyword": "mlops",
       "computed": true
     },
     "kw-archive": {
       "label": "Archive Core",
-      "color": "#fca5a5",
+      "color": "#a7f3d0",
       "keyword": "archive",
+      "computed": true
+    },
+    "kw-asks": {
+      "label": "Asks Core",
+      "color": "#fca5a5",
+      "keyword": "asks",
       "computed": true
     }
   },
@@ -113,56 +113,56 @@
       "keyword": "aesthetic",
       "label": "Aesthetic Core",
       "color": "#b7c7ff",
-      "count": 39
+      "count": 38
     },
     {
       "key": "kw-seedance",
       "keyword": "seedance",
       "label": "Seedance Core",
       "color": "#7dd3fc",
-      "count": 16
+      "count": 13
     },
     {
       "key": "kw-software",
       "keyword": "software",
       "label": "Software Core",
       "color": "#c4b5fd",
-      "count": 23
+      "count": 22
     },
     {
       "key": "kw-use",
       "keyword": "use",
       "label": "Use Core",
       "color": "#f0c987",
-      "count": 24
+      "count": 27
     },
     {
-      "key": "kw-prompt",
-      "keyword": "prompt",
-      "label": "Prompt Core",
+      "key": "kw-jeffery",
+      "keyword": "jeffery",
+      "label": "Jeffery Core",
       "color": "#8ee6d1",
-      "count": 13
-    },
-    {
-      "key": "kw-asks",
-      "keyword": "asks",
-      "label": "Asks Core",
-      "color": "#f2a8c2",
-      "count": 18
+      "count": 15
     },
     {
       "key": "kw-mlops",
       "keyword": "mlops",
       "label": "Mlops Core",
-      "color": "#a7f3d0",
+      "color": "#f2a8c2",
       "count": 9
     },
     {
       "key": "kw-archive",
       "keyword": "archive",
       "label": "Archive Core",
-      "color": "#fca5a5",
+      "color": "#a7f3d0",
       "count": 9
+    },
+    {
+      "key": "kw-asks",
+      "keyword": "asks",
+      "label": "Asks Core",
+      "color": "#fca5a5",
+      "count": 15
     }
   ],
   "nodes": [
@@ -180,7 +180,7 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 30.78,
+      "keywordScore": 30.02,
       "semanticKeywords": [
         "aesthetic",
         "seedance",
@@ -205,7 +205,7 @@
       "keywordScore": 1.52,
       "semanticKeywords": [
         "aesthetic",
-        "prompt"
+        "jeffery"
       ]
     },
     {
@@ -260,12 +260,12 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 34.78,
+      "keywordScore": 34.02,
       "semanticKeywords": [
         "aesthetic",
         "seedance",
         "software",
-        "use"
+        "jeffery"
       ]
     },
     {
@@ -285,6 +285,7 @@
       "keywordScore": 1.9,
       "semanticKeywords": [
         "aesthetic",
+        "jeffery",
         "use"
       ]
     },
@@ -319,11 +320,11 @@
         "deployment",
         "automation"
       ],
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "prompt"
+        "jeffery"
       ]
     },
     {
@@ -338,11 +339,11 @@
         "history",
         "sessions"
       ],
-      "keywordCore": "kw-asks",
-      "keyword": "asks",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "asks"
+        "mlops"
       ]
     },
     {
@@ -358,11 +359,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-archive",
+      "keyword": "archive",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "archive"
       ]
     },
     {
@@ -385,8 +386,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -409,8 +409,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -426,11 +425,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-archive",
-      "keyword": "archive",
+      "keywordCore": "kw-asks",
+      "keyword": "asks",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "archive"
+        "asks"
       ]
     },
     {
@@ -453,8 +452,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -500,8 +498,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "use",
-        "prompt"
+        "use"
       ]
     },
     {
@@ -524,8 +521,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -581,11 +577,11 @@
         "skill",
         "media"
       ],
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "prompt"
+        "jeffery"
       ]
     },
     {
@@ -608,8 +604,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -645,11 +640,11 @@
         "skill",
         "media"
       ],
-      "keywordCore": "kw-asks",
-      "keyword": "asks",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "asks"
+        "mlops"
       ]
     },
     {
@@ -665,11 +660,11 @@
         "skill",
         "media"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-asks",
+      "keyword": "asks",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "asks"
       ]
     },
     {
@@ -764,8 +759,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "software",
-        "prompt"
+        "software"
       ]
     },
     {
@@ -1048,7 +1042,7 @@
       "semanticKeywords": [
         "aesthetic",
         "use",
-        "prompt"
+        "jeffery"
       ]
     },
     {
@@ -1098,8 +1092,8 @@
       "semanticKeywords": [
         "aesthetic",
         "use",
-        "asks",
-        "prompt"
+        "jeffery",
+        "asks"
       ]
     },
     {
@@ -1115,11 +1109,11 @@
         "skill",
         "communication"
       ],
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "prompt"
+        "jeffery"
       ]
     },
     {
@@ -1148,8 +1142,8 @@
       "semanticKeywords": [
         "aesthetic",
         "software",
-        "use",
-        "prompt"
+        "jeffery",
+        "use"
       ]
     },
     {
@@ -1177,7 +1171,7 @@
         "aesthetic",
         "software",
         "use",
-        "asks"
+        "jeffery"
       ]
     },
     {
@@ -1233,11 +1227,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 0.1,
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
+      "keywordScore": 1.0,
       "semanticKeywords": [
-        "software"
+        "jeffery"
       ]
     },
     {
@@ -1260,8 +1254,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -1284,8 +1277,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -1301,11 +1293,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "prompt"
+        "software"
       ]
     },
     {
@@ -1332,8 +1324,7 @@
       "semanticKeywords": [
         "aesthetic",
         "software",
-        "use",
-        "prompt"
+        "use"
       ]
     },
     {
@@ -1360,8 +1351,7 @@
       "semanticKeywords": [
         "aesthetic",
         "software",
-        "use",
-        "prompt"
+        "use"
       ]
     },
     {
@@ -1404,8 +1394,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -1429,7 +1418,7 @@
       "keywordScore": 4.52,
       "semanticKeywords": [
         "aesthetic",
-        "prompt",
+        "jeffery",
         "use"
       ]
     },
@@ -1496,8 +1485,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -1522,7 +1510,7 @@
       "semanticKeywords": [
         "seedance",
         "aesthetic",
-        "prompt",
+        "jeffery",
         "use"
       ]
     },
@@ -1546,8 +1534,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -1575,7 +1562,7 @@
         "aesthetic",
         "software",
         "use",
-        "asks"
+        "jeffery"
       ]
     },
     {
@@ -1599,9 +1586,9 @@
       "keywordScore": 4.52,
       "semanticKeywords": [
         "aesthetic",
+        "jeffery",
         "use",
-        "asks",
-        "prompt"
+        "asks"
       ]
     },
     {
@@ -1624,8 +1611,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -1651,8 +1637,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "software",
-        "prompt"
+        "software"
       ]
     },
     {
@@ -1679,8 +1664,7 @@
       "semanticKeywords": [
         "aesthetic",
         "software",
-        "use",
-        "prompt"
+        "use"
       ]
     },
     {
@@ -1724,8 +1708,8 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "prompt",
         "use",
+        "jeffery",
         "asks"
       ]
     },
@@ -1742,11 +1726,11 @@
         "skill",
         "data-science"
       ],
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "prompt"
+        "jeffery"
       ]
     },
     {
@@ -1771,8 +1755,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -1860,11 +1843,82 @@
         "skill",
         "email"
       ],
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "prompt"
+        "jeffery"
+      ]
+    },
+    {
+      "id": "skill-director-chief-of-staff",
+      "label": "director-chief-of-staff",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "Use when Jeffery needs the 總監組 to intake ambiguous requests, decide the right group, break work into trackable tasks, and keep the conversation concise.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "experts"
+      ],
+      "keywordCore": "kw-use",
+      "keyword": "use",
+      "keywordScore": 1.0,
+      "semanticKeywords": [
+        "use",
+        "jeffery"
+      ]
+    },
+    {
+      "id": "skill-director-final-qa",
+      "label": "director-final-qa",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Use when the 總監組 needs to review outputs from 建模組, 影音組, 投資組, or other specialists before final delivery to Jeffery.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "experts",
+        "software"
+      ],
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "software",
+        "use",
+        "jeffery"
+      ]
+    },
+    {
+      "id": "skill-director-memory-librarian",
+      "label": "director-memory-librarian",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Use when cleaning or designing Jeffery's memory, profile split, skill placement, or deciding what belongs in memory vs skills vs session search.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "experts",
+        "aesthetic"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "use",
+        "jeffery"
       ]
     },
     {
@@ -1880,11 +1934,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-asks",
-      "keyword": "asks",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "asks"
+        "mlops"
       ]
     },
     {
@@ -1900,11 +1954,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-asks",
+      "keyword": "asks",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "asks"
       ]
     },
     {
@@ -1970,8 +2024,7 @@
       "keyword": "use",
       "keywordScore": 1.0,
       "semanticKeywords": [
-        "use",
-        "prompt"
+        "use"
       ]
     },
     {
@@ -2090,8 +2143,7 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "mlops",
-        "prompt"
+        "mlops"
       ]
     },
     {
@@ -2130,11 +2182,11 @@
         "skill",
         "note-taking"
       ],
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "prompt"
+        "jeffery"
       ]
     },
     {
@@ -2203,8 +2255,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -2254,8 +2305,8 @@
       "semanticKeywords": [
         "aesthetic",
         "use",
-        "asks",
-        "prompt"
+        "jeffery",
+        "asks"
       ]
     },
     {
@@ -2291,11 +2342,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-use",
-      "keyword": "use",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "use"
+        "jeffery"
       ]
     },
     {
@@ -2311,11 +2362,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
+      "keywordCore": "kw-asks",
+      "keyword": "asks",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "prompt"
+        "asks"
       ]
     },
     {
@@ -2331,11 +2382,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-asks",
-      "keyword": "asks",
+      "keywordCore": "kw-seedance",
+      "keyword": "seedance",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "asks"
+        "seedance"
       ]
     },
     {
@@ -2358,8 +2409,7 @@
       "keyword": "aesthetic",
       "keywordScore": 3.52,
       "semanticKeywords": [
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -2383,8 +2433,7 @@
       "keywordScore": 5.0,
       "semanticKeywords": [
         "seedance",
-        "aesthetic",
-        "prompt"
+        "aesthetic"
       ]
     },
     {
@@ -2404,8 +2453,7 @@
       "keyword": "seedance",
       "keywordScore": 4.0,
       "semanticKeywords": [
-        "seedance",
-        "prompt"
+        "seedance"
       ]
     },
     {
@@ -2430,8 +2478,7 @@
       "semanticKeywords": [
         "seedance",
         "aesthetic",
-        "asks",
-        "prompt"
+        "asks"
       ]
     },
     {
@@ -2493,8 +2540,7 @@
       "keyword": "seedance",
       "keywordScore": 4.0,
       "semanticKeywords": [
-        "seedance",
-        "prompt"
+        "seedance"
       ]
     },
     {
@@ -2519,7 +2565,6 @@
       "semanticKeywords": [
         "seedance",
         "aesthetic",
-        "prompt",
         "asks"
       ]
     },
@@ -2541,7 +2586,6 @@
       "keywordScore": 4.0,
       "semanticKeywords": [
         "seedance",
-        "prompt",
         "asks"
       ]
     },
@@ -2590,8 +2634,7 @@
       "keyword": "seedance",
       "keywordScore": 4.0,
       "semanticKeywords": [
-        "seedance",
-        "prompt"
+        "seedance"
       ]
     },
     {
@@ -2616,8 +2659,7 @@
       "semanticKeywords": [
         "seedance",
         "aesthetic",
-        "asks",
-        "prompt"
+        "asks"
       ]
     },
     {
@@ -2637,84 +2679,6 @@
       "keyword": "seedance",
       "keywordScore": 4.0,
       "semanticKeywords": [
-        "seedance",
-        "asks"
-      ]
-    },
-    {
-      "id": "skill-seedance-pipeline",
-      "label": "seedance-pipeline",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic",
-        "software"
-      ],
-      "size": 4.5,
-      "summary": "This skill should be used when the user asks about Seedance 2.0 workflow operations, API planning, BytePlus ModelArk, Dreamina/Jimeng surfaces, ComfyUI, post-production, stitching, batch workflow, or integration planning",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "seedance-20",
-        "aesthetic",
-        "software"
-      ],
-      "keywordCore": "kw-seedance",
-      "keyword": "seedance",
-      "keywordScore": 4.0,
-      "semanticKeywords": [
-        "seedance",
-        "aesthetic",
-        "software",
-        "asks"
-      ]
-    },
-    {
-      "id": "skill-seedance-prompt",
-      "label": "seedance-prompt",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic",
-        "software"
-      ],
-      "size": 4.5,
-      "summary": "This skill should be used when the user asks to write, improve, translate, compress, or debug a Seedance 2.0 video prompt; mentions T2V, I2V, V2V, R2V, camera direction, prompt quality, or provides reference assets for a",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "seedance-20",
-        "aesthetic",
-        "software"
-      ],
-      "keywordCore": "kw-seedance",
-      "keyword": "seedance",
-      "keywordScore": 4.0,
-      "semanticKeywords": [
-        "seedance",
-        "aesthetic",
-        "prompt",
-        "software"
-      ]
-    },
-    {
-      "id": "skill-seedance-prompt-short",
-      "label": "seedance-prompt-short",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "This skill should be used when the user asks for a compact Seedance 2.0 prompt, short Chinese prompt, prompt compression, 30-100 word output, or removal of unnecessary prompt language.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "seedance-20"
-      ],
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
-      "keywordScore": 5.0,
-      "semanticKeywords": [
-        "prompt",
         "seedance",
         "asks"
       ]
@@ -2792,39 +2756,21 @@
       ]
     },
     {
-      "id": "keyword-core-prompt",
-      "label": "Prompt Core",
+      "id": "keyword-core-jeffery",
+      "label": "Jeffery Core",
       "type": "keyword_core",
-      "nebula": "kw-prompt",
-      "keywordCore": "kw-prompt",
-      "keyword": "prompt",
+      "nebula": "kw-jeffery",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "size": 12,
-      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: prompt.",
+      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: jeffery.",
       "visibility": "public-safe",
       "tags": [
         "computed-core",
-        "prompt"
+        "jeffery"
       ],
       "semanticKeywords": [
-        "prompt"
-      ]
-    },
-    {
-      "id": "keyword-core-asks",
-      "label": "Asks Core",
-      "type": "keyword_core",
-      "nebula": "kw-asks",
-      "keywordCore": "kw-asks",
-      "keyword": "asks",
-      "size": 12,
-      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: asks.",
-      "visibility": "public-safe",
-      "tags": [
-        "computed-core",
-        "asks"
-      ],
-      "semanticKeywords": [
-        "asks"
+        "jeffery"
       ]
     },
     {
@@ -2861,6 +2807,24 @@
       ],
       "semanticKeywords": [
         "archive"
+      ]
+    },
+    {
+      "id": "keyword-core-asks",
+      "label": "Asks Core",
+      "type": "keyword_core",
+      "nebula": "kw-asks",
+      "keywordCore": "kw-asks",
+      "keyword": "asks",
+      "size": 12,
+      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: asks.",
+      "visibility": "public-safe",
+      "tags": [
+        "computed-core",
+        "asks"
+      ],
+      "semanticKeywords": [
+        "asks"
       ]
     }
   ],
@@ -3539,6 +3503,30 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-director-chief-of-staff",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-director-final-qa",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-director-memory-librarian",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-director-memory-librarian",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-minecraft-modpack-server",
       "type": "skill",
       "strength": 0.32
@@ -3839,36 +3827,6 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-seedance-pipeline",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "skill-seedance-pipeline",
-      "target": "aesthetic-wiki",
-      "type": "bridge",
-      "strength": 0.42
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-seedance-prompt",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "skill-seedance-prompt",
-      "target": "aesthetic-wiki",
-      "type": "bridge",
-      "strength": 0.42
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-seedance-prompt-short",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
       "target": "jeffery-profile",
       "type": "preference",
       "strength": 0.8
@@ -4097,6 +4055,12 @@
     },
     {
       "source": "keyword-core-aesthetic",
+      "target": "skill-director-memory-librarian",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
       "target": "skill-segment-anything-model",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
@@ -4164,6 +4128,12 @@
     {
       "source": "keyword-core-seedance",
       "target": "skill-godmode",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-seedance",
+      "target": "skill-polymarket",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4240,18 +4210,6 @@
       "strength": 0.5700000000000001
     },
     {
-      "source": "keyword-core-seedance",
-      "target": "skill-seedance-pipeline",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
-      "source": "keyword-core-seedance",
-      "target": "skill-seedance-prompt",
-      "type": "semantic-gravity",
-      "strength": 0.5700000000000001
-    },
-    {
       "source": "keyword-core-software",
       "target": "tool-registry",
       "type": "semantic-gravity",
@@ -4271,7 +4229,7 @@
     },
     {
       "source": "keyword-core-software",
-      "target": "skill-blender-architecture-interior-modeling-agent",
+      "target": "skill-ideation",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4284,6 +4242,12 @@
     {
       "source": "keyword-core-software",
       "target": "skill-hermes-operations",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
+      "target": "skill-director-final-qa",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
     },
@@ -4343,127 +4307,73 @@
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-audio-music-production",
+      "target": "skill-director-chief-of-staff",
       "type": "semantic-gravity",
       "strength": 0.33
     },
     {
       "source": "keyword-core-use",
-      "target": "skill-agent-reach",
+      "target": "skill-audio-music-production",
       "type": "semantic-gravity",
-      "strength": 0.258
+      "strength": 0.33
     },
     {
-      "source": "keyword-core-prompt",
+      "source": "keyword-core-jeffery",
       "target": "github-pages",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-prompt",
+      "source": "keyword-core-jeffery",
       "target": "skill-songwriting-and-ai-music",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-prompt",
+      "source": "keyword-core-jeffery",
       "target": "skill-mobile-friendly-communication",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-prompt",
-      "target": "skill-ideation",
+      "source": "keyword-core-jeffery",
+      "target": "skill-blender-architecture-interior-modeling-agent",
       "type": "semantic-gravity",
-      "strength": 0.258
+      "strength": 0.33
     },
     {
-      "source": "keyword-core-prompt",
+      "source": "keyword-core-jeffery",
       "target": "skill-jupyter-live-kernel",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-prompt",
+      "source": "keyword-core-jeffery",
       "target": "skill-himalaya",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-prompt",
+      "source": "keyword-core-jeffery",
       "target": "skill-obsidian",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-prompt",
-      "target": "skill-llm-wiki",
+      "source": "keyword-core-jeffery",
+      "target": "skill-agent-reach",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-prompt",
-      "target": "skill-seedance-prompt-short",
-      "type": "semantic-gravity",
-      "strength": 0.65
-    },
-    {
-      "source": "keyword-core-asks",
+      "source": "keyword-core-mlops",
       "target": "sessions",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-asks",
+      "source": "keyword-core-mlops",
       "target": "skill-heartmula",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-asks",
-      "target": "skill-baoyu-article-illustrator",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-asks",
-      "target": "skill-humanizer",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-asks",
-      "target": "skill-webhook-subscriptions",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-asks",
-      "target": "skill-minecraft-modpack-server",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-asks",
-      "target": "skill-google-workspace",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-asks",
-      "target": "skill-polymarket",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-mlops",
-      "target": "skill-architecture-diagram",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-mlops",
-      "target": "skill-songsee",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4487,7 +4397,7 @@
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-pokemon-player",
+      "target": "skill-minecraft-modpack-server",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4523,7 +4433,7 @@
     },
     {
       "source": "keyword-core-archive",
-      "target": "skill-baoyu-infographic",
+      "target": "skill-architecture-diagram",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4580,6 +4490,54 @@
       "target": "skill-hermes-agent-skill-authoring",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-asks",
+      "target": "skill-baoyu-infographic",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-asks",
+      "target": "skill-songsee",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-asks",
+      "target": "skill-baoyu-article-illustrator",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-asks",
+      "target": "skill-humanizer",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-asks",
+      "target": "skill-webhook-subscriptions",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-asks",
+      "target": "skill-pokemon-player",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-asks",
+      "target": "skill-google-workspace",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-asks",
+      "target": "skill-llm-wiki",
+      "type": "semantic-gravity",
+      "strength": 0.258
     }
   ]
 }
