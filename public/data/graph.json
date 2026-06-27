@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-27T04:00:37+08:00",
+    "generatedAt": "2026-06-28T04:00:49+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -88,22 +88,22 @@
       "keyword": "investment",
       "computed": true
     },
+    "kw-productivity": {
+      "label": "Productivity Core",
+      "color": "#f2a8c2",
+      "keyword": "productivity",
+      "computed": true
+    },
     "kw-archive": {
       "label": "Archive Core",
-      "color": "#f2a8c2",
+      "color": "#a7f3d0",
       "keyword": "archive",
       "computed": true
     },
     "kw-mlops": {
       "label": "Mlops Core",
-      "color": "#a7f3d0",
-      "keyword": "mlops",
-      "computed": true
-    },
-    "kw-productivity": {
-      "label": "Productivity Core",
       "color": "#fca5a5",
-      "keyword": "productivity",
+      "keyword": "mlops",
       "computed": true
     }
   },
@@ -113,7 +113,7 @@
       "keyword": "aesthetic",
       "label": "Aesthetic Core",
       "color": "#b7c7ff",
-      "count": 37
+      "count": 35
     },
     {
       "key": "kw-software",
@@ -144,23 +144,23 @@
       "count": 5
     },
     {
+      "key": "kw-productivity",
+      "keyword": "productivity",
+      "label": "Productivity Core",
+      "color": "#f2a8c2",
+      "count": 12
+    },
+    {
       "key": "kw-archive",
       "keyword": "archive",
       "label": "Archive Core",
-      "color": "#f2a8c2",
+      "color": "#a7f3d0",
       "count": 10
     },
     {
       "key": "kw-mlops",
       "keyword": "mlops",
       "label": "Mlops Core",
-      "color": "#a7f3d0",
-      "count": 9
-    },
-    {
-      "key": "kw-productivity",
-      "keyword": "productivity",
-      "label": "Productivity Core",
       "color": "#fca5a5",
       "count": 9
     }
@@ -180,12 +180,12 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 30.02,
+      "keywordScore": 28.5,
       "semanticKeywords": [
         "aesthetic",
         "software",
         "use",
-        "jeffery"
+        "productivity"
       ]
     },
     {
@@ -261,7 +261,7 @@
       ],
       "keywordCore": "kw-aesthetic",
       "keyword": "aesthetic",
-      "keywordScore": 34.02,
+      "keywordScore": 32.5,
       "semanticKeywords": [
         "aesthetic",
         "use",
@@ -288,7 +288,7 @@
         "investment",
         "aesthetic",
         "use",
-        "software"
+        "jeffery"
       ]
     },
     {
@@ -322,11 +322,11 @@
         "deployment",
         "automation"
       ],
-      "keywordCore": "kw-archive",
-      "keyword": "archive",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "archive"
+        "productivity"
       ]
     },
     {
@@ -341,11 +341,11 @@
         "history",
         "sessions"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-archive",
+      "keyword": "archive",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "archive"
       ]
     },
     {
@@ -361,11 +361,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "mlops"
       ]
     },
     {
@@ -579,11 +579,11 @@
         "skill",
         "media"
       ],
-      "keywordCore": "kw-archive",
-      "keyword": "archive",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "archive"
+        "productivity"
       ]
     },
     {
@@ -662,11 +662,11 @@
         "skill",
         "media"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "software"
       ]
     },
     {
@@ -1210,11 +1210,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "software"
+        "jeffery"
       ]
     },
     {
@@ -1230,11 +1230,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "investment"
       ]
     },
     {
@@ -1316,11 +1316,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "productivity"
       ]
     },
     {
@@ -1390,11 +1390,11 @@
         "skill",
         "creative"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "software"
       ]
     },
     {
@@ -1771,11 +1771,11 @@
         "skill",
         "data-science"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "software"
+        "jeffery"
       ]
     },
     {
@@ -1819,11 +1819,11 @@
         "devops",
         "automation"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "investment"
       ]
     },
     {
@@ -1962,11 +1962,11 @@
         "devops",
         "automation"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "productivity"
       ]
     },
     {
@@ -2073,11 +2073,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "investment"
       ]
     },
     {
@@ -2093,11 +2093,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "productivity"
       ]
     },
     {
@@ -2345,11 +2345,11 @@
         "skill",
         "note-taking"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "jeffery"
       ]
     },
     {
@@ -2428,6 +2428,66 @@
         "productivity",
         "software",
         "use"
+      ]
+    },
+    {
+      "id": "skill-google-docs",
+      "label": "google-docs",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "|",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity"
+      ],
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "productivity"
+      ]
+    },
+    {
+      "id": "skill-google-sheets",
+      "label": "google-sheets",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "|",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity"
+      ],
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "productivity"
+      ]
+    },
+    {
+      "id": "skill-google-slides",
+      "label": "google-slides",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [],
+      "size": 4.5,
+      "summary": "|",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "productivity"
+      ],
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "productivity"
       ]
     },
     {
@@ -2611,11 +2671,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "software"
       ]
     },
     {
@@ -2631,77 +2691,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 0.1,
-      "semanticKeywords": [
-        "software"
-      ]
-    },
-    {
-      "id": "skill-polymarket",
-      "label": "polymarket",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Query Polymarket: markets, prices, orderbooks, history.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "research"
-      ],
       "keywordCore": "kw-jeffery",
       "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
         "jeffery"
-      ]
-    },
-    {
-      "id": "skill-research-paper-writing",
-      "label": "research-paper-writing",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic"
-      ],
-      "size": 4.5,
-      "summary": "Write ML papers for NeurIPS/ICML/ICLR: design→submit.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "research",
-        "aesthetic"
-      ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "keywordScore": 3.52,
-      "semanticKeywords": [
-        "aesthetic"
-      ]
-    },
-    {
-      "id": "skill-seedance-20",
-      "label": "seedance-20",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic"
-      ],
-      "size": 4.5,
-      "summary": "This skill should be used when creating, improving, or troubleshooting Seedance 2.0 video on any surface - Dreamina, Jimeng, CapCut, Doubao, Volcengine/Ark, BytePlus, Runway's Seedance route, or fal - including text/imag",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "seedance-20",
-        "aesthetic"
-      ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "keywordScore": 3.52,
-      "semanticKeywords": [
-        "aesthetic"
       ]
     },
     {
@@ -2795,6 +2789,24 @@
       ]
     },
     {
+      "id": "keyword-core-productivity",
+      "label": "Productivity Core",
+      "type": "keyword_core",
+      "nebula": "kw-productivity",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
+      "size": 12,
+      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: productivity.",
+      "visibility": "public-safe",
+      "tags": [
+        "computed-core",
+        "productivity"
+      ],
+      "semanticKeywords": [
+        "productivity"
+      ]
+    },
+    {
       "id": "keyword-core-archive",
       "label": "Archive Core",
       "type": "keyword_core",
@@ -2828,24 +2840,6 @@
       ],
       "semanticKeywords": [
         "mlops"
-      ]
-    },
-    {
-      "id": "keyword-core-productivity",
-      "label": "Productivity Core",
-      "type": "keyword_core",
-      "nebula": "kw-productivity",
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
-      "size": 12,
-      "summary": "Computed semantic gravity center from the most frequent public-safe keyword: productivity.",
-      "visibility": "public-safe",
-      "tags": [
-        "computed-core",
-        "productivity"
-      ],
-      "semanticKeywords": [
-        "productivity"
       ]
     }
   ],
@@ -3746,6 +3740,24 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-google-docs",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-google-sheets",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-google-slides",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-google-workspace",
       "type": "skill",
       "strength": 0.32
@@ -3821,36 +3833,6 @@
       "target": "skill-llm-wiki",
       "type": "skill",
       "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-polymarket",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-research-paper-writing",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "skill-research-paper-writing",
-      "target": "aesthetic-wiki",
-      "type": "bridge",
-      "strength": 0.42
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-seedance-20",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "skill-seedance-20",
-      "target": "aesthetic-wiki",
-      "type": "bridge",
-      "strength": 0.42
     },
     {
       "source": "hermes-core",
@@ -4105,18 +4087,6 @@
       "strength": 0.5316000000000001
     },
     {
-      "source": "keyword-core-aesthetic",
-      "target": "skill-research-paper-writing",
-      "type": "semantic-gravity",
-      "strength": 0.5316000000000001
-    },
-    {
-      "source": "keyword-core-aesthetic",
-      "target": "skill-seedance-20",
-      "type": "semantic-gravity",
-      "strength": 0.5316000000000001
-    },
-    {
       "source": "keyword-core-software",
       "target": "holo-facts",
       "type": "semantic-gravity",
@@ -4130,13 +4100,19 @@
     },
     {
       "source": "keyword-core-software",
+      "target": "skill-songsee",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-software",
       "target": "skill-autonomous-coding-agents",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
     },
     {
       "source": "keyword-core-software",
-      "target": "skill-baoyu-article-illustrator",
+      "target": "skill-humanizer",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4145,12 +4121,6 @@
       "target": "skill-full-output-enforcement",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-software",
-      "target": "skill-jupyter-live-kernel",
-      "type": "semantic-gravity",
-      "strength": 0.258
     },
     {
       "source": "keyword-core-software",
@@ -4172,7 +4142,7 @@
     },
     {
       "source": "keyword-core-software",
-      "target": "skill-llm-wiki",
+      "target": "skill-agent-reach",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4262,7 +4232,7 @@
     },
     {
       "source": "keyword-core-jeffery",
-      "target": "skill-baoyu-comic",
+      "target": "skill-baoyu-article-illustrator",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4274,7 +4244,7 @@
     },
     {
       "source": "keyword-core-jeffery",
-      "target": "skill-global-prompt-architect-sop",
+      "target": "skill-jupyter-live-kernel",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4286,19 +4256,19 @@
     },
     {
       "source": "keyword-core-jeffery",
+      "target": "skill-obsidian",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-jeffery",
       "target": "skill-godmode",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-jeffery",
-      "target": "skill-agent-reach",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-jeffery",
-      "target": "skill-polymarket",
+      "target": "skill-llm-wiki",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4322,7 +4292,7 @@
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-ideation",
+      "target": "skill-baoyu-comic",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4334,13 +4304,13 @@
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-webhook-subscriptions",
+      "target": "skill-global-prompt-architect-sop",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-pokemon-player",
+      "target": "skill-minecraft-modpack-server",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4363,14 +4333,92 @@
       "strength": 0.722
     },
     {
-      "source": "keyword-core-archive",
+      "source": "keyword-core-productivity",
       "target": "github-pages",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
-      "source": "keyword-core-archive",
+      "source": "keyword-core-productivity",
       "target": "skill-songwriting-and-ai-music",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-mobile-friendly-communication",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-ideation",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-tighten",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-webhook-subscriptions",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-pokemon-player",
+      "type": "semantic-gravity",
+      "strength": 0.258
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-document-workflows",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-google-docs",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-google-sheets",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-google-slides",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-google-workspace",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-maps",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-productivity",
+      "target": "skill-petdex",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-archive",
+      "target": "sessions",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4430,7 +4478,7 @@
     },
     {
       "source": "keyword-core-mlops",
-      "target": "sessions",
+      "target": "skill-architecture-diagram",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4497,72 +4545,6 @@
     {
       "source": "keyword-core-mlops",
       "target": "skill-dspy",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-architecture-diagram",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-songsee",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-mobile-friendly-communication",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-humanizer",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-tighten",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-minecraft-modpack-server",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-obsidian",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-document-workflows",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-google-workspace",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-maps",
-      "type": "semantic-gravity",
-      "strength": 0.41000000000000003
-    },
-    {
-      "source": "keyword-core-productivity",
-      "target": "skill-petdex",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
     }
