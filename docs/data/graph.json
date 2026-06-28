@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-28T04:00:49+08:00",
+    "generatedAt": "2026-06-29T04:00:39+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -288,7 +288,7 @@
         "investment",
         "aesthetic",
         "use",
-        "jeffery"
+        "productivity"
       ]
     },
     {
@@ -1812,7 +1812,7 @@
         "automation"
       ],
       "size": 4.5,
-      "summary": "全域 Prompt Architect SOP：所有送往生成模型、外部 AI 或 worker 的 prompt 先結構化 brief；影音/圖像預設用 OpenRouter GLM 5.2。",
+      "summary": "全域 Prompt Architect SOP：所有送往生成模型、外部 AI 或 worker 的 prompt 先結構化 brief；影音/圖像預設用 OpenRouter GPT-4.1 mini。",
       "visibility": "public-safe",
       "tags": [
         "skill",
