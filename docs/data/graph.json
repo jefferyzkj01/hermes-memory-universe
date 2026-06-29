@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-29T04:00:39+08:00",
+    "generatedAt": "2026-06-30T04:00:32+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -120,21 +120,21 @@
       "keyword": "software",
       "label": "Software Core",
       "color": "#7dd3fc",
-      "count": 22
+      "count": 23
     },
     {
       "key": "kw-use",
       "keyword": "use",
       "label": "Use Core",
       "color": "#c4b5fd",
-      "count": 36
+      "count": 37
     },
     {
       "key": "kw-jeffery",
       "keyword": "jeffery",
       "label": "Jeffery Core",
       "color": "#f0c987",
-      "count": 19
+      "count": 20
     },
     {
       "key": "kw-investment",
@@ -185,7 +185,7 @@
         "aesthetic",
         "software",
         "use",
-        "productivity"
+        "jeffery"
       ]
     },
     {
@@ -1281,29 +1281,6 @@
       ]
     },
     {
-      "id": "skill-comfyui",
-      "label": "comfyui",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [
-        "aesthetic"
-      ],
-      "size": 4.5,
-      "summary": "Generate images, video, and audio with ComfyUI — install, launch, manage nodes/models, run workflows with parameter injection. Uses the official comfy-cli for lifecycle and direct REST/WebSocket API for execution.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "creative",
-        "aesthetic"
-      ],
-      "keywordCore": "kw-aesthetic",
-      "keyword": "aesthetic",
-      "keywordScore": 3.52,
-      "semanticKeywords": [
-        "aesthetic"
-      ]
-    },
-    {
       "id": "skill-ideation",
       "label": "ideation",
       "type": "skill",
@@ -1661,6 +1638,31 @@
       ]
     },
     {
+      "id": "skill-symbolization-thinking",
+      "label": "symbolization-thinking",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "aesthetic"
+      ],
+      "size": 4.5,
+      "summary": "Use only when Jeffery explicitly invokes symbolization before a visual/image/video prompt with words like 「象徵化」, \"symbolization\", 「這幀走象徵化」, or 「停 STAGE 5」. Never use for generic 「思考一下」 or ordinary prompt drafting.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "creative",
+        "aesthetic"
+      ],
+      "keywordCore": "kw-aesthetic",
+      "keyword": "aesthetic",
+      "keywordScore": 3.52,
+      "semanticKeywords": [
+        "aesthetic",
+        "use",
+        "jeffery"
+      ]
+    },
+    {
       "id": "skill-design-taste-frontend",
       "label": "design-taste-frontend",
       "type": "skill",
@@ -1809,21 +1811,23 @@
       "type": "skill",
       "nebula": "skills",
       "relatedNebulae": [
-        "automation"
+        "automation",
+        "software"
       ],
       "size": 4.5,
-      "summary": "全域 Prompt Architect SOP：所有送往生成模型、外部 AI 或 worker 的 prompt 先結構化 brief；影音/圖像預設用 OpenRouter GPT-4.1 mini。",
+      "summary": "全域 Prompt Architect SOP：所有送往生成模型、外部 AI 或 worker 的 prompt 先結構化 brief；影音/圖像預設用 OpenAI Codex OAuth GPT-4.1 mini。",
       "visibility": "public-safe",
       "tags": [
         "skill",
         "devops",
-        "automation"
+        "automation",
+        "software"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
-      "keywordScore": 0.1,
+      "keywordCore": "kw-software",
+      "keyword": "software",
+      "keywordScore": 2.0,
       "semanticKeywords": [
-        "investment"
+        "software"
       ]
     },
     {
@@ -1962,11 +1966,11 @@
         "devops",
         "automation"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "investment"
       ]
     },
     {
@@ -1982,11 +1986,11 @@
         "skill",
         "email"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "productivity"
       ]
     },
     {
@@ -2073,11 +2077,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-investment",
-      "keyword": "investment",
+      "keywordCore": "kw-mlops",
+      "keyword": "mlops",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "investment"
+        "mlops"
       ]
     },
     {
@@ -2093,11 +2097,11 @@
         "skill",
         "gaming"
       ],
-      "keywordCore": "kw-productivity",
-      "keyword": "productivity",
+      "keywordCore": "kw-investment",
+      "keyword": "investment",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "productivity"
+        "investment"
       ]
     },
     {
@@ -2163,11 +2167,11 @@
         "skill",
         "mcp"
       ],
-      "keywordCore": "kw-mlops",
-      "keyword": "mlops",
+      "keywordCore": "kw-productivity",
+      "keyword": "productivity",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "mlops"
+        "productivity"
       ]
     },
     {
@@ -2671,11 +2675,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
+      "keywordCore": "kw-jeffery",
+      "keyword": "jeffery",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "software"
+        "jeffery"
       ]
     },
     {
@@ -2691,11 +2695,11 @@
         "skill",
         "research"
       ],
-      "keywordCore": "kw-jeffery",
-      "keyword": "jeffery",
+      "keywordCore": "kw-software",
+      "keyword": "software",
       "keywordScore": 0.1,
       "semanticKeywords": [
-        "jeffery"
+        "software"
       ]
     },
     {
@@ -3170,18 +3174,6 @@
     },
     {
       "source": "hermes-core",
-      "target": "skill-comfyui",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "skill-comfyui",
-      "target": "aesthetic-wiki",
-      "type": "bridge",
-      "strength": 0.42
-    },
-    {
-      "source": "hermes-core",
       "target": "skill-ideation",
       "type": "skill",
       "strength": 0.32
@@ -3446,6 +3438,18 @@
     },
     {
       "source": "skill-stitch-design-taste",
+      "target": "aesthetic-wiki",
+      "type": "bridge",
+      "strength": 0.42
+    },
+    {
+      "source": "hermes-core",
+      "target": "skill-symbolization-thinking",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "skill-symbolization-thinking",
       "target": "aesthetic-wiki",
       "type": "bridge",
       "strength": 0.42
@@ -3962,12 +3966,6 @@
     },
     {
       "source": "keyword-core-aesthetic",
-      "target": "skill-comfyui",
-      "type": "semantic-gravity",
-      "strength": 0.5316000000000001
-    },
-    {
-      "source": "keyword-core-aesthetic",
       "target": "skill-creative-media-production",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
@@ -4029,6 +4027,12 @@
     {
       "source": "keyword-core-aesthetic",
       "target": "skill-stitch-design-taste",
+      "type": "semantic-gravity",
+      "strength": 0.5316000000000001
+    },
+    {
+      "source": "keyword-core-aesthetic",
+      "target": "skill-symbolization-thinking",
       "type": "semantic-gravity",
       "strength": 0.5316000000000001
     },
@@ -4124,6 +4128,12 @@
     },
     {
       "source": "keyword-core-software",
+      "target": "skill-global-prompt-architect-sop",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
+    },
+    {
+      "source": "keyword-core-software",
       "target": "skill-hermes-operations",
       "type": "semantic-gravity",
       "strength": 0.41000000000000003
@@ -4142,7 +4152,7 @@
     },
     {
       "source": "keyword-core-software",
-      "target": "skill-agent-reach",
+      "target": "skill-llm-wiki",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4268,7 +4278,7 @@
     },
     {
       "source": "keyword-core-jeffery",
-      "target": "skill-llm-wiki",
+      "target": "skill-agent-reach",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4304,13 +4314,13 @@
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-global-prompt-architect-sop",
+      "target": "skill-webhook-subscriptions",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-investment",
-      "target": "skill-minecraft-modpack-server",
+      "target": "skill-pokemon-player",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4364,13 +4374,13 @@
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-webhook-subscriptions",
+      "target": "skill-himalaya",
       "type": "semantic-gravity",
       "strength": 0.258
     },
     {
       "source": "keyword-core-productivity",
-      "target": "skill-pokemon-player",
+      "target": "skill-native-mcp",
       "type": "semantic-gravity",
       "strength": 0.258
     },
@@ -4508,13 +4518,7 @@
     },
     {
       "source": "keyword-core-mlops",
-      "target": "skill-himalaya",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
-      "source": "keyword-core-mlops",
-      "target": "skill-native-mcp",
+      "target": "skill-minecraft-modpack-server",
       "type": "semantic-gravity",
       "strength": 0.258
     },
