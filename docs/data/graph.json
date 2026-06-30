@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-06-30T04:00:32+08:00",
+    "generatedAt": "2026-07-01T04:00:36+08:00",
     "visibility": "public-safe",
     "source": "local Hermes export",
     "layoutMode": "keyword-core-semantic-gravity-v3",
@@ -120,21 +120,21 @@
       "keyword": "software",
       "label": "Software Core",
       "color": "#7dd3fc",
-      "count": 23
+      "count": 24
     },
     {
       "key": "kw-use",
       "keyword": "use",
       "label": "Use Core",
       "color": "#c4b5fd",
-      "count": 37
+      "count": 38
     },
     {
       "key": "kw-jeffery",
       "keyword": "jeffery",
       "label": "Jeffery Core",
       "color": "#f0c987",
-      "count": 20
+      "count": 21
     },
     {
       "key": "kw-investment",
@@ -288,7 +288,7 @@
         "investment",
         "aesthetic",
         "use",
-        "productivity"
+        "software"
       ]
     },
     {
@@ -1646,7 +1646,7 @@
         "aesthetic"
       ],
       "size": 4.5,
-      "summary": "Use only when Jeffery explicitly invokes symbolization before a visual/image/video prompt with words like 「象徵化」, \"symbolization\", 「這幀走象徵化」, or 「停 STAGE 5」. Never use for generic 「思考一下」 or ordinary prompt drafting.",
+      "summary": "Use as a mandatory full symbolization gate inside Jeffery's image/video production workflow. For Jeffery-facing image, video, keyframe, storyboard, concept-board, brand-facing, narrative, or formal visual production, run",
       "visibility": "public-safe",
       "tags": [
         "skill",
@@ -1658,8 +1658,8 @@
       "keywordScore": 3.52,
       "semanticKeywords": [
         "aesthetic",
-        "use",
-        "jeffery"
+        "jeffery",
+        "use"
       ]
     },
     {
@@ -1904,6 +1904,33 @@
       ]
     },
     {
+      "id": "skill-memory-systems-routing-os",
+      "label": "memory-systems-routing-os",
+      "type": "skill",
+      "nebula": "skills",
+      "relatedNebulae": [
+        "automation",
+        "software"
+      ],
+      "size": 4.5,
+      "summary": "Use when deciding whether to use Hindsight, Karpathy LLM Wiki, codebase-memory-mcp, session_search, or profile-owned databases for Jeffery's tasks.",
+      "visibility": "public-safe",
+      "tags": [
+        "skill",
+        "devops",
+        "automation",
+        "software"
+      ],
+      "keywordCore": "kw-use",
+      "keyword": "use",
+      "keywordScore": 2.0,
+      "semanticKeywords": [
+        "use",
+        "software",
+        "jeffery"
+      ]
+    },
+    {
       "id": "skill-profile-roster-collaboration",
       "label": "profile-roster-collaboration",
       "type": "skill",
@@ -2023,7 +2050,7 @@
         "software"
       ],
       "size": 4.5,
-      "summary": "Use when the 總監組 needs to review outputs from 建模組, 影音組, 投資組, or other specialists before final delivery to Jeffery.",
+      "summary": "Use when the 總監組 needs to review outputs from 建模組, 影像組, 投資組, or other specialists before final delivery to Jeffery.",
       "visibility": "public-safe",
       "tags": [
         "skill",
@@ -2680,26 +2707,6 @@
       "keywordScore": 0.1,
       "semanticKeywords": [
         "jeffery"
-      ]
-    },
-    {
-      "id": "skill-llm-wiki",
-      "label": "llm-wiki",
-      "type": "skill",
-      "nebula": "skills",
-      "relatedNebulae": [],
-      "size": 4.5,
-      "summary": "Karpathy's LLM Wiki: build/query interlinked markdown KB.",
-      "visibility": "public-safe",
-      "tags": [
-        "skill",
-        "research"
-      ],
-      "keywordCore": "kw-software",
-      "keyword": "software",
-      "keywordScore": 0.1,
-      "semanticKeywords": [
-        "software"
       ]
     },
     {
@@ -3540,6 +3547,12 @@
     },
     {
       "source": "hermes-core",
+      "target": "skill-memory-systems-routing-os",
+      "type": "skill",
+      "strength": 0.32
+    },
+    {
+      "source": "hermes-core",
       "target": "skill-profile-roster-collaboration",
       "type": "skill",
       "strength": 0.32
@@ -3829,12 +3842,6 @@
     {
       "source": "hermes-core",
       "target": "skill-agent-reach",
-      "type": "skill",
-      "strength": 0.32
-    },
-    {
-      "source": "hermes-core",
-      "target": "skill-llm-wiki",
       "type": "skill",
       "strength": 0.32
     },
@@ -4151,12 +4158,6 @@
       "strength": 0.41000000000000003
     },
     {
-      "source": "keyword-core-software",
-      "target": "skill-llm-wiki",
-      "type": "semantic-gravity",
-      "strength": 0.258
-    },
-    {
       "source": "keyword-core-use",
       "target": "tool-registry",
       "type": "semantic-gravity",
@@ -4197,6 +4198,12 @@
       "target": "skill-hermes-kanban-collaboration",
       "type": "semantic-gravity",
       "strength": 0.33
+    },
+    {
+      "source": "keyword-core-use",
+      "target": "skill-memory-systems-routing-os",
+      "type": "semantic-gravity",
+      "strength": 0.41000000000000003
     },
     {
       "source": "keyword-core-use",
